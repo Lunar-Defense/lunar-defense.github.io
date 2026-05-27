@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsroom | Lunar Defense</title>
+    <meta name="description" content="The latest news, announcements, and press coverage from Lunar Defense.">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'void-black': '#0A0B0F',
+                        'deep-navy': '#1A1D28',
+                        'orbital-blue': '#4B63F5',
+                        'lunar-silver': '#A8B2C8',
+                        'signal-white': '#FAFBFC',
+                        'horizon-cyan': '#00D9FF',
+                    },
+                    fontFamily: {
+                        sans: ['IBM Plex Sans', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            background-color: #0A0B0F;
+            color: #FAFBFC;
+        }
+
+        .gradient-bg {
+            background-color: #0A0B0F;
+            background-image: radial-gradient(at 0% 0%, rgba(75, 99, 245, 0.15) 0%, transparent 50%),
+                              radial-gradient(at 100% 100%, rgba(26, 29, 40, 0.5) 0%, transparent 70%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Offset anchored news cards so the sticky header doesn't overlap them */
+        article[id] {
+            scroll-margin-top: 6rem;
+        }
+    </style>
+</head>
+<body class="gradient-bg antialiased">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-void-black/95 backdrop-blur-sm border-b border-deep-navy shadow-lg">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <svg width="32" height="36" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <title>Lunar Defense Monogram</title>
+                        <defs>
+                            <path d="M0,0 L246.344195,0 L246.344195,272.681453 L0,272.681453 L0,0 Z" id="path-1"></path>
+                        </defs>
+                        <g stroke="none" fill="none" fill-rule="evenodd">
+                            <g transform="translate(27, 14)" xlink:href="#path-1" fill="#FAFBFC">
+                                <path d="M163.564191,1.3407301 C207.987662,1.3407301 244,61.7822889 244,136.34073 C244,210.899171 207.987662,271.34073 163.564191,271.34073 C163.304665,271.34073 163.045425,271.338667 162.786478,271.334551 C179.344579,250.006202 190.376128,211.840323 190.376128,168.306247 C190.376128,101.460748 164.367217,47.2717646 132.283599,47.2717646 C114.540749,47.2717646 98.6557267,63.8443823 88,89.9652393 C99.2698137,38.2518581 128.8487,1.3407301 163.564191,1.3407301 Z" id="Combined-Shape" transform="translate(166.0002, 136.3407) rotate(1) translate(-166.0002, -136.3407)"></path>
+                                <path d="M26.6595801,1.34072655 L68.0688562,1.34072655 C72.4871342,1.34072655 76.0688562,4.92244855 76.0688562,9.34072655 C76.0688562,9.58400934 76.0577587,9.82716551 76.0355984,10.0694369 L58.0247074,206.976371 C57.8234796,209.176326 59.4437682,211.12287 61.6437233,211.324098 C61.764859,211.335178 61.8864371,211.340727 62.0080785,211.340727 L148.863101,211.340725 C148.864889,211.340727 148.866677,211.340727 148.868465,211.340725 C162.956155,211.341093 170,214.341093 170,220.340727 C170,229.340727 160,261.340727 147.90546,271.340727 C101.46676,271.340727 55.0280603,271.340727 8.5893603,271.340727 C4.17108231,271.340727 0.589360305,267.759005 0.589360305,263.340727 C0.589360305,263.151312 0.596087395,262.961957 0.609528855,262.773021 L18.6797486,8.77302061 C18.9776513,4.58561845 22.4615945,1.34072655 26.6595801,1.34072655 Z" id="Rectangle-2"></path>
+                            </g>
+                        </g>
+                    </svg>
+                    <span class="text-2xl font-bold text-signal-white">Lunar Defense</span>
+                </a>
+                <a href="index.html" class="px-4 py-2 bg-orbital-blue text-signal-white rounded-lg hover:bg-[#3d53d9] transition duration-300 font-semibold shadow-xl shadow-orbital-blue/20 text-sm">
+                    Home
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-20 md:py-28">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Page header -->
+            <div class="mb-16">
+                <p class="text-orbital-blue uppercase tracking-widest text-sm font-semibold mb-3">Newsroom</p>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-signal-white mb-4">
+                    News &amp; Announcements
+                </h1>
+                <div class="h-1 w-20 bg-horizon-cyan mb-6"></div>
+                <p class="max-w-3xl text-xl text-lunar-silver font-light">
+                    The latest milestones, partnerships, and press coverage from Lunar Defense.
+                </p>
+            </div>
+
+            <!-- News list -->
+            <div class="space-y-8">
+
+                <!-- News item: Carahsoft partnership -->
+                <article id="carahsoft-partnership" class="bg-deep-navy rounded-2xl p-8 border border-deep-navy hover:border-orbital-blue transition duration-300">
+                    <div class="flex flex-wrap items-center gap-3 mb-4 text-sm">
+                        <span class="px-3 py-1 rounded-full border border-horizon-cyan/40 text-horizon-cyan font-medium">Press Release</span>
+                        <time class="text-lunar-silver" datetime="2026-05-26">May 26, 2026</time>
+                        <span class="text-lunar-silver">&middot;</span>
+                        <span class="text-lunar-silver">GlobeNewswire</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-signal-white mb-3">
+                        Lunar Defense and Carahsoft Partner to Deliver Fully Offline, AI-Powered Mobile Security to Federal, State, and Local Government Agencies
+                    </h2>
+                    <p class="text-lunar-silver text-base mb-6 font-light leading-relaxed">
+                        Carahsoft, The Trusted IT Solutions Provider&reg;, has announced a partnership making Lunar Defense's on-device iOS threat-detection platform available to the public sector. Lunar Defense is available to Federal, State, Local, Education, and Healthcare customers on the OMNIA, TIPS, NASPO ValuePoint, and NASA SEWP contract vehicles.
+                    </p>
+                    <a href="https://www.globenewswire.com/news-release/2026/05/26/3301326/0/en/lunar-defense-and-carahsoft-partner-to-deliver-fully-offline-ai-powered-mobile-security-to-federal-state-and-local-government-agencies.html" target="_blank" rel="noopener"
+                       class="inline-flex items-center gap-2 text-orbital-blue hover:text-horizon-cyan font-semibold transition duration-300">
+                        Read the press release
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </article>
+
+                <!-- To add a new entry, copy an <article> block above, update the tag,
+                     date, source, headline, summary, and link, and place the newest at the top. -->
+
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-void-black border-t border-deep-navy py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm text-lunar-silver">&copy; 2026 Lunar Defense. All rights reserved. Endpoint Security, Engineered for iOS.</p>
+            <div class="flex justify-center space-x-6 mt-4 text-sm text-lunar-silver">
+                <a href="index.html" class="hover:text-orbital-blue transition duration-300">Home</a>
+                <a href="news.html" class="hover:text-orbital-blue transition duration-300">Newsroom</a>
+                <a href="privacy.html" class="hover:text-orbital-blue transition duration-300">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
