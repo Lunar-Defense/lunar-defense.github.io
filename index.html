@@ -106,8 +106,8 @@
 
                 <nav class="hidden md:flex space-x-8 text-lunar-silver text-sm font-medium items-center">
                     <a href="#problem" class="hover:text-orbital-blue transition duration-300">The Problem</a>
-                    <a href="#how-it-works" class="hover:text-orbital-blue transition duration-300">How It Works</a>
                     <a href="#platform" class="hover:text-orbital-blue transition duration-300">Platform</a>
+                    <a href="#products" class="hover:text-orbital-blue transition duration-300">Products</a>
                     <a href="#team" class="hover:text-orbital-blue transition duration-300">Team</a>
                     <a href="news.html" class="hover:text-orbital-blue transition duration-300">Newsroom</a>
                     <a href="#contact" class="px-4 py-2 bg-orbital-blue text-signal-white rounded-lg hover:bg-[#3d53d9] transition duration-300 font-semibold shadow-xl shadow-orbital-blue/20" aria-label="Request a demo">
@@ -127,8 +127,8 @@
             <div id="mobile-menu" class="mobile-menu md:hidden border-t border-deep-navy">
                 <div class="py-4 space-y-3">
                     <a href="#problem" class="block text-lunar-silver hover:text-orbital-blue transition duration-300 text-sm font-medium">The Problem</a>
-                    <a href="#how-it-works" class="block text-lunar-silver hover:text-orbital-blue transition duration-300 text-sm font-medium">How It Works</a>
                     <a href="#platform" class="block text-lunar-silver hover:text-orbital-blue transition duration-300 text-sm font-medium">Platform</a>
+                    <a href="#products" class="block text-lunar-silver hover:text-orbital-blue transition duration-300 text-sm font-medium">Products</a>
                     <a href="#team" class="block text-lunar-silver hover:text-orbital-blue transition duration-300 text-sm font-medium">Team</a>
                     <a href="news.html" class="block text-lunar-silver hover:text-orbital-blue transition duration-300 text-sm font-medium">Newsroom</a>
                     <a href="#contact" class="inline-block px-4 py-2 bg-orbital-blue text-signal-white text-sm rounded-lg hover:bg-[#3d53d9] transition duration-300 font-semibold mt-2">Request a Demo</a>
@@ -158,8 +158,8 @@
                     <a href="#contact" class="px-8 py-4 bg-orbital-blue text-signal-white text-lg font-bold rounded-xl hover:bg-[#3d53d9] transition duration-300 shadow-2xl shadow-orbital-blue/30 transform hover:scale-[1.02] active:scale-[0.98]">
                         Request a Demo
                     </a>
-                    <a href="#how-it-works" class="px-8 py-4 bg-deep-navy text-lunar-silver text-lg font-medium rounded-xl border border-deep-navy hover:border-orbital-blue hover:text-signal-white transition duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
-                        See How It Works
+                    <a href="#platform" class="px-8 py-4 bg-deep-navy text-lunar-silver text-lg font-medium rounded-xl border border-deep-navy hover:border-orbital-blue hover:text-signal-white transition duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                        See the Platform
                     </a>
                 </div>
             </div>
@@ -176,80 +176,6 @@
                 <p class="max-w-4xl mx-auto text-xl text-lunar-silver font-light leading-relaxed mt-6 border-l-4 border-orbital-blue pl-4 text-left">
                     <strong>Traditional endpoint security stops at the desktop.</strong> iOS and macOS devices account for over 25% of mobile endpoints across U.S. federal agencies, yet no incumbent vendor provides real-time, on-device endpoint detection within Apple's strict sandbox. Detection happens after the breach, not before.
                 </p>
-            </div>
-        </section>
-
-        <!-- How It Works -->
-        <section id="how-it-works" class="py-20 md:py-32 bg-deep-navy border-t border-b border-void-black">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <p class="text-horizon-cyan uppercase tracking-widest text-sm font-semibold mb-3">Architecture</p>
-                    <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-signal-white">On-Device AI. No Cloud Required.</h2>
-                    <div class="h-1 w-20 bg-horizon-cyan mx-auto mb-8"></div>
-                    <p class="max-w-3xl mx-auto text-lg text-lunar-silver font-light">
-                        Lunar Defense runs entirely on-device using Apple's CoreML framework. Four specialized AI engines operate within Apple's sandbox and MDM constraints &mdash; no telemetry offloading, no cloud dependency, no data leaving the device.
-                    </p>
-                </div>
-
-                <!-- Architecture diagram -->
-                <div class="max-w-5xl mx-auto">
-                    <!-- Four engines -->
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                        <div class="engine-card bg-void-black p-6 rounded-xl border border-orbital-blue/30 text-center hover:border-orbital-blue transition duration-300">
-                            <div class="w-12 h-12 mx-auto mb-4 rounded-lg bg-orbital-blue/20 flex items-center justify-center">
-                                <svg class="w-6 h-6 text-orbital-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                            </div>
-                            <h3 class="font-semibold text-signal-white text-base mb-2">Malware Detection</h3>
-                            <p class="text-lunar-silver text-sm">Identifies known and novel malware signatures in real time on-device.</p>
-                        </div>
-                        <div class="engine-card bg-void-black p-6 rounded-xl border border-orbital-blue/30 text-center hover:border-orbital-blue transition duration-300">
-                            <div class="w-12 h-12 mx-auto mb-4 rounded-lg bg-orbital-blue/20 flex items-center justify-center">
-                                <svg class="w-6 h-6 text-orbital-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-                            </div>
-                            <h3 class="font-semibold text-signal-white text-base mb-2">Anomaly Detection</h3>
-                            <p class="text-lunar-silver text-sm">Spots abnormal device behavior and zero-day threats before they escalate.</p>
-                        </div>
-                        <div class="engine-card bg-void-black p-6 rounded-xl border border-orbital-blue/30 text-center hover:border-orbital-blue transition duration-300">
-                            <div class="w-12 h-12 mx-auto mb-4 rounded-lg bg-orbital-blue/20 flex items-center justify-center">
-                                <svg class="w-6 h-6 text-orbital-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.858 15.355-5.858 21.213 0"></path></svg>
-                            </div>
-                            <h3 class="font-semibold text-signal-white text-base mb-2">Network Traffic Analysis</h3>
-                            <p class="text-lunar-silver text-sm">Monitors network activity for suspicious connections and data exfiltration attempts.</p>
-                        </div>
-                        <div class="engine-card bg-void-black p-6 rounded-xl border border-orbital-blue/30 text-center hover:border-orbital-blue transition duration-300">
-                            <div class="w-12 h-12 mx-auto mb-4 rounded-lg bg-orbital-blue/20 flex items-center justify-center">
-                                <svg class="w-6 h-6 text-orbital-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                            </div>
-                            <h3 class="font-semibold text-signal-white text-base mb-2">Threat Intelligence</h3>
-                            <p class="text-lunar-silver text-sm">Correlates signals across engines for contextual, high-confidence threat assessments.</p>
-                        </div>
-                    </div>
-
-                    <!-- Converge arrow -->
-                    <div class="flex justify-center mb-8">
-                        <div class="flex flex-col items-center">
-                            <div class="w-px h-8 bg-gradient-to-b from-orbital-blue to-horizon-cyan"></div>
-                            <svg class="w-5 h-5 text-horizon-cyan" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </div>
-                    </div>
-
-                    <!-- Single agent box -->
-                    <div class="max-w-2xl mx-auto bg-void-black rounded-2xl border border-horizon-cyan/50 p-8 text-center shadow-2xl shadow-horizon-cyan/10">
-                        <div class="flex items-center justify-center gap-3 mb-4">
-                            <div class="w-3 h-3 rounded-full bg-horizon-cyan animate-pulse"></div>
-                            <h3 class="text-xl font-bold text-signal-white">Single Endpoint Agent</h3>
-                        </div>
-                        <p class="text-lunar-silver text-base mb-6">
-                            All four engines run as a single lightweight agent. Pre-trained models mean no per-device learning &mdash; operational from first deployment.
-                        </p>
-                        <div class="flex flex-wrap justify-center gap-4 text-sm">
-                            <span class="px-3 py-1 rounded-full border border-horizon-cyan/40 text-horizon-cyan">Built on CoreML</span>
-                            <span class="px-3 py-1 rounded-full border border-horizon-cyan/40 text-horizon-cyan">Deploys via MDM</span>
-                            <span class="px-3 py-1 rounded-full border border-horizon-cyan/40 text-horizon-cyan">Under 24 Hours</span>
-                            <span class="px-3 py-1 rounded-full border border-horizon-cyan/40 text-horizon-cyan">Optional SOC Integration</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -416,6 +342,69 @@
                             Lunar Defense operates on-device, inside the sandbox, with zero cloud dependency.
                         </p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products -->
+        <section id="products" class="py-20 md:py-32 border-t border-deep-navy">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <p class="text-orbital-blue uppercase tracking-widest text-sm font-semibold mb-3">Our Products</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-signal-white">One Platform. Every Device.</h2>
+                    <div class="h-1 w-20 bg-orbital-blue mx-auto mb-8"></div>
+                    <p class="max-w-2xl mx-auto text-lg text-lunar-silver font-light">The same on-device detection engine, in two forms: one for the iPhone in your pocket, one for the fleet your agency runs.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+
+                    <!-- Consumer: Mobile Security -->
+                    <div style="position:relative;background:#11131A;border:1px solid rgba(0,230,118,.35);border-radius:18px;padding:32px;box-shadow:0 0 0 1px rgba(0,230,118,.06),0 24px 50px -24px rgba(0,230,118,.25);overflow:hidden;">
+                        <div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:radial-gradient(circle,rgba(0,230,118,.18),transparent 70%);"></div>
+                        <div style="display:inline-flex;align-items:center;gap:7px;background:rgba(0,230,118,.12);border:1px solid rgba(0,230,118,.3);color:#00E676;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:100px;margin-bottom:24px;">
+                            <span style="width:6px;height:6px;border-radius:50%;background:#00E676;box-shadow:0 0 8px #00E676;"></span>Coming soon to the App Store
+                        </div>
+                        <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+                            <div style="width:56px;height:56px;border-radius:14px;background:linear-gradient(140deg,#0A0B0F,#1A1D28);border:1px solid #2D3139;display:flex;align-items:center;justify-content:center;flex:none;"><svg width="26" height="29" viewBox="0 0 300 300" fill="none"><g fill="#00E676"><g transform="translate(27,14)"><path d="M163.564191,1.3407301 C207.987662,1.3407301 244,61.7822889 244,136.34073 C244,210.899171 207.987662,271.34073 163.564191,271.34073 C163.304665,271.34073 163.045425,271.338667 162.786478,271.334551 C179.344579,250.006202 190.376128,211.840323 190.376128,168.306247 C190.376128,101.460748 164.367217,47.2717646 132.283599,47.2717646 C114.540749,47.2717646 98.6557267,63.8443823 88,89.9652393 C99.2698137,38.2518581 128.8487,1.3407301 163.564191,1.3407301 Z"></path><path d="M26.6595801,1.34072655 L68.0688562,1.34072655 C72.4871342,1.34072655 76.0688562,4.92244855 76.0688562,9.34072655 C76.0688562,9.58400934 76.0577587,9.82716551 76.0355984,10.0694369 L58.0247074,206.976371 C57.8234796,209.176326 59.4437682,211.12287 61.6437233,211.324098 C61.764859,211.335178 61.8864371,211.340727 62.0080785,211.340727 L148.863101,211.340725 C148.864889,211.340727 148.866677,211.340727 148.868465,211.340725 C162.956155,211.341093 170,214.341093 170,220.340727 C170,229.340727 160,261.340727 147.90546,271.340727 C101.46676,271.340727 55.0280603,271.340727 8.5893603,271.340727 C4.17108231,271.340727 0.589360305,267.759005 0.589360305,263.340727 C0.589360305,263.151312 0.596087395,262.961957 0.609528855,262.773021 L18.6797486,8.77302061 C18.9776513,4.58561845 22.4615945,1.34072655 26.6595801,1.34072655 Z"></path></g></g></svg></div>
+                            <div>
+                                <h3 style="font-size:20px;font-weight:700;color:#FAFBFC;margin:0;line-height:1.2;">Mobile Security</h3>
+                                <p style="font-size:13px;color:#A8B2C8;margin:3px 0 0;">For your personal iPhone</p>
+                            </div>
+                        </div>
+                        <p style="font-size:15px;color:#C7CEDC;line-height:1.6;margin:0 0 20px;">Run a sweep on your iPhone and get one honest verdict in seconds. On-device checks for integrity and connection, with your results staying on your phone.</p>
+                        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px;">
+                            <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#C7CEDC;"><span style="color:#00E676;">&#10003;</span> Manual sweeps, always free</div>
+                            <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#C7CEDC;"><span style="color:#00E676;">&#10003;</span> A plain verdict, not a score</div>
+                            <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#C7CEDC;"><span style="color:#00E676;">&#10003;</span> Pro adds automatic background sweeps</div>
+                        </div>
+                        <p style="font-size:13px;color:#A8B2C8;margin:0 0 18px;">Free to scan &middot; Pro from <strong style="color:#FAFBFC;">$4.99/mo</strong></p>
+                        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+                            <a href="mobile.html" style="display:inline-flex;align-items:center;gap:7px;background:#00E676;color:#06231A;font-size:14px;font-weight:700;padding:11px 18px;border-radius:10px;text-decoration:none;">Explore the app &rarr;</a>
+                            <span style="display:inline-flex;align-items:center;gap:8px;background:#0D0F15;border:1px solid #2D3139;border-radius:10px;padding:10px 16px;color:#A8B2C8;font-size:13px;font-weight:600;cursor:default;"><span style="width:7px;height:7px;border-radius:50%;background:#00E676;box-shadow:0 0 8px #00E676;"></span>App Store &middot; Coming soon</span>
+                        </div>
+                    </div>
+
+                    <!-- Enterprise -->
+                    <div style="position:relative;background:#0D0F15;border:1px solid #1A1D28;border-radius:18px;padding:32px;">
+                        <div style="display:inline-flex;align-items:center;gap:7px;background:rgba(168,178,200,.08);border:1px solid #2D3139;color:#A8B2C8;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:100px;margin-bottom:24px;">Coming soon</div>
+                        <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+                            <div style="width:56px;height:56px;border-radius:14px;background:linear-gradient(140deg,#0A0B0F,#1A1D28);border:1px solid #2D3139;display:flex;align-items:center;justify-content:center;flex:none;"><svg width="26" height="29" viewBox="0 0 300 300" fill="none"><g fill="#4B6EF5"><g transform="translate(27,14)"><path d="M163.564191,1.3407301 C207.987662,1.3407301 244,61.7822889 244,136.34073 C244,210.899171 207.987662,271.34073 163.564191,271.34073 C163.304665,271.34073 163.045425,271.338667 162.786478,271.334551 C179.344579,250.006202 190.376128,211.840323 190.376128,168.306247 C190.376128,101.460748 164.367217,47.2717646 132.283599,47.2717646 C114.540749,47.2717646 98.6557267,63.8443823 88,89.9652393 C99.2698137,38.2518581 128.8487,1.3407301 163.564191,1.3407301 Z"></path><path d="M26.6595801,1.34072655 L68.0688562,1.34072655 C72.4871342,1.34072655 76.0688562,4.92244855 76.0688562,9.34072655 C76.0688562,9.58400934 76.0577587,9.82716551 76.0355984,10.0694369 L58.0247074,206.976371 C57.8234796,209.176326 59.4437682,211.12287 61.6437233,211.324098 C61.764859,211.335178 61.8864371,211.340727 62.0080785,211.340727 L148.863101,211.340725 C148.864889,211.340727 148.866677,211.340727 148.868465,211.340725 C162.956155,211.341093 170,214.341093 170,220.340727 C170,229.340727 160,261.340727 147.90546,271.340727 C101.46676,271.340727 55.0280603,271.340727 8.5893603,271.340727 C4.17108231,271.340727 0.589360305,267.759005 0.589360305,263.340727 C0.589360305,263.151312 0.596087395,262.961957 0.609528855,262.773021 L18.6797486,8.77302061 C18.9776513,4.58561845 22.4615945,1.34072655 26.6595801,1.34072655 Z"></path></g></g></svg></div>
+                            <div>
+                                <h3 style="font-size:20px;font-weight:700;color:#FAFBFC;margin:0;line-height:1.2;">Enterprise</h3>
+                                <p style="font-size:13px;color:#A8B2C8;margin:3px 0 0;">For fleets &amp; federal agencies</p>
+                            </div>
+                        </div>
+                        <p style="font-size:15px;color:#9aa3b5;line-height:1.6;margin:0 0 20px;">The endpoint agent built for managed iOS deployments: runtime detection inside Apple's sandbox, distributed via MDM, with optional SOC integration.</p>
+                        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px;">
+                            <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#9aa3b5;"><span style="color:#4B6EF5;">&#9671;</span> Fleet-wide endpoint visibility</div>
+                            <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#9aa3b5;"><span style="color:#4B6EF5;">&#9671;</span> MDM deployment in under 24 hours</div>
+                            <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#9aa3b5;"><span style="color:#4B6EF5;">&#9671;</span> Federal-grade, air-gap ready</div>
+                        </div>
+                        <p style="font-size:13px;color:#6b7080;margin:0 0 18px;">Launching 2026</p>
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <a href="#contact" style="display:inline-flex;align-items:center;gap:7px;background:transparent;color:#4B6EF5;border:1px solid #4B6EF5;font-size:14px;font-weight:600;padding:11px 18px;border-radius:10px;text-decoration:none;">Get notified &rarr;</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>

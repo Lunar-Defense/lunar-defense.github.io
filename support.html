@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Lunar Defense Mobile Security</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  body{margin:0;}
+  details>summary{list-style:none;cursor:pointer;}
+  details>summary::-webkit-details-marker{display:none;}
+  details[open] .faq-plus{transform:rotate(45deg);}
+  html{scroll-behavior:smooth;}
+  [id]{scroll-margin-top:90px;}
+</style>
+<style>
+  body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+  .ld-header{position:sticky;top:0;z-index:50;background:rgba(10,11,15,.95);backdrop-filter:blur(8px);border-bottom:1px solid #1A1D28;box-shadow:0 10px 30px rgba(0,0,0,.3);}
+  .ld-header-inner{box-sizing:border-box;max-width:1280px;margin:0 auto;padding:0 16px;height:80px;display:flex;align-items:center;justify-content:space-between;}
+  @media (min-width:640px){.ld-header-inner{padding-left:24px;padding-right:24px;}}
+  @media (min-width:1024px){.ld-header-inner{padding-left:32px;padding-right:32px;}}
+  .ld-brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+  .ld-wordmark{font-size:24px;font-weight:700;color:#FAFBFC;letter-spacing:-.01em;}
+  .ld-nav{display:flex;align-items:center;gap:28px;}
+  .ld-nav a{font-size:14px;font-weight:500;color:#A8B2C8;text-decoration:none;transition:color .2s;}
+  .ld-nav a:hover{color:#4B6EF5;}
+  .ld-cta{display:inline-flex;align-items:center;gap:8px;background:#00E676;color:#06231A !important;padding:10px 18px;border-radius:9px;font-weight:700;}
+  .ld-ham{display:none;background:none;border:none;color:#A8B2C8;cursor:pointer;padding:8px;line-height:0;}
+  .ld-mm{display:none;flex-direction:column;padding:6px 32px 18px;border-top:1px solid #1A1D28;background:rgba(10,11,15,.98);}
+  .ld-mm.open{display:flex;}
+  .ld-mm a{font-size:15px;color:#C7CEDC;text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(45,49,57,.5);}
+  .ld-mm a:last-child{border-bottom:none;color:#00E676;font-weight:600;}
+  [id]{scroll-margin-top:96px;}
+  @media (max-width:860px){ .ld-nav{display:none;} .ld-ham{display:block;} }
+  @media (min-width:861px){ .ld-mm{display:none !important;} }
+  html,body{overflow-x:hidden;}
+  @media (max-width:1023px){ .m-grid3{grid-template-columns:1fr 1fr !important;} }
+  @media (max-width:767px){
+    .m-hero{grid-template-columns:1fr !important;gap:36px !important;padding-top:56px !important;padding-bottom:48px !important;}
+    .m-split{grid-template-columns:1fr !important;gap:40px !important;}
+    .m-gridp{grid-template-columns:1fr !important;}
+    .m-h1{font-size:42px !important;}
+    .m-h2{font-size:28px !important;}
+  }
+  @media (max-width:639px){ .m-grid3{grid-template-columns:1fr !important;} }
+  @media (max-width:479px){ .m-h1{font-size:34px !important;} }
+</style>
+</head>
+<body>
+<div style="font-family:'IBM Plex Sans',sans-serif;background:#0A0B0F;color:#FAFBFC;background-image:radial-gradient(at 0% 0%, rgba(75,110,245,.13) 0%, transparent 45%),radial-gradient(at 100% 0%, rgba(0,230,118,.07) 0%, transparent 45%);">
+
+  <!-- header -->
+  <header class="ld-header">
+    <div class="ld-header-inner">
+      <a href="index.html" class="ld-brand"><svg width="32" height="36" viewBox="0 0 300 300" fill="none"><g fill="#FAFBFC"><g transform="translate(27,14)"><path d="M163.564191,1.3407301 C207.987662,1.3407301 244,61.7822889 244,136.34073 C244,210.899171 207.987662,271.34073 163.564191,271.34073 C163.304665,271.34073 163.045425,271.338667 162.786478,271.334551 C179.344579,250.006202 190.376128,211.840323 190.376128,168.306247 C190.376128,101.460748 164.367217,47.2717646 132.283599,47.2717646 C114.540749,47.2717646 98.6557267,63.8443823 88,89.9652393 C99.2698137,38.2518581 128.8487,1.3407301 163.564191,1.3407301 Z"></path><path d="M26.6595801,1.34072655 L68.0688562,1.34072655 C72.4871342,1.34072655 76.0688562,4.92244855 76.0688562,9.34072655 C76.0688562,9.58400934 76.0577587,9.82716551 76.0355984,10.0694369 L58.0247074,206.976371 C57.8234796,209.176326 59.4437682,211.12287 61.6437233,211.324098 C61.764859,211.335178 61.8864371,211.340727 62.0080785,211.340727 L148.863101,211.340725 C148.864889,211.340727 148.866677,211.340727 148.868465,211.340725 C162.956155,211.341093 170,214.341093 170,220.340727 C170,229.340727 160,261.340727 147.90546,271.340727 C101.46676,271.340727 55.0280603,271.340727 8.5893603,271.340727 C4.17108231,271.340727 0.589360305,267.759005 0.589360305,263.340727 C0.589360305,263.151312 0.596087395,262.961957 0.609528855,262.773021 L18.6797486,8.77302061 C18.9776513,4.58561845 22.4615945,1.34072655 26.6595801,1.34072655 Z"></path></g></g></svg><span class="ld-wordmark">Lunar Defense</span></a>
+      <nav class="ld-nav">
+        <a href="mobile.html#how">Features</a>
+        <a href="mobile.html#pricing">Pricing</a>
+        <a href="mobile.html#faq">FAQ</a>
+        <a href="support.html" class="active">Support</a>
+        <a href="index.html">For Business</a>
+        <a href="mobile.html#pricing" class="ld-cta">Download</a>
+      </nav>
+      <button class="ld-ham" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+    </div>
+    <div class="ld-mm" id="ld-mm">
+      <a href="mobile.html#how">Features</a>
+      <a href="mobile.html#pricing">Pricing</a>
+      <a href="mobile.html#faq">FAQ</a>
+      <a href="support.html">Support</a>
+      <a href="index.html">For Business</a>
+      <a href="mobile.html#pricing">Download the app</a>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <section style="max-width:1200px;margin:0 auto;padding:80px 32px 56px;text-align:center;">
+    <p style="color:#4B6EF5;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:600;margin:0 0 16px;">Lunar Defense Mobile Security · Support</p>
+    <h1 class="m-h1" style="font-size:52px;line-height:1.05;font-weight:700;letter-spacing:-.03em;margin:0 0 18px;">How can we help?</h1>
+    <p style="font-size:18px;color:#A8B2C8;font-weight:300;max-width:560px;margin:0 auto 36px;line-height:1.6;">Answers to common questions, help managing your subscription, and a direct line to our team.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="#getting-started" style="font-size:14px;color:#C7CEDC;border:1px solid #2D3139;border-radius:100px;padding:9px 18px;text-decoration:none;">Getting started</a>
+      <a href="#scans" style="font-size:14px;color:#C7CEDC;border:1px solid #2D3139;border-radius:100px;padding:9px 18px;text-decoration:none;">Scans &amp; results</a>
+      <a href="#billing" style="font-size:14px;color:#C7CEDC;border:1px solid #2D3139;border-radius:100px;padding:9px 18px;text-decoration:none;">Subscription &amp; billing</a>
+      <a href="#privacy" style="font-size:14px;color:#C7CEDC;border:1px solid #2D3139;border-radius:100px;padding:9px 18px;text-decoration:none;">Privacy &amp; data</a>
+    </div>
+  </section>
+
+  <!-- contact card -->
+  <section id="contact" style="max-width:880px;margin:0 auto;padding:0 32px 64px;">
+    <div style="background:linear-gradient(140deg,#11161C,#0D0F15);border:1px solid rgba(75,110,245,.35);border-radius:20px;padding:40px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;box-shadow:0 30px 70px -35px rgba(75,110,245,.3);">
+      <div style="flex:1;min-width:260px;">
+        <h2 style="font-size:24px;font-weight:700;margin:0 0 8px;">Contact our team</h2>
+        <p style="font-size:15px;color:#A8B2C8;line-height:1.6;margin:0 0 6px;">Email us and we'll get back to you, typically within one business day.</p>
+        <p style="font-size:13px;color:#6b7080;margin:0;">Include your iPhone model and iOS version so we can help faster.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+        <a href="mailto:support@lunardefense.co" style="display:inline-flex;align-items:center;gap:10px;background:#4B6EF5;color:#FAFBFC;font-size:16px;font-weight:700;padding:14px 22px;border-radius:12px;text-decoration:none;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
+          support@lunardefense.co
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting started -->
+  <section id="getting-started" style="max-width:880px;margin:0 auto;padding:24px 32px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+      <div style="width:38px;height:38px;border-radius:10px;background:rgba(0,230,118,.12);display:flex;align-items:center;justify-content:center;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#00E676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"></path></svg></div>
+      <h2 style="font-size:22px;font-weight:700;margin:0;letter-spacing:-.01em;">Getting started</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">How do I run my first sweep?<span class="faq-plus" style="transition:transform .2s;color:#00E676;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">Open Lunar Defense and tap <strong>Run Security Scan</strong> on the home screen to start a sweep. It runs entirely on your device and finishes in seconds, no account or sign-in required.</p></details>
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">Do I need to create an account?<span class="faq-plus" style="transition:transform .2s;color:#00E676;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">No. You can download the app and run unlimited manual sweeps without an account. A Pro subscription is tied to your Apple ID, so there's still no separate account to manage.</p></details>
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">Which devices and iOS versions are supported?<span class="faq-plus" style="transition:transform .2s;color:#00E676;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">Lunar Defense Mobile Security supports iPhone running iOS 26 or later.</p></details>
+    </div>
+  </section>
+
+  <!-- Scans & results -->
+  <section id="scans" style="max-width:880px;margin:0 auto;padding:24px 32px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+      <div style="width:38px;height:38px;border-radius:10px;background:rgba(0,217,255,.12);display:flex;align-items:center;justify-content:center;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg></div>
+      <h2 style="font-size:22px;font-weight:700;margin:0;letter-spacing:-.01em;">Scans &amp; results</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">What does a sweep check?<span class="faq-plus" style="transition:transform .2s;color:#00D9FF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">A sweep runs three families of checks plus a final cross-check: device integrity (jailbreak traces, injected code, app isolation, and verifying your device is genuine with Apple), connection safety (proxies, interception, and impersonation), and a correlation step that weighs everything together. Tap any result to see what it checked and what it found.</p></details>
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">My sweep found an issue. What should I do?<span class="faq-plus" style="transition:transform .2s;color:#00D9FF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">When a sweep finds something, the app gives you a consolidated, ranked to-do list, safety-first steps first, and each step explains why it helps. Work through it top to bottom. If you're unsure how to proceed, email support@lunardefense.co with a description of what you saw and we'll help.</p></details>
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">How often should I sweep?<span class="faq-plus" style="transition:transform .2s;color:#00D9FF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">You can run a manual sweep any time, for free. With Pro, the app sweeps automatically in the background on a schedule and alerts you if something changes, so you don't have to remember.</p></details>
+    </div>
+  </section>
+
+  <!-- Subscription & billing -->
+  <section id="billing" style="max-width:880px;margin:0 auto;padding:24px 32px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+      <div style="width:38px;height:38px;border-radius:10px;background:rgba(75,110,245,.14);display:flex;align-items:center;justify-content:center;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#4B6EF5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path></svg></div>
+      <h2 style="font-size:22px;font-weight:700;margin:0;letter-spacing:-.01em;">Subscription &amp; billing</h2>
+    </div>
+
+    <!-- manage subscription callout -->
+    <div style="background:#0D0F15;border:1px solid rgba(75,110,245,.3);border-radius:16px;padding:24px 26px;margin-bottom:14px;">
+      <h3 style="font-size:16px;font-weight:700;margin:0 0 12px;color:#FAFBFC;">Manage or cancel your subscription</h3>
+      <p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0 0 14px;">Pro subscriptions are billed through your Apple ID and managed in iOS Settings:</p>
+      <ol style="margin:0;padding-left:20px;color:#C7CEDC;font-size:14px;line-height:1.9;">
+        <li>Open the <strong>Settings</strong> app and tap your name at the top.</li>
+        <li>Tap <strong>Subscriptions</strong>.</li>
+        <li>Select <strong>Lunar Defense</strong>, then change your plan or tap <strong>Cancel Subscription</strong>.</li>
+      </ol>
+      <p style="font-size:13px;color:#6b7080;margin:14px 0 0;">You'll keep Pro until the end of your current billing period.</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">How much does Pro cost?<span class="faq-plus" style="transition:transform .2s;color:#4B6EF5;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">Pro is $4.99/month or $49.99/year. The yearly plan includes a 3-day free trial. Subscriptions auto-renew until cancelled.</p></details>
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">How does the free trial work?<span class="faq-plus" style="transition:transform .2s;color:#4B6EF5;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">The yearly plan starts with a 3-day free trial. You won't be charged if you cancel before the trial ends. If you don't cancel, the subscription begins automatically and your Apple ID is charged.</p></details>
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">How do I restore a purchase on a new device?<span class="faq-plus" style="transition:transform .2s;color:#4B6EF5;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">Sign in with the same Apple ID you used to subscribe, open the app, and tap <strong>Restore Purchases</strong> in Settings. Your Pro access will be reinstated.</p></details>
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">Can I get a refund?<span class="faq-plus" style="transition:transform .2s;color:#4B6EF5;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">Purchases are processed by Apple, so refunds are handled through Apple. Visit reportaproblem.apple.com, sign in with your Apple ID, and request a refund for Lunar Defense. If you need help, email us and we'll point you in the right direction.</p></details>
+    </div>
+  </section>
+
+  <!-- Privacy & data -->
+  <section id="privacy" style="max-width:880px;margin:0 auto;padding:24px 32px 8px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+      <div style="width:38px;height:38px;border-radius:10px;background:rgba(124,111,191,.16);display:flex;align-items:center;justify-content:center;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#7C6FBF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg></div>
+      <h2 style="font-size:22px;font-weight:700;margin:0;letter-spacing:-.01em;">Privacy &amp; data</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">Do my scan results ever leave my phone?<span class="faq-plus" style="transition:transform .2s;color:#7C6FBF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">Your scan results and personal information never leave your device, and the analysis runs on-device. The app makes only a few network connections (verifying your device is genuine with Apple, checking the connection to us is secure, push for background scans, and payments through Apple), and none of them carry your scan results or personal information. See our <a href="privacy.html" style="color:#7C6FBF;text-decoration:none;">Privacy Policy</a> for full details.</p></details>
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">What data does Lunar Defense collect?<span class="faq-plus" style="transition:transform .2s;color:#7C6FBF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">The app is built to minimize data collection. Details of what is and isn't collected are described in our <a href="privacy.html" style="color:#7C6FBF;text-decoration:none;">Privacy Policy</a>.</p></details>
+    </div>
+  </section>
+
+  <!-- still need help -->
+  <section style="max-width:880px;margin:0 auto;padding:48px 32px 24px;">
+    <div style="background:#0C0E14;border:1px solid #1A1D28;border-radius:18px;padding:40px;text-align:center;">
+      <h2 style="font-size:24px;font-weight:700;margin:0 0 10px;">Still need help?</h2>
+      <p style="font-size:15px;color:#A8B2C8;margin:0 0 24px;line-height:1.6;">Can't find what you're looking for? We're happy to help.</p>
+      <a href="mailto:support@lunardefense.co" style="display:inline-flex;align-items:center;gap:10px;background:#4B6EF5;color:#FAFBFC;font-size:15px;font-weight:700;padding:13px 22px;border-radius:11px;text-decoration:none;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
+        Email support@lunardefense.co
+      </a>
+    </div>
+  </section>
+
+  <!-- app info -->
+  <section style="max-width:880px;margin:0 auto;padding:24px 32px 64px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid #1A1D28;padding-top:28px;font-size:13px;color:#6b7080;">
+      <span>Lunar Defense Mobile Security · App version 1.0.2</span>
+      <div style="display:flex;gap:22px;">
+        <a href="privacy.html" style="color:#A8B2C8;text-decoration:none;">Privacy Policy</a>
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener" style="color:#A8B2C8;text-decoration:none;">Terms of Use</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer style="background:#0A0B0F;border-top:1px solid #1A1D28;padding:48px 32px;">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <svg width="22" height="25" viewBox="0 0 300 300" fill="none"><g fill="#FAFBFC"><g transform="translate(27,14)"><path d="M163.564191,1.3407301 C207.987662,1.3407301 244,61.7822889 244,136.34073 C244,210.899171 207.987662,271.34073 163.564191,271.34073 C163.304665,271.34073 163.045425,271.338667 162.786478,271.334551 C179.344579,250.006202 190.376128,211.840323 190.376128,168.306247 C190.376128,101.460748 164.367217,47.2717646 132.283599,47.2717646 C114.540749,47.2717646 98.6557267,63.8443823 88,89.9652393 C99.2698137,38.2518581 128.8487,1.3407301 163.564191,1.3407301 Z"></path><path d="M26.6595801,1.34072655 L68.0688562,1.34072655 C72.4871342,1.34072655 76.0688562,4.92244855 76.0688562,9.34072655 C76.0688562,9.58400934 76.0577587,9.82716551 76.0355984,10.0694369 L58.0247074,206.976371 C57.8234796,209.176326 59.4437682,211.12287 61.6437233,211.324098 C61.764859,211.335178 61.8864371,211.340727 62.0080785,211.340727 L148.863101,211.340725 C148.864889,211.340727 148.866677,211.340727 148.868465,211.340725 C162.956155,211.341093 170,214.341093 170,220.340727 C170,229.340727 160,261.340727 147.90546,271.340727 C101.46676,271.340727 55.0280603,271.340727 8.5893603,271.340727 C4.17108231,271.340727 0.589360305,267.759005 0.589360305,263.340727 C0.589360305,263.151312 0.596087395,262.961957 0.609528855,262.773021 L18.6797486,8.77302061 C18.9776513,4.58561845 22.4615945,1.34072655 26.6595801,1.34072655 Z"></path></g></g></svg>
+        <span style="font-size:14px;color:#A8B2C8;">© 2026 Lunar Defense</span>
+      </div>
+      <div style="display:flex;gap:28px;font-size:14px;color:#A8B2C8;">
+        <a href="index.html" style="color:#A8B2C8;text-decoration:none;">Main site</a>
+        <a href="mobile.html" style="color:#A8B2C8;text-decoration:none;">The App</a>
+        <a href="privacy.html" style="color:#A8B2C8;text-decoration:none;">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+<script>
+(function(){
+  var b=document.querySelector('.ld-ham'), m=document.getElementById('ld-mm');
+  if(b&&m){ b.addEventListener('click',function(){m.classList.toggle('open');});
+    m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');});}); }
+})();
+</script>
+</body>
+</html>

@@ -1,241 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | Lunar Defense</title>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'void-black': '#0A0B0F',
-                        'deep-navy': '#1A1D28',
-                        'orbital-blue': '#4B63F5',
-                        'lunar-silver': '#A8B2C8',
-                        'signal-white': '#FAFBFC',
-                        'horizon-cyan': '#00D9FF',
-                    },
-                    fontFamily: {
-                        sans: ['IBM Plex Sans', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-
-    <style>
-        /* Apply IBM Plex Sans globally */
-        body {
-            font-family: 'IBM Plex Sans', sans-serif;
-            background-color: #0A0B0F; /* Void Black */
-            color: #FAFBFC; /* Signal White */
-        }
-
-        /* Subtle Dark Gradient Overlay for depth */
-        .gradient-bg {
-            background-color: #0A0B0F;
-            background-image: radial-gradient(at 0% 0%, rgba(75, 99, 245, 0.15) 0%, transparent 50%),
-                              radial-gradient(at 100% 100%, rgba(26, 29, 40, 0.5) 0%, transparent 70%);
-        }
-
-        /* Ensure all headers use the secondary accent color */
-        h2, h3 {
-            color: #4B63F5; /* Orbital Blue */
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Lunar Defense Mobile Security</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>body{margin:0;}</style>
+<style>
+  body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+  .ld-header{position:sticky;top:0;z-index:50;background:rgba(10,11,15,.95);backdrop-filter:blur(8px);border-bottom:1px solid #1A1D28;box-shadow:0 10px 30px rgba(0,0,0,.3);}
+  .ld-header-inner{box-sizing:border-box;max-width:1280px;margin:0 auto;padding:0 16px;height:80px;display:flex;align-items:center;justify-content:space-between;}
+  @media (min-width:640px){.ld-header-inner{padding-left:24px;padding-right:24px;}}
+  @media (min-width:1024px){.ld-header-inner{padding-left:32px;padding-right:32px;}}
+  .ld-brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+  .ld-wordmark{font-size:24px;font-weight:700;color:#FAFBFC;letter-spacing:-.01em;}
+  .ld-nav{display:flex;align-items:center;gap:28px;}
+  .ld-nav a{font-size:14px;font-weight:500;color:#A8B2C8;text-decoration:none;transition:color .2s;}
+  .ld-nav a:hover{color:#4B6EF5;}
+  .ld-cta{display:inline-flex;align-items:center;gap:8px;background:#00E676;color:#06231A !important;padding:10px 18px;border-radius:9px;font-weight:700;}
+  .ld-ham{display:none;background:none;border:none;color:#A8B2C8;cursor:pointer;padding:8px;line-height:0;}
+  .ld-mm{display:none;flex-direction:column;padding:6px 32px 18px;border-top:1px solid #1A1D28;background:rgba(10,11,15,.98);}
+  .ld-mm.open{display:flex;}
+  .ld-mm a{font-size:15px;color:#C7CEDC;text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(45,49,57,.5);}
+  .ld-mm a:last-child{border-bottom:none;color:#00E676;font-weight:600;}
+  [id]{scroll-margin-top:96px;}
+  @media (max-width:860px){ .ld-nav{display:none;} .ld-ham{display:block;} }
+  @media (min-width:861px){ .ld-mm{display:none !important;} }
+  html,body{overflow-x:hidden;}
+  @media (max-width:1023px){ .m-grid3{grid-template-columns:1fr 1fr !important;} }
+  @media (max-width:767px){
+    .m-hero{grid-template-columns:1fr !important;gap:36px !important;padding-top:56px !important;padding-bottom:48px !important;}
+    .m-split{grid-template-columns:1fr !important;gap:40px !important;}
+    .m-gridp{grid-template-columns:1fr !important;}
+    .m-h1{font-size:42px !important;}
+    .m-h2{font-size:28px !important;}
+  }
+  @media (max-width:639px){ .m-grid3{grid-template-columns:1fr !important;} }
+  @media (max-width:479px){ .m-h1{font-size:34px !important;} }
+</style>
 </head>
-<body class="gradient-bg antialiased">
+<body>
+<div style="font-family:'IBM Plex Sans',sans-serif;background:#0A0B0F;color:#FAFBFC;background-image:radial-gradient(at 0% 0%, rgba(75,110,245,.13) 0%, transparent 45%),radial-gradient(at 100% 0%, rgba(0,230,118,.06) 0%, transparent 45%);min-height:100vh;">
 
-    <header class="sticky top-0 z-50 bg-void-black/95 backdrop-blur-sm border-b border-deep-navy shadow-lg">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <a href="index.html" class="flex items-center space-x-3">
-                    <svg width="32" height="36" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <title>Lunar Defense Monogram</title>
-                        <defs>
-                            <path d="M0,0 L246.344195,0 L246.344195,272.681453 L0,272.681453 L0,0 Z" id="path-1"></path>
-                        </defs>
-                        <g stroke="none" fill="none" fill-rule="evenodd">
-                            <g transform="translate(27, 14)" xlink:href="#path-1" fill="#FAFBFC">
-                                <path d="M163.564191,1.3407301 C207.987662,1.3407301 244,61.7822889 244,136.34073 C244,210.899171 207.987662,271.34073 163.564191,271.34073 C163.304665,271.34073 163.045425,271.338667 162.786478,271.334551 C179.344579,250.006202 190.376128,211.840323 190.376128,168.306247 C190.376128,101.460748 164.367217,47.2717646 132.283599,47.2717646 C114.540749,47.2717646 98.6557267,63.8443823 88,89.9652393 C99.2698137,38.2518581 128.8487,1.3407301 163.564191,1.3407301 Z" id="Combined-Shape" transform="translate(166.0002, 136.3407) rotate(1) translate(-166.0002, -136.3407)"></path>
-                                <path d="M26.6595801,1.34072655 L68.0688562,1.34072655 C72.4871342,1.34072655 76.0688562,4.92244855 76.0688562,9.34072655 C76.0688562,9.58400934 76.0577587,9.82716551 76.0355984,10.0694369 L58.0247074,206.976371 C57.8234796,209.176326 59.4437682,211.12287 61.6437233,211.324098 C61.764859,211.335178 61.8864371,211.340727 62.0080785,211.340727 L148.863101,211.340725 C148.864889,211.340727 148.866677,211.340727 148.868465,211.340725 C162.956155,211.341093 170,214.341093 170,220.340727 C170,229.340727 160,261.340727 147.90546,271.340727 C101.46676,271.340727 55.0280603,271.340727 8.5893603,271.340727 C4.17108231,271.340727 0.589360305,267.759005 0.589360305,263.340727 C0.589360305,263.151312 0.596087395,262.961957 0.609528855,262.773021 L18.6797486,8.77302061 C18.9776513,4.58561845 22.4615945,1.34072655 26.6595801,1.34072655 Z" id="Rectangle-2"></path>
-                            </g>
-                        </g>
-                    </svg>
-                    <span class="text-2xl font-bold text-signal-white">Lunar Defense</span>
-                </a>
-                <a href="index.html" class="px-4 py-2 bg-orbital-blue text-signal-white rounded-lg hover:bg-[#3d53d9] transition duration-300 font-semibold shadow-xl shadow-orbital-blue/20 text-sm">
-                    Home
-                </a>
-            </div>
-        </div>
-    </header>
+  <!-- header -->
+  <header class="ld-header">
+    <div class="ld-header-inner">
+      <a href="index.html" class="ld-brand"><svg width="32" height="36" viewBox="0 0 300 300" fill="none"><g fill="#FAFBFC"><g transform="translate(27,14)"><path d="M163.564191,1.3407301 C207.987662,1.3407301 244,61.7822889 244,136.34073 C244,210.899171 207.987662,271.34073 163.564191,271.34073 C163.304665,271.34073 163.045425,271.338667 162.786478,271.334551 C179.344579,250.006202 190.376128,211.840323 190.376128,168.306247 C190.376128,101.460748 164.367217,47.2717646 132.283599,47.2717646 C114.540749,47.2717646 98.6557267,63.8443823 88,89.9652393 C99.2698137,38.2518581 128.8487,1.3407301 163.564191,1.3407301 Z"></path><path d="M26.6595801,1.34072655 L68.0688562,1.34072655 C72.4871342,1.34072655 76.0688562,4.92244855 76.0688562,9.34072655 C76.0688562,9.58400934 76.0577587,9.82716551 76.0355984,10.0694369 L58.0247074,206.976371 C57.8234796,209.176326 59.4437682,211.12287 61.6437233,211.324098 C61.764859,211.335178 61.8864371,211.340727 62.0080785,211.340727 L148.863101,211.340725 C148.864889,211.340727 148.866677,211.340727 148.868465,211.340725 C162.956155,211.341093 170,214.341093 170,220.340727 C170,229.340727 160,261.340727 147.90546,271.340727 C101.46676,271.340727 55.0280603,271.340727 8.5893603,271.340727 C4.17108231,271.340727 0.589360305,267.759005 0.589360305,263.340727 C0.589360305,263.151312 0.596087395,262.961957 0.609528855,262.773021 L18.6797486,8.77302061 C18.9776513,4.58561845 22.4615945,1.34072655 26.6595801,1.34072655 Z"></path></g></g></svg><span class="ld-wordmark">Lunar Defense</span></a>
+      <nav class="ld-nav">
+        <a href="mobile.html#how">Features</a>
+        <a href="mobile.html#pricing">Pricing</a>
+        <a href="mobile.html#faq">FAQ</a>
+        <a href="support.html">Support</a>
+        <a href="index.html">For Business</a>
+        <a href="mobile.html#pricing" class="ld-cta">Download</a>
+      </nav>
+      <button class="ld-ham" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+    </div>
+    <div class="ld-mm" id="ld-mm">
+      <a href="mobile.html#how">Features</a>
+      <a href="mobile.html#pricing">Pricing</a>
+      <a href="mobile.html#faq">FAQ</a>
+      <a href="support.html">Support</a>
+      <a href="index.html">For Business</a>
+      <a href="mobile.html#pricing">Download the app</a>
+    </div>
+  </header>
 
-    <main class="py-20 md:py-32">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-lunar-silver leading-relaxed">
+  <main style="max-width:760px;margin:0 auto;padding:72px 32px 96px;">
 
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-signal-white mb-2">Lunar Defense | Privacy Policy</h1>
-            <p class="text-lg text-orbital-blue font-semibold mb-12">Last Updated: March 2026</p>
+    <h1 class="m-h1" style="font-size:42px;font-weight:700;letter-spacing:-.02em;margin:0 0 8px;color:#FAFBFC;">Privacy Policy</h1>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:18px;">
+      <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(75,110,245,.12);border:1px solid rgba(75,110,245,.4);border-radius:100px;padding:7px 16px;font-size:14px;color:#FAFBFC;font-weight:600;">Effective date <span style="color:#4B6EF5;">June 2026</span></span>
+      <span style="font-size:14px;color:#A8B2C8;"><strong style="color:#C7CEDC;font-weight:600;">Applies to:</strong> Lunar Defense Mobile Security (Consumer)</span>
+    </div>
+    <div style="height:2px;width:64px;background:#4B6EF5;margin-bottom:36px;"></div>
 
-            <p class="mb-8">
-                Lunar Defense ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains what information our app collects, how we use it, and the choices you have. Lunar Defense is a device-based security application that uses on-device AI models to analyze basic system behavior and provide security insights.
-                We do not collect, transmit, sell, or share any personal data. All analysis occurs locally on your device.
-            </p>
+    <p style="font-size:16px;line-height:1.75;color:#C7CEDC;margin:0 0 20px;">Lunar Defense is a device-based security app. Its job is to check whether your iPhone and its network connection show signs of compromise, then tell you what it found and what to do about it. The analysis runs on your phone, and the results stay on your phone.</p>
+    <p style="font-size:16px;line-height:1.75;color:#C7CEDC;margin:0 0 40px;">This policy explains exactly what that means: what we process locally, the few specific things that do leave your device and why, and what we never touch.</p>
 
-            <h2 class="text-2xl font-bold mt-10 mb-4">1. Information We Collect</h2>
-            <p class="mb-6">
-                Lunar Defense only collects a very limited set of device metrics, all of which remain on your device and are used solely to operate our on-device AI detection engines. We do not collect any personally identifiable information.
-            </p>
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">Our approach: on-device first</h2>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 16px;">When you run a sweep, the security checks and the AI model that weighs them run <strong style="color:#FAFBFC;font-weight:600;">entirely on your device</strong>. Your scan results (the findings, the verdict, and the device and network signals we examine to produce them) are computed locally and are <strong style="color:#FAFBFC;font-weight:600;">never transmitted to us or stored off your device</strong>.</p>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">There is no account to create, no profile, and no login.</p>
 
-            <h3 class="text-xl font-bold mt-6 mb-3">1.1 Device Behavior Telemetry (On-Device Only)</h3>
-            <p class="mb-4">Lunar Defense processes the following telemetry locally:</p>
-            <ul class="list-disc list-inside space-y-2 ml-4 mb-8">
-                <li>Screen-time activity (total minutes active during each session)</li>
-                <li>Battery level changes (to infer unusual background drain patterns)</li>
-                <li>Disk usage deltas (to detect abnormal local file growth)</li>
-                <li>App-launch frequency (to detect unexpected activity)</li>
-                <li>DNS hostnames queried by the device</li>
-                <li>File extension frequencies within Lunar Defense's own sandbox (e.g., .so, js, .sh, .zip)</li>
-            </ul>
-            <p class="mb-8 font-medium text-signal-white">
-                All telemetry stays on your device and never leaves it.
-            </p>
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">What we process on your device (and never send)</h2>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 16px;">To assess your device's security, the app inspects local security-relevant signals, such as:</p>
+    <ul style="font-size:16px;line-height:1.7;color:#A8B2C8;margin:0 0 16px;padding-left:22px;display:flex;flex-direction:column;gap:10px;">
+      <li>Signs of jailbreaking or system tampering (for example known jailbreak files, injected or "hooking" code, whether app isolation is intact, whether a core system folder is unmodified).</li>
+      <li>Whether anything is attached to or monitoring the app (for example a debugger).</li>
+      <li>Your network and connection configuration (for example whether a proxy or VPN is present, and whether the secure connection to our service holds).</li>
+    </ul>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">All of this is read, analyzed, and turned into a verdict <strong style="color:#FAFBFC;font-weight:600;">on your device</strong>. None of it, and none of the resulting findings, is transmitted to us or retained anywhere off your phone.</p>
 
-            <h3 class="text-xl font-bold mt-6 mb-3">1.2 No Sensitive Data</h3>
-            <p class="mb-4">We do not collect:</p>
-            <ul class="list-disc list-inside space-y-2 ml-4 mb-8">
-                <li>Contacts</li>
-                <li>Photos</li>
-                <li>Messages</li>
-                <li>Browsing history</li>
-                <li>Location</li>
-                <li>Installed apps list</li>
-                <li>Device identifiers (IDFA, IDFV)</li>
-                <li>Email, name, or phone number</li>
-                <li>Advertising information</li>
-            </ul>
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 8px;letter-spacing:-.01em;">What leaves your device, and why</h2>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 24px;">The app makes a small number of network connections. <strong style="color:#FAFBFC;font-weight:600;">None of them carry your scan results, findings, security posture, or personal information.</strong> They are the security mechanisms themselves, and they are limited to the following:</p>
 
-            <h3 class="text-xl font-bold mt-6 mb-3">1.3 No Tracking</h3>
-            <p class="mb-4">Lunar Defense does not:</p>
-            <ul class="list-disc list-inside space-y-2 ml-4 mb-8">
-                <li>Track users across apps or websites</li>
-                <li>Use third-party analytics</li>
-                <li>Use ad networks or marketing trackers</li>
-            </ul>
+    <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:40px;">
+      <div style="display:flex;gap:16px;background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:22px 24px;">
+        <div style="flex:none;width:30px;height:30px;border-radius:8px;background:rgba(75,110,245,.16);color:#4B6EF5;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;">1</div>
+        <div><h3 style="font-size:16px;font-weight:600;color:#FAFBFC;margin:0 0 6px;">Confirming your device is genuine (Apple App Attest)</h3><p style="font-size:15px;line-height:1.7;color:#A8B2C8;margin:0;">To verify that your iPhone is a genuine, untampered Apple device, the app uses Apple's App Attest service and confirms the result with our server. This sends an opaque install identifier (a random ID generated on install, not your name, Apple ID, phone number, or device serial number) and Apple's cryptographic attestation material. Our server keeps a minimal per-install record (the opaque install ID, an attestation public key, and a timestamp) so the check can't be abused. This runs once per install and is then cached. It contains nothing about you or what your scans found.</p></div>
+      </div>
+      <div style="display:flex;gap:16px;background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:22px 24px;">
+        <div style="flex:none;width:30px;height:30px;border-radius:8px;background:rgba(75,110,245,.16);color:#4B6EF5;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;">2</div>
+        <div><h3 style="font-size:16px;font-weight:600;color:#FAFBFC;margin:0 0 6px;">Verifying the connection to our service (certificate pinning)</h3><p style="font-size:15px;line-height:1.7;color:#A8B2C8;margin:0;">The app sends a contentless request to our backend and fetches a signed configuration file to confirm no one is impersonating our service or intercepting the connection. This carries no personal data and no scan data. It is the security check itself.</p></div>
+      </div>
+      <div style="display:flex;gap:16px;background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:22px 24px;">
+        <div style="flex:none;width:30px;height:30px;border-radius:8px;background:rgba(75,110,245,.16);color:#4B6EF5;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;">3</div>
+        <div><h3 style="font-size:16px;font-weight:600;color:#FAFBFC;margin:0 0 6px;">Background scan notifications (paid automation tier only)</h3><p style="font-size:15px;line-height:1.7;color:#A8B2C8;margin:0;">If you subscribe to the automated-scanning tier, the app registers for push notifications so we can wake it to run scans in the background. This uses an Apple-issued push token, which is not personal information and is not tied to your identity.</p></div>
+      </div>
+      <div style="display:flex;gap:16px;background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:22px 24px;">
+        <div style="flex:none;width:30px;height:30px;border-radius:8px;background:rgba(75,110,245,.16);color:#4B6EF5;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;">4</div>
+        <div><h3 style="font-size:16px;font-weight:600;color:#FAFBFC;margin:0 0 6px;">Payments (Apple In-App Purchase)</h3><p style="font-size:15px;line-height:1.7;color:#A8B2C8;margin:0;">Subscriptions are handled entirely by Apple's In-App Purchase system. We never receive or see your payment details. We only receive your subscription status from Apple so the app can unlock paid features.</p></div>
+      </div>
+    </div>
 
-            <h2 class="text-2xl font-bold mt-10 mb-4">2. How We Use Information</h2>
-            <p class="mb-4">
-                All telemetry is processed exclusively on your device using CoreML models for the purpose of:
-            </p>
-            <ul class="list-disc list-inside space-y-2 ml-4 mb-8">
-                <li>Detecting behavioral anomalies</li>
-                <li>Flagging potentially malicious DNS patterns</li>
-                <li>Identifying malware-like activity inside the app sandbox</li>
-                <li>Providing you with on-device security insights</li>
-                <li>Enforcing sweep limits (free tier) or unlocking unlimited sweeps (paid tier)</li>
-            </ul>
-            <p class="mb-8 font-medium text-signal-white">
-                No telemetry is transmitted to our servers or stored off device.
-            </p>
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">What we never collect</h2>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 16px;">We do not collect, transmit, sell, or share your personal data. In particular, the app does <strong style="color:#FAFBFC;font-weight:600;">not</strong> collect:</p>
+    <ul style="font-size:16px;line-height:1.7;color:#A8B2C8;margin:0 0 16px;padding-left:22px;display:flex;flex-direction:column;gap:10px;">
+      <li>Contacts, photos, messages, or call history</li>
+      <li>Browsing history or the contents of your network traffic</li>
+      <li>Your location</li>
+      <li>A list of the other apps installed on your device</li>
+      <li>Advertising identifiers or device identifiers tied to your real-world identity</li>
+      <li>Your name, email address, or phone number</li>
+    </ul>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">There are <strong style="color:#FAFBFC;font-weight:600;">no third-party trackers, no analytics SDKs, and no advertising networks</strong> in the app.</p>
 
-            <h2 class="text-2xl font-bold mt-10 mb-4">3. Data Storage & Retention</h2>
-            <p class="mb-4">
-                Lunar Defense stores only small, temporary telemetry measurements within the app sandbox.
-            </p>
-            <p class="mb-4">We do not:</p>
-            <ul class="list-disc list-inside space-y-2 ml-4 mb-8">
-                <li>Upload data to cloud servers</li>
-                <li>Create user accounts</li>
-                <li>Maintain remote logs</li>
-                <li>Sync information across devices</li>
-            </ul>
-            <p class="mb-8">
-                All telemetry resets periodically and is fully deleted if you uninstall the app.
-            </p>
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">No selling, no sharing</h2>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">We do not sell, rent, trade, or share any information with advertisers, data brokers, other companies, or governments. The only third party involved is <strong style="color:#FAFBFC;font-weight:600;">Apple</strong> (for device attestation, push notifications, and payments, as described above), which acts under Apple's own privacy terms.</p>
 
-            <h2 class="text-2xl font-bold mt-10 mb-4">4. Subscription & Payment Information</h2>
-            <p class="mb-4">If you choose to upgrade to a paid plan:</p>
-            <ul class="list-disc list-inside space-y-2 ml-4 mb-8">
-                <li>Payments are processed securely through Apple's In-App Purchase system.</li>
-                <li>We do not receive or store your payment information.</li>
-                <li>Apple may provide anonymized subscription status to the app (e.g., active/inactive).</li>
-            </ul>
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">Data retention</h2>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">We do not store your scan results or personal data, so there is nothing for us to retain about your activity. The only records we keep are the minimal, non-personal anti-abuse and operational records described in "What leaves your device" (the opaque install attestation record and, for subscribers, a push token). You can end these by uninstalling the app and, for subscriptions, canceling through Apple.</p>
 
-            <h2 class="text-2xl font-bold mt-10 mb-4">5. Children's Privacy</h2>
-            <p class="mb-8">
-                Lunar Defense is safe for all ages and collects no personal data. We do not knowingly collect personally identifiable information from children.
-            </p>
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">Security</h2>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">Analysis runs inside Apple's app sandbox using on-device machine-learning frameworks. The limited network connections we do make are protected by certificate pinning to prevent impersonation or interception.</p>
 
-            <h2 class="text-2xl font-bold mt-10 mb-4">6. Data Sharing</h2>
-            <p class="mb-4">Lunar Defense does not share, sell, rent, or transfer any information to:</p>
-            <ul class="list-disc list-inside space-y-2 ml-4 mb-8">
-                <li>Third parties</li>
-                <li>Advertisers</li>
-                <li>Data brokers</li>
-                <li>Governments</li>
-                <li>Cloud services</li>
-            </ul>
-            <p class="mb-8 font-medium text-signal-white">
-                There is no scenario in which your telemetry leaves your device.
-            </p>
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">Children's privacy</h2>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">Lunar Defense is not directed to children under 13 (or the equivalent minimum age in your jurisdiction), and we do not knowingly collect personal information from children.</p>
 
-            <h2 class="text-2xl font-bold mt-10 mb-4">7. Security</h2>
-            <p class="mb-4">
-                Lunar Defense uses Apple's secure sandboxing and on-device machine learning frameworks. All detection happens offline with:
-            </p>
-            <ul class="list-disc list-inside space-y-2 ml-4 mb-8">
-                <li>No servers</li>
-                <li>No databases</li>
-                <li>No transmissions</li>
-                <li>No remote logging</li>
-            </ul>
-            <p class="mb-8">
-                Your device handles all processing internally.
-            </p>
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">Your choices</h2>
+    <ul style="font-size:16px;line-height:1.7;color:#A8B2C8;margin:0 0 40px;padding-left:22px;display:flex;flex-direction:column;gap:10px;">
+      <li>Use the free, manual-scan tier with no subscription.</li>
+      <li>Turn off notifications at any time in iOS Settings.</li>
+      <li>Cancel a subscription through your Apple account.</li>
+      <li>Uninstall the app to remove it and stop all activity.</li>
+    </ul>
 
-            <h2 class="text-2xl font-bold mt-10 mb-4">8. Your Choices</h2>
-            <p class="mb-4">You may:</p>
-            <ul class="list-disc list-inside space-y-2 ml-4 mb-8">
-                <li>Use Lunar Defense without creating an account</li>
-                <li>Disable notifications at any time</li>
-                <li>Uninstall the app to delete all stored telemetry</li>
-                <li>Choose free tier or paid tier</li>
-            </ul>
-            <p class="mb-8">
-                There are no user data exports because we do not collect or store your information.
-            </p>
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">Changes to this policy</h2>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">If we change how the app handles data, we will update this policy and revise the effective date above.</p>
 
-            <h2 class="text-2xl font-bold mt-10 mb-4">9. Changes to This Privacy Policy</h2>
-            <p class="mb-8">
-                We may update this Privacy Policy as Lunar Defense evolves. Material changes will be reflected by updating the "Last Updated" date above.
-            </p>
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">Contact</h2>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 18px;">Questions about this policy? Get in touch.</p>
+    <div style="background:#11131A;border:1px solid rgba(75,110,245,.3);border-radius:14px;padding:24px 26px;display:flex;flex-direction:column;gap:8px;">
+      <p style="font-size:16px;font-weight:600;color:#FAFBFC;margin:0;">Lunar Defense LLC</p>
+      <p style="font-size:15px;color:#A8B2C8;margin:0;">Email: <a href="mailto:support@lunardefense.co" style="color:#4B6EF5;text-decoration:none;">support@lunardefense.co</a></p>
+      <p style="font-size:15px;color:#A8B2C8;margin:0;">Website: <a href="https://lunardefense.co" style="color:#4B6EF5;text-decoration:none;">lunardefense.co</a></p>
+    </div>
 
-            <h2 class="text-2xl font-bold mt-10 mb-4">10. Contact Us</h2>
-            <p class="mb-4">
-                If you have questions about this Privacy Policy or Lunar Defense's security practices, you may contact us at:
-            </p>
-            <div class="space-y-3 bg-deep-navy p-6 rounded-lg border border-orbital-blue/30">
-                <p class="text-signal-white font-semibold">Lunar Defense LLC</p>
-                <p class="text-orbital-blue"><span class="text-lunar-silver font-medium">Email:</span> <a href="mailto:support@lunardefense.co" class="hover:text-horizon-cyan">support@lunardefense.co</a></p>
-                <p class="text-orbital-blue"><span class="text-lunar-silver font-medium">Website:</span> <a href="https://lunardefense.co" class="hover:text-horizon-cyan">https://lunardefense.co</a></p>
-            </div>
+  </main>
 
-        </div>
-    </main>
+  <footer style="background:#0A0B0F;border-top:1px solid #1A1D28;padding:40px 32px;">
+    <div style="max-width:880px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+      <span style="font-size:14px;color:#A8B2C8;">© 2026 Lunar Defense. All rights reserved.</span>
+      <div style="display:flex;gap:26px;font-size:14px;color:#A8B2C8;">
+        <a href="index.html" style="color:#A8B2C8;text-decoration:none;">Main site</a>
+        <a href="mobile.html" style="color:#A8B2C8;text-decoration:none;">The app</a>
+        <a href="support.html" style="color:#A8B2C8;text-decoration:none;">Support</a>
+      </div>
+    </div>
+  </footer>
 
-    <footer class="bg-void-black border-t border-deep-navy py-10 mt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-sm text-lunar-silver">&copy; 2026 Lunar Defense. All rights reserved.</p>
-            <div class="flex justify-center space-x-6 mt-4 text-sm text-lunar-silver">
-                <a href="index.html" class="hover:text-orbital-blue transition duration-300">Home</a>
-                <a href="#" class="hover:text-orbital-blue transition duration-300">Back to Top</a>
-            </div>
-        </div>
-    </footer>
-
+</div>
+<script>
+(function(){
+  var b=document.querySelector('.ld-ham'), m=document.getElementById('ld-mm');
+  if(b&&m){ b.addEventListener('click',function(){m.classList.toggle('open');});
+    m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');});}); }
+})();
+</script>
 </body>
 </html>

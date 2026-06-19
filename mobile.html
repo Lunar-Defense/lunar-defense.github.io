@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lunar Defense Mobile Security — Know your iPhone is clean</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  body{margin:0;}
+  details>summary{list-style:none;cursor:pointer;}
+  details>summary::-webkit-details-marker{display:none;}
+  details[open] .faq-plus{transform:rotate(45deg);}
+</style>
+<style>
+  body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+  .ld-header{position:sticky;top:0;z-index:50;background:rgba(10,11,15,.95);backdrop-filter:blur(8px);border-bottom:1px solid #1A1D28;box-shadow:0 10px 30px rgba(0,0,0,.3);}
+  .ld-header-inner{box-sizing:border-box;max-width:1280px;margin:0 auto;padding:0 16px;height:80px;display:flex;align-items:center;justify-content:space-between;}
+  @media (min-width:640px){.ld-header-inner{padding-left:24px;padding-right:24px;}}
+  @media (min-width:1024px){.ld-header-inner{padding-left:32px;padding-right:32px;}}
+  .ld-brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+  .ld-wordmark{font-size:24px;font-weight:700;color:#FAFBFC;letter-spacing:-.01em;}
+  .ld-nav{display:flex;align-items:center;gap:28px;}
+  .ld-nav a{font-size:14px;font-weight:500;color:#A8B2C8;text-decoration:none;transition:color .2s;}
+  .ld-nav a:hover{color:#4B6EF5;}
+  .ld-cta{display:inline-flex;align-items:center;gap:8px;background:#00E676;color:#06231A !important;padding:10px 18px;border-radius:9px;font-weight:700;}
+  .ld-ham{display:none;background:none;border:none;color:#A8B2C8;cursor:pointer;padding:8px;line-height:0;}
+  .ld-mm{display:none;flex-direction:column;padding:6px 32px 18px;border-top:1px solid #1A1D28;background:rgba(10,11,15,.98);}
+  .ld-mm.open{display:flex;}
+  .ld-mm a{font-size:15px;color:#C7CEDC;text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(45,49,57,.5);}
+  .ld-mm a:last-child{border-bottom:none;color:#00E676;font-weight:600;}
+  [id]{scroll-margin-top:96px;}
+  @media (max-width:860px){ .ld-nav{display:none;} .ld-ham{display:block;} }
+  @media (min-width:861px){ .ld-mm{display:none !important;} }
+  html,body{overflow-x:hidden;}
+  @media (max-width:1023px){ .m-grid3{grid-template-columns:1fr 1fr !important;} }
+  @media (max-width:767px){
+    .m-hero{grid-template-columns:1fr !important;gap:36px !important;padding-top:56px !important;padding-bottom:48px !important;}
+    .m-split{grid-template-columns:1fr !important;gap:40px !important;}
+    .m-gridp{grid-template-columns:1fr !important;}
+    .m-h1{font-size:42px !important;}
+    .m-h2{font-size:28px !important;}
+  }
+  @media (max-width:639px){ .m-grid3{grid-template-columns:1fr !important;} }
+  @media (max-width:479px){ .m-h1{font-size:34px !important;} }
+</style>
+</head>
+<body>
+<div style="font-family:'IBM Plex Sans',sans-serif;background:#0A0B0F;color:#FAFBFC;background-image:radial-gradient(at 0% 0%, rgba(75,110,245,.13) 0%, transparent 45%),radial-gradient(at 100% 0%, rgba(0,230,118,.08) 0%, transparent 45%);">
+
+  <!-- header -->
+  <header class="ld-header">
+    <div class="ld-header-inner">
+      <a href="index.html" class="ld-brand"><svg width="32" height="36" viewBox="0 0 300 300" fill="none"><g fill="#FAFBFC"><g transform="translate(27,14)"><path d="M163.564191,1.3407301 C207.987662,1.3407301 244,61.7822889 244,136.34073 C244,210.899171 207.987662,271.34073 163.564191,271.34073 C163.304665,271.34073 163.045425,271.338667 162.786478,271.334551 C179.344579,250.006202 190.376128,211.840323 190.376128,168.306247 C190.376128,101.460748 164.367217,47.2717646 132.283599,47.2717646 C114.540749,47.2717646 98.6557267,63.8443823 88,89.9652393 C99.2698137,38.2518581 128.8487,1.3407301 163.564191,1.3407301 Z"></path><path d="M26.6595801,1.34072655 L68.0688562,1.34072655 C72.4871342,1.34072655 76.0688562,4.92244855 76.0688562,9.34072655 C76.0688562,9.58400934 76.0577587,9.82716551 76.0355984,10.0694369 L58.0247074,206.976371 C57.8234796,209.176326 59.4437682,211.12287 61.6437233,211.324098 C61.764859,211.335178 61.8864371,211.340727 62.0080785,211.340727 L148.863101,211.340725 C148.864889,211.340727 148.866677,211.340727 148.868465,211.340725 C162.956155,211.341093 170,214.341093 170,220.340727 C170,229.340727 160,261.340727 147.90546,271.340727 C101.46676,271.340727 55.0280603,271.340727 8.5893603,271.340727 C4.17108231,271.340727 0.589360305,267.759005 0.589360305,263.340727 C0.589360305,263.151312 0.596087395,262.961957 0.609528855,262.773021 L18.6797486,8.77302061 C18.9776513,4.58561845 22.4615945,1.34072655 26.6595801,1.34072655 Z"></path></g></g></svg><span class="ld-wordmark">Lunar Defense</span></a>
+      <nav class="ld-nav">
+        <a href="mobile.html#how" class="active">Features</a>
+        <a href="mobile.html#pricing">Pricing</a>
+        <a href="mobile.html#faq">FAQ</a>
+        <a href="support.html">Support</a>
+        <a href="index.html">For Business</a>
+        <a href="mobile.html#pricing" class="ld-cta">Download</a>
+      </nav>
+      <button class="ld-ham" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+    </div>
+    <div class="ld-mm" id="ld-mm">
+      <a href="mobile.html#how">Features</a>
+      <a href="mobile.html#pricing">Pricing</a>
+      <a href="mobile.html#faq">FAQ</a>
+      <a href="support.html">Support</a>
+      <a href="index.html">For Business</a>
+      <a href="mobile.html#pricing">Download the app</a>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <section class="m-hero" style="max-width:1200px;margin:0 auto;padding:88px 32px 72px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+    <div>
+      <p style="color:#00E676;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:600;margin:0 0 18px;">Lunar Defense Mobile Security</p>
+      <h1 class="m-h1" style="font-size:60px;line-height:1.02;font-weight:700;letter-spacing:-.03em;margin:0 0 22px;">One tap.<br>A clear<br><span style="color:#00E676;">answer.</span></h1>
+      <p style="font-size:19px;line-height:1.6;color:#A8B2C8;font-weight:300;margin:0 0 32px;max-width:470px;">Run a sweep and Lunar Defense checks your iPhone's integrity and connection right on the device, then gives you one honest verdict with plain-language findings. Your scan results never leave your phone.</p>
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:22px;">
+        <span style="display:inline-flex;align-items:center;gap:9px;background:#0D0F15;border:1px solid #2D3139;border-radius:12px;padding:12px 18px;cursor:default;">
+          <span style="width:8px;height:8px;border-radius:50%;background:#00E676;box-shadow:0 0 8px #00E676;flex:none;"></span>
+          <span style="line-height:1.08;"><span style="display:block;font-size:10px;color:#A8B2C8;">Coming soon to the</span><span style="display:block;font-size:18px;color:#FAFBFC;font-weight:600;">App Store</span></span>
+        </span>
+        <a href="#how" style="display:inline-flex;align-items:center;gap:7px;color:#FAFBFC;border:1px solid #2D3139;border-radius:12px;padding:14px 20px;font-weight:600;font-size:15px;text-decoration:none;">See how it works</a>
+      </div>
+      <p style="font-size:13px;color:#6b7080;margin:0;">Free to sweep · Pro from $4.99/mo · No account required</p>
+    </div>
+    <div style="display:flex;justify-content:center;position:relative;">
+      <div style="position:absolute;width:380px;height:380px;background:radial-gradient(circle,rgba(0,230,118,.16),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+      <div style="position:relative;width:284px;height:600px;border-radius:52px;background:#000;padding:11px;box-shadow:0 50px 90px -30px rgba(0,0,0,.8);border:1px solid #2D3139;">
+        <div style="position:absolute;top:23px;left:50%;transform:translateX(-50%);width:96px;height:28px;background:#000;border-radius:15px;z-index:3;"></div>
+        <div id="ld-carousel" style="position:relative;width:100%;height:100%;border-radius:42px;overflow:hidden;">
+          <img class="ld-slide" src="assets/app-screens/1.png" alt="App screenshot 1" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity .8s ease;" />
+          <img class="ld-slide" src="assets/app-screens/2.png" alt="App screenshot 2" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease;" />
+          <img class="ld-slide" src="assets/app-screens/3.png" alt="App screenshot 3" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease;" />
+          <div id="ld-dots" style="position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:7px;z-index:2;">
+            <span style="width:7px;height:7px;border-radius:50%;background:#FAFBFC;opacity:.95;transition:opacity .3s;"></span>
+            <span style="width:7px;height:7px;border-radius:50%;background:#FAFBFC;opacity:.4;transition:opacity .3s;"></span>
+            <span style="width:7px;height:7px;border-radius:50%;background:#FAFBFC;opacity:.4;transition:opacity .3s;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- verdict band -->
+  <section style="border-top:1px solid #1A1D28;border-bottom:1px solid #1A1D28;background:#0C0E14;">
+    <div style="max-width:1000px;margin:0 auto;padding:60px 32px;text-align:center;">
+      <p style="font-size:15px;color:#A8B2C8;font-weight:300;margin:0 0 26px;">Every sweep ends with one honest verdict, never a made-up score.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.35);border-radius:100px;padding:11px 22px;">
+          <span style="width:9px;height:9px;border-radius:50%;background:#00E676;box-shadow:0 0 10px #00E676;"></span>
+          <span style="font-size:16px;font-weight:600;color:#00E676;">Protected</span>
+        </div>
+        <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,176,32,.1);border:1px solid rgba(255,176,32,.35);border-radius:100px;padding:11px 22px;">
+          <span style="width:9px;height:9px;border-radius:50%;background:#FFB020;box-shadow:0 0 10px #FFB020;"></span>
+          <span style="font-size:16px;font-weight:600;color:#FFB020;">Needs attention</span>
+        </div>
+        <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,59,92,.1);border:1px solid rgba(255,59,92,.35);border-radius:100px;padding:11px 22px;">
+          <span style="width:9px;height:9px;border-radius:50%;background:#FF3B5C;box-shadow:0 0 10px #FF3B5C;"></span>
+          <span style="font-size:16px;font-weight:600;color:#FF3B5C;">Action needed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- on-device band -->
+  <section style="border-bottom:1px solid #1A1D28;background:#0A0B0F;">
+    <div style="max-width:1000px;margin:0 auto;padding:64px 32px;display:flex;align-items:center;gap:40px;justify-content:center;text-align:center;flex-direction:column;">
+      <div style="width:88px;height:88px;border-radius:24px;background:rgba(0,230,118,.12);border:1px solid rgba(0,230,118,.3);display:flex;align-items:center;justify-content:center;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#00E676" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg>
+      </div>
+      <div>
+        <h2 style="font-size:30px;font-weight:700;margin:0 0 12px;letter-spacing:-.02em;">On-device. Private. Honest.</h2>
+        <p style="font-size:17px;color:#A8B2C8;font-weight:300;max-width:640px;margin:0;line-height:1.6;">The same detection technology trusted in federal deployments, re-engineered for your personal iPhone. The analysis runs entirely on-device. Your scan results and personal information never leave it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- features -->
+  <section id="how" style="max-width:1200px;margin:0 auto;padding:88px 32px;">
+    <div style="text-align:center;margin-bottom:56px;">
+      <p style="color:#4B6EF5;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:600;margin:0 0 12px;">What a sweep does</p>
+      <h2 class="m-h2" style="font-size:38px;font-weight:700;margin:0;letter-spacing:-.02em;">Real checks. Plain-language answers.</h2>
+    </div>
+    <div class="m-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(0,230,118,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00E676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">One-tap sweep</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">Tap once and Lunar Defense runs a full battery of security checks on your device in seconds.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(75,110,245,.14);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4B6EF5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6z"></path></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">Device integrity</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">Checks for jailbreak traces, injected code, broken app isolation and debuggers, and verifies your device is genuine with Apple.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(0,217,255,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"></path><path d="M2 12h20M12 2c2.5 2.7 4 6.3 4 10s-1.5 7.3-4 10c-2.5-2.7-4-6.3-4-10s1.5-7.3 4-10z"></path></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">Connection safety</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">Detects proxies and network interception, and confirms the app's own connection can't be quietly impersonated or watched.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(124,111,191,.16);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7C6FBF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"></path></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">The correlation cross-check</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">A final pass weighs every signal together, catching patterns that line up into a bigger picture no single check would see.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(0,230,118,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00E676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"></rect><path d="M9 12l2 2 4-4"></path></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">A verdict, not a score</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">One plain status: Protected, Needs attention, or Action needed, earned by named evidence. No theater, no 0 to 100 gauge.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(0,217,255,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">Private by architecture</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">The analysis happens on your phone; your results and personal information never leave it. Honest about what iOS lets it see.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- free vs premium -->
+  <section style="background:#0C0E14;border-top:1px solid #1A1D28;border-bottom:1px solid #1A1D28;">
+    <div style="max-width:1100px;margin:0 auto;padding:88px 32px;">
+      <div class="m-split" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+        <div style="display:flex;justify-content:center;position:relative;">
+          <div style="position:relative;width:268px;height:566px;border-radius:50px;background:#000;padding:10px;box-shadow:0 40px 80px -30px rgba(0,0,0,.8);border:1px solid #2D3139;">
+            <div style="position:absolute;top:21px;left:50%;transform:translateX(-50%);width:90px;height:26px;background:#000;border-radius:14px;z-index:2;"></div>
+            <img src="assets/app-screens/sweep-report.png" alt="sweep report" style="width:100%;height:100%;object-fit:cover;border-radius:40px;display:block;" />
+          </div>
+        </div>
+        <div>
+          <p style="color:#4B6EF5;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:600;margin:0 0 12px;">Free &amp; Pro</p>
+          <h2 style="font-size:34px;font-weight:700;margin:0 0 18px;letter-spacing:-.02em;">Sweep free. Automate when you're ready.</h2>
+          <div style="display:flex;flex-direction:column;gap:18px;">
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div style="width:34px;height:34px;border-radius:9px;background:rgba(0,230,118,.12);display:flex;align-items:center;justify-content:center;flex:none;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#00E676" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></div>
+              <div><h3 style="font-size:17px;font-weight:600;margin:0 0 3px;">Manual sweeps, always free</h3><p style="font-size:14px;color:#A8B2C8;margin:0;line-height:1.55;">Run a full security sweep whenever you want, at no cost, forever.</p></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div style="width:34px;height:34px;border-radius:9px;background:rgba(75,110,245,.14);display:flex;align-items:center;justify-content:center;flex:none;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4B6EF5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-3-6.7"></path><path d="M21 3v5h-5"></path></svg></div>
+              <div><h3 style="font-size:17px;font-weight:600;margin:0 0 3px;">Automatic background sweeps <span style="font-size:11px;color:#4B6EF5;border:1px solid #4B6EF5;border-radius:100px;padding:2px 8px;margin-left:6px;vertical-align:middle;">PRO</span></h3><p style="font-size:14px;color:#A8B2C8;margin:0;line-height:1.55;">Lunar Defense sweeps on a schedule, so you don't have to remember to check.</p></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div style="width:34px;height:34px;border-radius:9px;background:rgba(75,110,245,.14);display:flex;align-items:center;justify-content:center;flex:none;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4B6EF5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.7 21a2 2 0 01-3.4 0"></path></svg></div>
+              <div><h3 style="font-size:17px;font-weight:600;margin:0 0 3px;">Alerts when something changes <span style="font-size:11px;color:#4B6EF5;border:1px solid #4B6EF5;border-radius:100px;padding:2px 8px;margin-left:6px;vertical-align:middle;">PRO</span></h3><p style="font-size:14px;color:#A8B2C8;margin:0;line-height:1.55;">Get notified the moment a background sweep finds something that needs your attention.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- pricing -->
+  <section id="pricing" style="max-width:1100px;margin:0 auto;padding:88px 32px;">
+    <div style="text-align:center;margin-bottom:52px;">
+      <p style="color:#00E676;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:600;margin:0 0 12px;">Pricing</p>
+      <h2 class="m-h2" style="font-size:38px;font-weight:700;margin:0 0 10px;letter-spacing:-.02em;">Start free. Upgrade anytime.</h2>
+      <p style="font-size:16px;color:#A8B2C8;font-weight:300;margin:0;">Yearly includes a 3-day free trial.</p>
+    </div>
+    <div class="m-gridp" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch;">
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:18px;padding:32px;display:flex;flex-direction:column;">
+        <h3 style="font-size:15px;font-weight:600;color:#A8B2C8;text-transform:uppercase;letter-spacing:.08em;margin:0 0 14px;">Free</h3>
+        <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:6px;"><span style="font-size:44px;font-weight:700;">$0</span></div>
+        <p style="font-size:14px;color:#A8B2C8;margin:0 0 24px;">Manual sweeps, forever</p>
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;color:#C7CEDC;margin-bottom:28px;">
+          <div style="display:flex;gap:10px;"><span style="color:#00E676;">✓</span> Unlimited manual sweeps</div>
+          <div style="display:flex;gap:10px;"><span style="color:#00E676;">✓</span> Device, connection &amp; correlation checks</div>
+          <div style="display:flex;gap:10px;"><span style="color:#00E676;">✓</span> Plain-language verdict &amp; findings</div>
+          <div style="display:flex;gap:10px;"><span style="color:#00E676;">✓</span> No account required</div>
+        </div>
+        <span style="margin-top:auto;text-align:center;border:1px solid #2D3139;color:#FAFBFC;border-radius:11px;padding:13px;font-weight:600;font-size:15px;cursor:default;">Coming soon</span>
+      </div>
+      <div style="position:relative;background:linear-gradient(160deg,#11161C,#0E1117);border:1.5px solid #00E676;border-radius:18px;padding:32px;display:flex;flex-direction:column;box-shadow:0 30px 70px -30px rgba(0,230,118,.35);">
+        <span style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#00E676;color:#06231A;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:100px;">Best value</span>
+        <h3 style="font-size:15px;font-weight:600;color:#00E676;text-transform:uppercase;letter-spacing:.08em;margin:0 0 14px;">Pro · Yearly</h3>
+        <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:6px;"><span style="font-size:44px;font-weight:700;">$49.99</span><span style="font-size:15px;color:#A8B2C8;">/yr</span></div>
+        <p style="font-size:14px;color:#00E676;margin:0 0 24px;">3-day free trial · ~$4.17/mo</p>
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;color:#C7CEDC;margin-bottom:28px;">
+          <div style="display:flex;gap:10px;"><span style="color:#00E676;">✓</span> Everything in Free</div>
+          <div style="display:flex;gap:10px;"><span style="color:#00E676;">✓</span> Automatic background sweeps</div>
+          <div style="display:flex;gap:10px;"><span style="color:#00E676;">✓</span> Alerts when something changes</div>
+          <div style="display:flex;gap:10px;"><span style="color:#00E676;">✓</span> Best price, 2 months free vs monthly</div>
+        </div>
+        <span style="margin-top:auto;text-align:center;background:#00E676;color:#06231A;border-radius:11px;padding:13px;font-weight:700;font-size:15px;cursor:default;">Coming soon</span>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:18px;padding:32px;display:flex;flex-direction:column;">
+        <h3 style="font-size:15px;font-weight:600;color:#A8B2C8;text-transform:uppercase;letter-spacing:.08em;margin:0 0 14px;">Pro · Monthly</h3>
+        <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:6px;"><span style="font-size:44px;font-weight:700;">$4.99</span><span style="font-size:15px;color:#A8B2C8;">/mo</span></div>
+        <p style="font-size:14px;color:#A8B2C8;margin:0 0 24px;">Flexible, cancel anytime</p>
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;color:#C7CEDC;margin-bottom:28px;">
+          <div style="display:flex;gap:10px;"><span style="color:#00E676;">✓</span> Everything in Free</div>
+          <div style="display:flex;gap:10px;"><span style="color:#00E676;">✓</span> Automatic background sweeps</div>
+          <div style="display:flex;gap:10px;"><span style="color:#00E676;">✓</span> Alerts when something changes</div>
+          <div style="display:flex;gap:10px;"><span style="color:#00E676;">✓</span> Cancel in one tap</div>
+        </div>
+        <span style="margin-top:auto;text-align:center;border:1px solid #4B6EF5;color:#4B6EF5;border-radius:11px;padding:13px;font-weight:600;font-size:15px;cursor:default;">Coming soon</span>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:12px;color:#6b7080;margin:28px auto 0;max-width:680px;line-height:1.6;">Subscriptions are auto-renewing and billed through your Apple ID. Cancel anytime in Settings.</p>
+  </section>
+
+  <!-- faq -->
+  <section id="faq" style="background:#0C0E14;border-top:1px solid #1A1D28;">
+    <div style="max-width:760px;margin:0 auto;padding:88px 32px;">
+      <h2 style="font-size:34px;font-weight:700;text-align:center;margin:0 0 44px;letter-spacing:-.02em;">Frequently asked</h2>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 24px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:20px 0;font-size:16px;font-weight:600;color:#FAFBFC;">Is Lunar Defense Mobile Security free?<span class="faq-plus" style="transition:transform .2s;color:#00E676;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:15px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 22px;">Yes. Manual sweeps are completely free, forever, no account required. A Pro subscription adds automatic background sweeps and alerts when something changes.</p></details>
+        <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 24px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:20px 0;font-size:16px;font-weight:600;color:#FAFBFC;">Do my scan results ever leave my phone?<span class="faq-plus" style="transition:transform .2s;color:#00E676;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:15px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 22px;">Your scan results and personal information never leave your device, and the analysis runs on-device. The app makes only a few network connections (verifying your device is genuine with Apple, checking the connection to us is secure, push for background scans, and payments through Apple), and none of them carry your scan results or personal information.</p></details>
+        <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 24px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:20px 0;font-size:16px;font-weight:600;color:#FAFBFC;">What does a sweep check?<span class="faq-plus" style="transition:transform .2s;color:#00E676;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:15px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 22px;">Three families of checks plus a final cross-check: device integrity (jailbreak traces, injected code, app isolation, device genuineness), connection safety (interception and impersonation), and a correlation step that weighs everything together. Each finding is explained in plain language.</p></details>
+        <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 24px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:20px 0;font-size:16px;font-weight:600;color:#FAFBFC;">Will it remove a threat it finds?<span class="faq-plus" style="transition:transform .2s;color:#00E676;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:15px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 22px;">Lunar Defense is a security checkup and advisor, not an antivirus. It detects issues and gives you a clear, ranked list of what to do, safety-first steps first. It doesn't quarantine or delete files.</p></details>
+        <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 24px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:20px 0;font-size:16px;font-weight:600;color:#FAFBFC;">What do I get with Pro?<span class="faq-plus" style="transition:transform .2s;color:#00E676;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:15px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 22px;">Automatic background sweeps on a schedule, plus alerts when something changes, so you stay covered without manually running a sweep. $4.99/month or $49.99/year with a 3-day free trial.</p></details>
+        <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 24px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:20px 0;font-size:16px;font-weight:600;color:#FAFBFC;">How do I cancel my subscription?<span class="faq-plus" style="transition:transform .2s;color:#00E676;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:15px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 22px;">Subscriptions are managed through your Apple ID. You can cancel anytime in your iPhone's Settings under your name → Subscriptions. You keep Pro until the end of your billing period.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- cta -->
+  <section style="background:#0C0E14;border-top:1px solid #1A1D28;">
+    <div style="max-width:760px;margin:0 auto;padding:96px 32px;text-align:center;">
+      <div style="display:inline-flex;width:64px;height:64px;border-radius:18px;background:rgba(0,230,118,.12);border:1px solid rgba(0,230,118,.3);align-items:center;justify-content:center;margin-bottom:24px;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#00E676" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg></div>
+      <h2 class="m-h2" style="font-size:42px;font-weight:700;margin:0 0 16px;letter-spacing:-.02em;">Run your first sweep in seconds.</h2>
+      <p style="font-size:18px;color:#A8B2C8;font-weight:300;margin:0 0 32px;">Download free. Sweep as often as you like. Upgrade when you want it automatic.</p>
+      <span style="display:inline-flex;align-items:center;gap:9px;background:#0D0F15;border:1px solid #2D3139;border-radius:12px;padding:12px 18px;cursor:default;">
+          <span style="width:8px;height:8px;border-radius:50%;background:#00E676;box-shadow:0 0 8px #00E676;flex:none;"></span>
+          <span style="line-height:1.08;"><span style="display:block;font-size:10px;color:#A8B2C8;">Coming soon to the</span><span style="display:block;font-size:18px;color:#FAFBFC;font-weight:600;">App Store</span></span>
+        </span>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer style="background:#0A0B0F;border-top:1px solid #1A1D28;padding:48px 32px;">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <svg width="22" height="25" viewBox="0 0 300 300" fill="none"><g fill="#FAFBFC"><g transform="translate(27,14)"><path d="M163.564191,1.3407301 C207.987662,1.3407301 244,61.7822889 244,136.34073 C244,210.899171 207.987662,271.34073 163.564191,271.34073 C163.304665,271.34073 163.045425,271.338667 162.786478,271.334551 C179.344579,250.006202 190.376128,211.840323 190.376128,168.306247 C190.376128,101.460748 164.367217,47.2717646 132.283599,47.2717646 C114.540749,47.2717646 98.6557267,63.8443823 88,89.9652393 C99.2698137,38.2518581 128.8487,1.3407301 163.564191,1.3407301 Z"></path><path d="M26.6595801,1.34072655 L68.0688562,1.34072655 C72.4871342,1.34072655 76.0688562,4.92244855 76.0688562,9.34072655 C76.0688562,9.58400934 76.0577587,9.82716551 76.0355984,10.0694369 L58.0247074,206.976371 C57.8234796,209.176326 59.4437682,211.12287 61.6437233,211.324098 C61.764859,211.335178 61.8864371,211.340727 62.0080785,211.340727 L148.863101,211.340725 C148.864889,211.340727 148.866677,211.340727 148.868465,211.340725 C162.956155,211.341093 170,214.341093 170,220.340727 C170,229.340727 160,261.340727 147.90546,271.340727 C101.46676,271.340727 55.0280603,271.340727 8.5893603,271.340727 C4.17108231,271.340727 0.589360305,267.759005 0.589360305,263.340727 C0.589360305,263.151312 0.596087395,262.961957 0.609528855,262.773021 L18.6797486,8.77302061 C18.9776513,4.58561845 22.4615945,1.34072655 26.6595801,1.34072655 Z"></path></g></g></svg>
+        <span style="font-size:14px;color:#A8B2C8;">© 2026 Lunar Defense</span>
+      </div>
+      <div style="display:flex;gap:28px;font-size:14px;color:#A8B2C8;">
+        <a href="index.html" style="color:#A8B2C8;text-decoration:none;">Main site</a>
+        <a href="support.html" style="color:#A8B2C8;text-decoration:none;">Support</a>
+        <a href="privacy.html" style="color:#A8B2C8;text-decoration:none;">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('#ld-carousel .ld-slide'));
+  var dots=[].slice.call(document.querySelectorAll('#ld-dots span'));
+  if(slides.length<2)return;
+  var i=0;
+  setInterval(function(){
+    slides[i].style.opacity='0'; if(dots[i])dots[i].style.opacity='.4';
+    i=(i+1)%slides.length;
+    slides[i].style.opacity='1'; if(dots[i])dots[i].style.opacity='.95';
+  },3500);
+})();
+</script>
+<script>
+(function(){
+  var b=document.querySelector('.ld-ham'), m=document.getElementById('ld-mm');
+  if(b&&m){ b.addEventListener('click',function(){m.classList.toggle('open');});
+    m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');});}); }
+})();
+</script>
+</body>
+</html>
