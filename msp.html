@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lunar Defense Managed: Provider-deployed mobile security</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  body{margin:0;}
+  details>summary{list-style:none;cursor:pointer;}
+  details>summary::-webkit-details-marker{display:none;}
+  details[open] .faq-plus{transform:rotate(45deg);}
+</style>
+<style>
+  body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+  .ld-header{position:sticky;top:0;z-index:50;background:rgba(10,11,15,.95);backdrop-filter:blur(8px);border-bottom:1px solid #1A1D28;box-shadow:0 10px 30px rgba(0,0,0,.3);}
+  .ld-header-inner{box-sizing:border-box;max-width:1280px;margin:0 auto;padding:0 16px;height:80px;display:flex;align-items:center;justify-content:space-between;}
+  @media (min-width:640px){.ld-header-inner{padding-left:24px;padding-right:24px;}}
+  @media (min-width:1024px){.ld-header-inner{padding-left:32px;padding-right:32px;}}
+  .ld-brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+  .ld-wordmark{font-size:24px;font-weight:700;color:#FAFBFC;letter-spacing:-.01em;}
+  .ld-nav{display:flex;align-items:center;gap:28px;}
+  .ld-nav a{font-size:14px;font-weight:500;color:#A8B2C8;text-decoration:none;transition:color .2s;}
+  .ld-nav a:hover{color:#00D9FF;}
+  .ld-cta{display:inline-flex;align-items:center;gap:8px;background:rgba(0,217,255,.12);border:1px solid rgba(0,217,255,.35);color:#00D9FF !important;padding:10px 18px;border-radius:9px;font-weight:700;}
+  .ld-ham{display:none;background:none;border:none;color:#A8B2C8;cursor:pointer;padding:8px;line-height:0;}
+  .ld-mm{display:none;flex-direction:column;padding:6px 32px 18px;border-top:1px solid #1A1D28;background:rgba(10,11,15,.98);}
+  .ld-mm.open{display:flex;}
+  .ld-mm a{font-size:15px;color:#C7CEDC;text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(45,49,57,.5);}
+  .ld-mm a:last-child{border-bottom:none;color:#00D9FF;font-weight:600;}
+  [id]{scroll-margin-top:96px;}
+  @media (max-width:860px){ .ld-nav{display:none;} .ld-ham{display:block;} }
+  @media (min-width:861px){ .ld-mm{display:none !important;} }
+  html,body{overflow-x:hidden;}
+  @media (max-width:1023px){ .m-grid3{grid-template-columns:1fr 1fr !important;} }
+  @media (max-width:767px){
+    .m-hero{grid-template-columns:1fr !important;gap:36px !important;padding-top:56px !important;padding-bottom:48px !important;}
+    .m-split{grid-template-columns:1fr !important;gap:40px !important;}
+    .m-gridp{grid-template-columns:1fr !important;}
+    .m-steps{grid-template-columns:1fr !important;}
+    .m-h1{font-size:42px !important;}
+    .m-h2{font-size:28px !important;}
+  }
+  @media (max-width:639px){ .m-grid3{grid-template-columns:1fr !important;} }
+  @media (max-width:479px){ .m-h1{font-size:34px !important;} }
+</style>
+</head>
+<body>
+<div style="font-family:'IBM Plex Sans',sans-serif;background:#0A0B0F;color:#FAFBFC;background-image:radial-gradient(at 0% 0%, rgba(0,217,255,.12) 0%, transparent 45%),radial-gradient(at 100% 0%, rgba(75,110,245,.08) 0%, transparent 45%);">
+
+  <!-- header -->
+  <header class="ld-header">
+    <div class="ld-header-inner">
+      <a href="index.html" class="ld-brand"><svg width="32" height="36" viewBox="0 0 300 300" fill="none"><g fill="#FAFBFC"><g transform="translate(27,14)"><path d="M163.564191,1.3407301 C207.987662,1.3407301 244,61.7822889 244,136.34073 C244,210.899171 207.987662,271.34073 163.564191,271.34073 C163.304665,271.34073 163.045425,271.338667 162.786478,271.334551 C179.344579,250.006202 190.376128,211.840323 190.376128,168.306247 C190.376128,101.460748 164.367217,47.2717646 132.283599,47.2717646 C114.540749,47.2717646 98.6557267,63.8443823 88,89.9652393 C99.2698137,38.2518581 128.8487,1.3407301 163.564191,1.3407301 Z"></path><path d="M26.6595801,1.34072655 L68.0688562,1.34072655 C72.4871342,1.34072655 76.0688562,4.92244855 76.0688562,9.34072655 C76.0688562,9.58400934 76.0577587,9.82716551 76.0355984,10.0694369 L58.0247074,206.976371 C57.8234796,209.176326 59.4437682,211.12287 61.6437233,211.324098 C61.764859,211.335178 61.8864371,211.340727 62.0080785,211.340727 L148.863101,211.340725 C148.864889,211.340727 148.866677,211.340727 148.868465,211.340725 C162.956155,211.341093 170,214.341093 170,220.340727 C170,229.340727 160,261.340727 147.90546,271.340727 C101.46676,271.340727 55.0280603,271.340727 8.5893603,271.340727 C4.17108231,271.340727 0.589360305,267.759005 0.589360305,263.340727 C0.589360305,263.151312 0.596087395,262.961957 0.609528855,262.773021 L18.6797486,8.77302061 C18.9776513,4.58561845 22.4615945,1.34072655 26.6595801,1.34072655 Z"></path></g></g></svg><span class="ld-wordmark">Lunar Defense</span></a>
+      <nav class="ld-nav">
+        <a href="msp.html#how">Features</a>
+        <a href="msp.html#steps">How it works</a>
+        <a href="msp.html#faq">FAQ</a>
+        <a href="support.html">Support</a>
+        <a href="index.html">For Business</a>
+        <a href="index.html#contact" class="ld-cta">Talk to us</a>
+      </nav>
+      <button class="ld-ham" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+    </div>
+    <div class="ld-mm" id="ld-mm">
+      <a href="msp.html#how">Features</a>
+      <a href="msp.html#steps">How it works</a>
+      <a href="msp.html#faq">FAQ</a>
+      <a href="support.html">Support</a>
+      <a href="index.html">For Business</a>
+      <a href="index.html#contact">Talk to us</a>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <section class="m-hero" style="max-width:1200px;margin:0 auto;padding:88px 32px 72px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+    <div>
+      <p style="color:#00D9FF;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:600;margin:0 0 18px;">Lunar Defense Managed</p>
+      <h1 class="m-h1" style="font-size:60px;line-height:1.02;font-weight:700;letter-spacing:-.03em;margin:0 0 22px;">You deploy it.<br>They're<br><span style="color:#00D9FF;">covered.</span></h1>
+      <p style="font-size:19px;line-height:1.6;color:#A8B2C8;font-weight:300;margin:0 0 32px;max-width:480px;">A one-tap security check that inspects each client's iPhone for tampering and network interception, then returns one plain-language verdict. You deploy it and it's free to the client, backed by a tamper-evident audit trail built for the support call. Detect, advise, and log, all on the client's device.</p>
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:22px;">
+        <span style="display:inline-flex;align-items:center;gap:9px;background:rgba(0,217,255,.1);border:1px solid rgba(0,217,255,.35);border-radius:12px;padding:14px 22px;font-weight:700;font-size:15px;color:#00D9FF;"><span style="width:8px;height:8px;border-radius:50%;background:#00D9FF;box-shadow:0 0 10px #00D9FF;"></span>Coming to the App Store</span>
+        <a href="index.html#contact" style="display:inline-flex;align-items:center;gap:7px;color:#FAFBFC;border:1px solid #2D3139;border-radius:12px;padding:14px 20px;font-weight:600;font-size:15px;text-decoration:none;">Talk to our team</a>
+      </div>
+      <p style="font-size:13px;color:#6b7080;margin:0;">Free to the client · Provider-licensed · No client account required</p>
+    </div>
+    <div style="display:flex;justify-content:center;position:relative;">
+      <div style="position:absolute;width:380px;height:380px;background:radial-gradient(circle,rgba(0,217,255,.16),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+      <div style="position:relative;width:284px;height:600px;border-radius:52px;background:#000;padding:11px;box-shadow:0 50px 90px -30px rgba(0,0,0,.8);border:1px solid #2D3139;">
+        <div style="position:absolute;top:23px;left:50%;transform:translateX(-50%);width:96px;height:28px;background:#000;border-radius:15px;z-index:3;"></div>
+        <div id="ld-carousel" style="position:relative;width:100%;height:100%;border-radius:42px;overflow:hidden;">
+          <img class="ld-slide" src="assets/app-screens/1.png" alt="App screenshot 1" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity .8s ease;" />
+          <img class="ld-slide" src="assets/app-screens/2.png" alt="App screenshot 2" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease;" />
+          <img class="ld-slide" src="assets/app-screens/3.png" alt="App screenshot 3" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease;" />
+          <div id="ld-dots" style="position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:7px;z-index:2;">
+            <span style="width:7px;height:7px;border-radius:50%;background:#FAFBFC;opacity:.95;transition:opacity .3s;"></span>
+            <span style="width:7px;height:7px;border-radius:50%;background:#FAFBFC;opacity:.4;transition:opacity .3s;"></span>
+            <span style="width:7px;height:7px;border-radius:50%;background:#FAFBFC;opacity:.4;transition:opacity .3s;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- posture band -->
+  <section style="border-top:1px solid #1A1D28;border-bottom:1px solid #1A1D28;background:#0C0E14;">
+    <div style="max-width:1000px;margin:0 auto;padding:60px 32px;text-align:center;">
+      <p style="font-size:15px;color:#A8B2C8;font-weight:300;margin:0 0 26px;">On-device security checks for every client's iPhone, plus a permanent record for the people supporting them.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(0,217,255,.1);border:1px solid rgba(0,217,255,.35);border-radius:100px;padding:11px 22px;">
+          <span style="width:9px;height:9px;border-radius:50%;background:#00D9FF;box-shadow:0 0 10px #00D9FF;"></span>
+          <span style="font-size:16px;font-weight:600;color:#00D9FF;">Detect</span>
+        </div>
+        <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(75,110,245,.12);border:1px solid rgba(75,110,245,.4);border-radius:100px;padding:11px 22px;">
+          <span style="width:9px;height:9px;border-radius:50%;background:#4B6EF5;box-shadow:0 0 10px #4B6EF5;"></span>
+          <span style="font-size:16px;font-weight:600;color:#7C93FF;">Advise</span>
+        </div>
+        <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(124,111,191,.12);border:1px solid rgba(124,111,191,.4);border-radius:100px;padding:11px 22px;">
+          <span style="width:9px;height:9px;border-radius:50%;background:#7C6FBF;box-shadow:0 0 10px #7C6FBF;"></span>
+          <span style="font-size:16px;font-weight:600;color:#A79BE0;">Log</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- what the app does -->
+  <section id="protection" style="max-width:1200px;margin:0 auto;padding:88px 32px 48px;">
+    <div style="text-align:center;margin-bottom:56px;">
+      <p style="color:#00D9FF;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:600;margin:0 0 12px;">What the app does</p>
+      <h2 class="m-h2" style="font-size:38px;font-weight:700;margin:0 0 16px;letter-spacing:-.02em;">Real security checks, in plain language.</h2>
+      <p style="font-size:17px;color:#A8B2C8;font-weight:300;max-width:680px;margin:0 auto;line-height:1.6;">Every client runs the same one-tap sweep: a battery of on-device checks that inspect the iPhone and its network connection, then combine into one honest verdict. The analysis runs entirely on the device, and the client's results and personal information stay on it.</p>
+    </div>
+    <div class="m-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(0,217,255,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">One-tap sweep</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">Tap once and the app runs a full battery of security checks on the device in seconds, with no setup for the client.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(0,217,255,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6z"></path></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">Device integrity</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">Checks for jailbreak traces, injected code, broken app isolation and debuggers, and verifies the iPhone is genuine with Apple.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(0,217,255,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"></path><path d="M2 12h20M12 2c2.5 2.7 4 6.3 4 10s-1.5 7.3-4 10c-2.5-2.7-4-6.3-4-10s1.5-7.3 4-10z"></path></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">Connection safety</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">Detects proxies and network interception, and confirms the app's own connection can't be quietly impersonated or watched.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(0,217,255,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1"></path><path d="M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"></path></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">Phishing and QR checks</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">The client can check a suspicious message or scan a QR code and get a plain verdict before they act on it.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(0,217,255,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"></path></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">Correlation cross-check</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">A final pass weighs every signal together, catching patterns that line up into a bigger picture no single check would see.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(0,217,255,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"></rect><path d="M9 12l2 2 4-4"></path></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">A verdict, not a score</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">One plain status, Protected, Needs attention, or Action needed, earned by named evidence and paired with a ranked list of what to do next.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- features: built for the provider -->
+  <section id="how" style="max-width:1200px;margin:0 auto;padding:88px 32px 48px;">
+    <div style="text-align:center;margin-bottom:56px;">
+      <p style="color:#00D9FF;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:600;margin:0 0 12px;">Built for the provider</p>
+      <h2 class="m-h2" style="font-size:38px;font-weight:700;margin:0;letter-spacing:-.02em;">Deploy it once. It just works for the client.</h2>
+    </div>
+    <div class="m-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(0,217,255,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 019.9-1"></path></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">Ships inert until activated</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">A free download does nothing until the client enters the activation code you issued, clearly presented as provided by their IT or security provider.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(0,217,255,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M7 9h.01M7 13h.01M11 9h6M11 13h6"></path></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">Seat-based, device-bound licensing</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">Each license is welded to that specific iPhone's hardware-attested key. Copying it to another device fails outright.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(0,217,255,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.4 8A6.5 6.5 0 006 9v1.5"></path><path d="M5.6 16A6.5 6.5 0 0018 15v-1.5"></path><path d="M6 4v5h5M18 20v-5h-5"></path></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">Works offline for three weeks</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">A 21-day token is verified fully offline at every launch, so a client on a jobsite or without connectivity keeps working uninterrupted.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(0,217,255,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13H12l-1 9 8.5-11H12z"></path></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">Pro automation, free for clients</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">Background scans, push alerts, and instant notification are always on for Managed clients. No paywall, no upsell, no subscription screens.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(0,217,255,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">No accounts, no portals</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">Activation is the only step. There's no login for the client to create and no portal to manage, so protection starts the moment the code is entered.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(0,217,255,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H5.2L4 17.5z"></path><path d="M8 9h8M8 12h5"></path></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">Presented as provider-supplied</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">The client always sees that protection is provided by their IT or security provider. The relationship stays yours, not ours.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- features: built for the support call -->
+  <section style="max-width:1200px;margin:0 auto;padding:40px 32px 88px;">
+    <div style="text-align:center;margin-bottom:56px;">
+      <p style="color:#4B6EF5;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:600;margin:0 0 12px;">When a client needs help</p>
+      <h2 class="m-h2" style="font-size:38px;font-weight:700;margin:0;letter-spacing:-.02em;">On-demand context, and proof of what happened.</h2>
+    </div>
+    <div class="m-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(75,110,245,.14);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4B6EF5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H4z"></path><path d="M4 8h16M7 12h6"></path></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">Technician-facing log view</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">One tap swaps the client's friendly view for a full typed event timeline with timestamps, built for a live screen-share support session.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(75,110,245,.14);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4B6EF5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">Chain-integrity badge</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">One glance answers "can I trust this device's history?" The badge reads Verified, or one of several honestly-labeled failure states.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(75,110,245,.14);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4B6EF5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">Disclosure logging</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">Opening the technician view writes a permanent record into the client's own log stating their information was viewed, and when.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(75,110,245,.14);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4B6EF5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.7 21a2 2 0 01-3.4 0"></path></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">Audit-log health banner</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">A non-dismissible banner surfaces on the client's home screen if logging itself has stopped or been tampered with. It stays silent when healthy.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(75,110,245,.14);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4B6EF5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1"></path><path d="M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"></path></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">Tamper-evident, hash-chained</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">Meaningful changes write one encrypted, hash-chained record. Tampering is detected and preserved, not hidden. Damaged records are quarantined into a fresh chain.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:28px;">
+        <div style="width:46px;height:46px;border-radius:12px;background:rgba(75,110,245,.14);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4B6EF5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"></path><rect x="8" y="8" width="8" height="8" rx="2"></rect></svg></div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">A clean day writes nothing</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">The log records verdicts and indicators only: a finding that appears, escalates, or clears. It's case context for a support call, not a transcript of activity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- what the audit log is -->
+  <section style="background:#0C0E14;border-top:1px solid #1A1D28;border-bottom:1px solid #1A1D28;">
+    <div style="max-width:1100px;margin:0 auto;padding:88px 32px;">
+      <div class="m-split" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+        <div>
+          <p style="color:#00D9FF;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:600;margin:0 0 12px;">What the audit log actually is</p>
+          <h2 style="font-size:34px;font-weight:700;margin:0 0 18px;letter-spacing:-.02em;">A record you can stand behind, and nothing you can't.</h2>
+          <p style="font-size:16px;color:#A8B2C8;font-weight:300;margin:0 0 24px;line-height:1.65;">Managed keeps a tamper-evident, encrypted, hash-chained record of meaningful changes, not a transcript. It's built to give a support call real case context while keeping the client's private information off the record entirely.</p>
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:#00D9FF;font-size:16px;line-height:1.4;">&#10003;</span><span style="font-size:15px;color:#C7CEDC;line-height:1.5;">Records verdicts and indicators: a finding that appears, escalates, or clears</span></div>
+            <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:#00D9FF;font-size:16px;line-height:1.4;">&#10003;</span><span style="font-size:15px;color:#C7CEDC;line-height:1.5;">Encrypted and hash-chained, so tampering is detected and preserved</span></div>
+            <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:#FF6B7D;font-size:16px;line-height:1.4;">&times;</span><span style="font-size:15px;color:#C7CEDC;line-height:1.5;">Never records message content or full URLs</span></div>
+            <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:#FF6B7D;font-size:16px;line-height:1.4;">&times;</span><span style="font-size:15px;color:#C7CEDC;line-height:1.5;">Not a keystroke or activity transcript: a clean day writes nothing</span></div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:center;position:relative;">
+          <div style="position:relative;width:268px;height:566px;border-radius:50px;background:#000;padding:10px;box-shadow:0 40px 80px -30px rgba(0,0,0,.8);border:1px solid #2D3139;">
+            <div style="position:absolute;top:21px;left:50%;transform:translateX(-50%);width:90px;height:26px;background:#000;border-radius:14px;z-index:2;"></div>
+            <img src="assets/app-screens/sweep-report.png" alt="sweep report" style="width:100%;height:100%;object-fit:cover;border-radius:40px;display:block;" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- how it works / steps -->
+  <section id="steps" style="max-width:1100px;margin:0 auto;padding:88px 32px;">
+    <div style="text-align:center;margin-bottom:52px;">
+      <p style="color:#00D9FF;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:600;margin:0 0 12px;">How it works</p>
+      <h2 class="m-h2" style="font-size:38px;font-weight:700;margin:0;letter-spacing:-.02em;">From license to protected, in three steps.</h2>
+    </div>
+    <div class="m-steps" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:18px;padding:32px;">
+        <div style="width:38px;height:38px;border-radius:10px;background:rgba(0,217,255,.12);border:1px solid rgba(0,217,255,.3);color:#00D9FF;font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">1</div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">You issue a license</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">Provision a seat from your provider license and hand the client an activation code.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:18px;padding:32px;">
+        <div style="width:38px;height:38px;border-radius:10px;background:rgba(0,217,255,.12);border:1px solid rgba(0,217,255,.3);color:#00D9FF;font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">2</div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">The client activates</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">They download the free app and enter the code. The license binds to that device and it comes to life.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:18px;padding:32px;">
+        <div style="width:38px;height:38px;border-radius:10px;background:rgba(0,217,255,.12);border:1px solid rgba(0,217,255,.3);color:#00D9FF;font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">3</div>
+        <h3 style="font-size:18px;font-weight:600;margin:0 0 8px;">Support with the full record</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">Sweeps and automation run for free, and every meaningful change is logged for your next support call.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- faq -->
+  <section id="faq" style="background:#0C0E14;border-top:1px solid #1A1D28;">
+    <div style="max-width:760px;margin:0 auto;padding:88px 32px;">
+      <h2 style="font-size:34px;font-weight:700;text-align:center;margin:0 0 44px;letter-spacing:-.02em;">Frequently asked</h2>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 24px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:20px 0;font-size:16px;font-weight:600;color:#FAFBFC;">Who is Lunar Defense Managed for?<span class="faq-plus" style="transition:transform .2s;color:#00D9FF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:15px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 22px;">IT and security providers who support a base of iPhone users. You deploy and license it; your clients get the full security app, with one-tap sweeps and automatic scans, for free, and you get a tamper-evident record built for support.</p></details>
+        <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 24px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:20px 0;font-size:16px;font-weight:600;color:#FAFBFC;">How does a client get it?<span class="faq-plus" style="transition:transform .2s;color:#00D9FF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:15px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 22px;">They download the free app and enter the activation code you issued. Until it's activated the app is inert. It's explicitly presented as provided by their IT or security provider.</p></details>
+        <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 24px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:20px 0;font-size:16px;font-weight:600;color:#FAFBFC;">Is it free for the client?<span class="faq-plus" style="transition:transform .2s;color:#00D9FF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:15px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 22px;">Yes. Everything is free to the client, including the Pro automation (background scans, push alerts, and instant notification) with no paywall or upsell. You hold the seat license.</p></details>
+        <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 24px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:20px 0;font-size:16px;font-weight:600;color:#FAFBFC;">What does the audit log record?<span class="faq-plus" style="transition:transform .2s;color:#00D9FF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:15px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 22px;">Verdicts and indicators only (a finding that appears, escalates, or clears), plus disclosures when a technician opens the log view. It never records message content or full URLs, and a clean day writes nothing. It's encrypted and hash-chained, so tampering is detected and preserved rather than hidden.</p></details>
+        <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 24px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:20px 0;font-size:16px;font-weight:600;color:#FAFBFC;">Does it work without connectivity?<span class="faq-plus" style="transition:transform .2s;color:#00D9FF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:15px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 22px;">Yes. A 21-day token is verified fully offline at every launch, so a client on a jobsite or without a connection keeps working uninterrupted for up to three weeks.</p></details>
+        <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 24px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:20px 0;font-size:16px;font-weight:600;color:#FAFBFC;">When can we deploy it?<span class="faq-plus" style="transition:transform .2s;color:#00D9FF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:15px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 22px;">Managed is built and device-tested, and coming to the App Store soon. <a href="index.html#contact" style="color:#00D9FF;text-decoration:none;">Talk to our team</a> to line up licensing for your client base ahead of launch.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- cta -->
+  <section style="background:#0C0E14;border-top:1px solid #1A1D28;">
+    <div style="max-width:760px;margin:0 auto;padding:96px 32px;text-align:center;">
+      <div style="display:inline-flex;width:64px;height:64px;border-radius:18px;background:rgba(0,217,255,.12);border:1px solid rgba(0,217,255,.3);align-items:center;justify-content:center;margin-bottom:24px;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg></div>
+      <h2 class="m-h2" style="font-size:42px;font-weight:700;margin:0 0 16px;letter-spacing:-.02em;">Bring Managed to your client base.</h2>
+      <p style="font-size:18px;color:#A8B2C8;font-weight:300;margin:0 0 32px;">Coming to the App Store soon. Talk to us now to line up licensing and be ready on day one.</p>
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;">
+        <span style="display:inline-flex;align-items:center;gap:9px;background:rgba(0,217,255,.1);border:1px solid rgba(0,217,255,.35);border-radius:12px;padding:15px 24px;font-weight:700;font-size:16px;color:#00D9FF;"><span style="width:8px;height:8px;border-radius:50%;background:#00D9FF;box-shadow:0 0 10px #00D9FF;"></span>Coming to the App Store</span>
+        <a href="index.html#contact" style="display:inline-flex;align-items:center;gap:7px;background:#00D9FF;color:#04222B;border-radius:12px;padding:15px 26px;font-weight:700;font-size:16px;text-decoration:none;">Talk to our team &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer style="background:#0A0B0F;border-top:1px solid #1A1D28;padding:48px 32px;">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <svg width="22" height="25" viewBox="0 0 300 300" fill="none"><g fill="#FAFBFC"><g transform="translate(27,14)"><path d="M163.564191,1.3407301 C207.987662,1.3407301 244,61.7822889 244,136.34073 C244,210.899171 207.987662,271.34073 163.564191,271.34073 C163.304665,271.34073 163.045425,271.338667 162.786478,271.334551 C179.344579,250.006202 190.376128,211.840323 190.376128,168.306247 C190.376128,101.460748 164.367217,47.2717646 132.283599,47.2717646 C114.540749,47.2717646 98.6557267,63.8443823 88,89.9652393 C99.2698137,38.2518581 128.8487,1.3407301 163.564191,1.3407301 Z"></path><path d="M26.6595801,1.34072655 L68.0688562,1.34072655 C72.4871342,1.34072655 76.0688562,4.92244855 76.0688562,9.34072655 C76.0688562,9.58400934 76.0577587,9.82716551 76.0355984,10.0694369 L58.0247074,206.976371 C57.8234796,209.176326 59.4437682,211.12287 61.6437233,211.324098 C61.764859,211.335178 61.8864371,211.340727 62.0080785,211.340727 L148.863101,211.340725 C148.864889,211.340727 148.866677,211.340727 148.868465,211.340725 C162.956155,211.341093 170,214.341093 170,220.340727 C170,229.340727 160,261.340727 147.90546,271.340727 C101.46676,271.340727 55.0280603,271.340727 8.5893603,271.340727 C4.17108231,271.340727 0.589360305,267.759005 0.589360305,263.340727 C0.589360305,263.151312 0.596087395,262.961957 0.609528855,262.773021 L18.6797486,8.77302061 C18.9776513,4.58561845 22.4615945,1.34072655 26.6595801,1.34072655 Z"></path></g></g></svg>
+        <span style="font-size:14px;color:#A8B2C8;">© 2026 Lunar Defense</span>
+      </div>
+      <div style="display:flex;gap:28px;font-size:14px;color:#A8B2C8;">
+        <a href="index.html" style="color:#A8B2C8;text-decoration:none;">Main site</a>
+        <a href="mobile.html" style="color:#A8B2C8;text-decoration:none;">Mobile Security</a>
+        <a href="support.html" style="color:#A8B2C8;text-decoration:none;">Support</a>
+        <a href="privacy.html" style="color:#A8B2C8;text-decoration:none;">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('#ld-carousel .ld-slide'));
+  var dots=[].slice.call(document.querySelectorAll('#ld-dots span'));
+  if(slides.length<2)return;
+  var i=0;
+  setInterval(function(){
+    slides[i].style.opacity='0'; if(dots[i])dots[i].style.opacity='.4';
+    i=(i+1)%slides.length;
+    slides[i].style.opacity='1'; if(dots[i])dots[i].style.opacity='.95';
+  },3500);
+})();
+</script>
+<script>
+(function(){
+  var b=document.querySelector('.ld-ham'), m=document.getElementById('ld-mm');
+  if(b&&m){ b.addEventListener('click',function(){m.classList.toggle('open');});
+    m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');});}); }
+})();
+</script>
+</body>
+</html>
