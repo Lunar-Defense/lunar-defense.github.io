@@ -37,6 +37,15 @@
   }
   @media (max-width:639px){ .m-grid3{grid-template-columns:1fr !important;} }
   @media (max-width:479px){ .m-h1{font-size:34px !important;} }
+
+  /* edition tabs */
+  .ld-tabs{display:inline-flex;gap:6px;background:#11131A;border:1px solid #1A1D28;border-radius:13px;padding:6px;margin:0 0 30px;}
+  .ld-tab{appearance:none;font-family:inherit;background:none;border:none;font-size:14px;font-weight:600;color:#A8B2C8;padding:11px 20px;border-radius:9px;cursor:pointer;transition:background .2s,color .2s;white-space:nowrap;}
+  .ld-tab:hover{color:#FAFBFC;}
+  .ld-tab[aria-selected="true"]{background:rgba(75,110,245,.16);color:#4B6EF5;}
+  #tab-managed[aria-selected="true"]{background:rgba(0,217,255,.14);color:#00D9FF;}
+  .ld-panel[hidden]{display:none;}
+  @media (max-width:479px){ .ld-tabs{display:flex;width:100%;} .ld-tab{flex:1;padding:11px 8px;text-align:center;} }
 </style>
 </head>
 <body>
@@ -68,48 +77,75 @@
 
   <main style="max-width:760px;margin:0 auto;padding:72px 32px 96px;">
 
-    <h1 class="m-h1" style="font-size:42px;font-weight:700;letter-spacing:-.02em;margin:0 0 8px;color:#FAFBFC;">Privacy Policy</h1>
+    <h1 class="m-h1" style="font-size:42px;font-weight:700;letter-spacing:-.02em;margin:0 0 10px;color:#FAFBFC;">Privacy Policy</h1>
+    <p style="font-size:16px;line-height:1.7;color:#A8B2C8;margin:0 0 22px;">We publish one policy per app. Pick the one you're using.</p>
+
+    <div class="ld-tabs" role="tablist" aria-label="Choose an edition">
+      <button class="ld-tab" id="tab-consumer" data-tab="consumer" role="tab" aria-controls="panel-consumer" aria-selected="true">Mobile Security</button>
+      <button class="ld-tab" id="tab-managed" data-tab="managed" role="tab" aria-controls="panel-managed" aria-selected="false" tabindex="-1">Managed</button>
+    </div>
+
+    <!-- ============================ CONSUMER ============================ -->
+    <section class="ld-panel" id="panel-consumer" role="tabpanel" aria-labelledby="tab-consumer">
+
     <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:18px;">
-      <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(75,110,245,.12);border:1px solid rgba(75,110,245,.4);border-radius:100px;padding:7px 16px;font-size:14px;color:#FAFBFC;font-weight:600;">Effective date <span style="color:#4B6EF5;">June 2026</span></span>
-      <span style="font-size:14px;color:#A8B2C8;"><strong style="color:#C7CEDC;font-weight:600;">Applies to:</strong> Lunar Defense Mobile Security (Consumer)</span>
+      <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(75,110,245,.12);border:1px solid rgba(75,110,245,.4);border-radius:100px;padding:7px 16px;font-size:14px;color:#FAFBFC;font-weight:600;">Effective date <span style="color:#4B6EF5;">August 2026</span></span>
+      <span style="flex-basis:100%;font-size:14px;color:#A8B2C8;"><strong style="color:#C7CEDC;font-weight:600;">Applies to:</strong> Lunar Defense Mobile Security, downloaded from the App Store</span>
     </div>
     <div style="height:2px;width:64px;background:#4B6EF5;margin-bottom:36px;"></div>
 
-    <p style="font-size:16px;line-height:1.75;color:#C7CEDC;margin:0 0 20px;">Lunar Defense is a device-based security app. Its job is to check whether your iPhone and its network connection show signs of compromise, then tell you what it found and what to do about it. The analysis runs on your phone, and the results stay on your phone.</p>
+    <p style="font-size:16px;line-height:1.75;color:#C7CEDC;margin:0 0 20px;">Lunar Defense is a device-based security app. Its job is to check whether your device and its network connection show signs of compromise, then tell you what it found and what to do about it. The analysis runs on your device, and the results stay on your device.</p>
     <p style="font-size:16px;line-height:1.75;color:#C7CEDC;margin:0 0 40px;">This policy explains exactly what that means: what we process locally, the few specific things that do leave your device and why, and what we never touch.</p>
 
     <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">Our approach: on-device first</h2>
-    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 16px;">When you run a sweep, the security checks and the AI model that weighs them run <strong style="color:#FAFBFC;font-weight:600;">entirely on your device</strong>. Your scan results (the findings, the verdict, and the device and network signals we examine to produce them) are computed locally and are <strong style="color:#FAFBFC;font-weight:600;">never transmitted to us or stored off your device</strong>.</p>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 16px;">When you run a sweep, the security checks and the AI model that weighs them run <strong style="color:#FAFBFC;font-weight:600;">entirely on your device</strong>. Your scan results (the findings, the verdict, and the device and network signals we examine to produce them) are computed locally and are <strong style="color:#FAFBFC;font-weight:600;">never transmitted to us or stored off your device</strong> — with one exception, which only happens when you choose it: if you email our support team from inside the app, the message you send contains your findings, because that is the point of it. That path is described below, and nothing is sent until you read the email and send it yourself.</p>
     <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">There is no account to create, no profile, and no login.</p>
 
     <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">What we process on your device (and never send)</h2>
     <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 16px;">To assess your device's security, the app inspects local security-relevant signals, such as:</p>
     <ul style="font-size:16px;line-height:1.7;color:#A8B2C8;margin:0 0 16px;padding-left:22px;display:flex;flex-direction:column;gap:10px;">
-      <li>Signs of jailbreaking or system tampering (for example known jailbreak files, injected or "hooking" code, whether app isolation is intact, whether a core system folder is unmodified).</li>
-      <li>Whether anything is attached to or monitoring the app (for example a debugger).</li>
+      <li>Signs that the operating system has been jailbroken or otherwise tampered with, or that unauthorized code is running alongside the app.</li>
+      <li>Whether anything is attached to or monitoring the app.</li>
       <li>Your network and connection configuration (for example whether a proxy or VPN is present, and whether the secure connection to our service holds).</li>
+      <li>Whether the Wi-Fi network you're on adds encryption of its own. The app reads the network's security type only. It never reads the network's name, and it never reads your location.</li>
     </ul>
-    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">All of this is read, analyzed, and turned into a verdict <strong style="color:#FAFBFC;font-weight:600;">on your device</strong>. None of it, and none of the resulting findings, is transmitted to us or retained anywhere off your phone.</p>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 16px;">Two features work on content you hand them directly, and both are also entirely local:</p>
+    <ul style="font-size:16px;line-height:1.7;color:#A8B2C8;margin:0 0 16px;padding-left:22px;display:flex;flex-direction:column;gap:10px;">
+      <li><strong style="color:#FAFBFC;font-weight:600;">Check a Link.</strong> When you paste a suspicious message in, it is analyzed by Apple's on-device intelligence, on your own device. The message text is never uploaded, never stored on our servers, and never seen by us.</li>
+      <li><strong style="color:#FAFBFC;font-weight:600;">QR link safety.</strong> When you point the camera at a QR code, the code is read and the link it points to is evaluated on your device. This feature makes <strong style="color:#FAFBFC;font-weight:600;">no network calls at all</strong> — not to us, not to anyone. No photo or video is recorded or kept.</li>
+    </ul>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">All of this is read, analyzed, and turned into a verdict <strong style="color:#FAFBFC;font-weight:600;">on your device</strong>. None of it, and none of the resulting findings, is transmitted to us or retained anywhere off your device.</p>
+
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">Permissions the app asks for, and why</h2>
+    <ul style="font-size:16px;line-height:1.7;color:#A8B2C8;margin:0 0 16px;padding-left:22px;display:flex;flex-direction:column;gap:12px;">
+      <li><strong style="color:#FAFBFC;font-weight:600;">Camera</strong> — used only while the QR scanner is open on screen, to read the code in front of it. Frames are analyzed live and discarded. Nothing is recorded, saved, or transmitted.</li>
+      <li><strong style="color:#FAFBFC;font-weight:600;">Location (while using the app)</strong> — this one deserves an explanation, because it looks like more than it is. iOS will not tell an app anything about the Wi-Fi network you're joined to, including whether it's encrypted, unless that app holds location permission. That is the <em>only</em> reason we ask. The app never reads, stores, or transmits a coordinate, and it asks in context when you run a scan rather than at launch. Decline it and everything else works normally; the app simply reports that it couldn't check your Wi-Fi rather than guessing.</li>
+      <li><strong style="color:#FAFBFC;font-weight:600;">Notifications</strong> — used to tell you a background scan found something. You can turn them off at any time in iOS Settings.</li>
+    </ul>
 
     <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 8px;letter-spacing:-.01em;">What leaves your device, and why</h2>
-    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 24px;">The app makes a small number of network connections. <strong style="color:#FAFBFC;font-weight:600;">None of them carry your scan results, findings, security posture, or personal information.</strong> They are the security mechanisms themselves, and they are limited to the following:</p>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 24px;">The app makes a small number of network connections. Apart from the last one, which happens only when you initiate it, <strong style="color:#FAFBFC;font-weight:600;">none of them carry your scan results, findings, security posture, or personal information.</strong> They are the security mechanisms themselves, and they are limited to the following:</p>
 
     <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:40px;">
       <div style="display:flex;gap:16px;background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:22px 24px;">
         <div style="flex:none;width:30px;height:30px;border-radius:8px;background:rgba(75,110,245,.16);color:#4B6EF5;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;">1</div>
-        <div><h3 style="font-size:16px;font-weight:600;color:#FAFBFC;margin:0 0 6px;">Confirming your device is genuine (Apple App Attest)</h3><p style="font-size:15px;line-height:1.7;color:#A8B2C8;margin:0;">To verify that your iPhone is a genuine, untampered Apple device, the app uses Apple's App Attest service and confirms the result with our server. This sends an opaque install identifier (a random ID generated on install, not your name, Apple ID, phone number, or device serial number) and Apple's cryptographic attestation material. Our server keeps a minimal per-install record (the opaque install ID, an attestation public key, and a timestamp) so the check can't be abused. This runs once per install and is then cached. It contains nothing about you or what your scans found.</p></div>
+        <div><h3 style="font-size:16px;font-weight:600;color:#FAFBFC;margin:0 0 6px;">Confirming your device is genuine (Apple App Attest)</h3><p style="font-size:15px;line-height:1.7;color:#A8B2C8;margin:0;">To verify that your device is a genuine, untampered Apple device, the app uses Apple's App Attest service and confirms the result with our server. This sends an opaque install identifier (a random ID generated on install, not your name, Apple ID, phone number, or device serial number) and Apple's cryptographic attestation material. Our server keeps a minimal per-install record (the opaque install ID, an attestation public key, and a timestamp) so the check can't be abused. It is not sent with every scan, and it contains nothing about you or what your scans found.</p></div>
       </div>
       <div style="display:flex;gap:16px;background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:22px 24px;">
         <div style="flex:none;width:30px;height:30px;border-radius:8px;background:rgba(75,110,245,.16);color:#4B6EF5;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;">2</div>
-        <div><h3 style="font-size:16px;font-weight:600;color:#FAFBFC;margin:0 0 6px;">Verifying the connection to our service (certificate pinning)</h3><p style="font-size:15px;line-height:1.7;color:#A8B2C8;margin:0;">The app sends a contentless request to our backend and fetches a signed configuration file to confirm no one is impersonating our service or intercepting the connection. This carries no personal data and no scan data. It is the security check itself.</p></div>
+        <div><h3 style="font-size:16px;font-weight:600;color:#FAFBFC;margin:0 0 6px;">Verifying the connection to our service (certificate pinning)</h3><p style="font-size:15px;line-height:1.7;color:#A8B2C8;margin:0;">The app sends a contentless request to our own service to confirm that no one is impersonating it or intercepting the connection. This carries no personal data and no scan data. It is the security check itself.</p></div>
       </div>
       <div style="display:flex;gap:16px;background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:22px 24px;">
         <div style="flex:none;width:30px;height:30px;border-radius:8px;background:rgba(75,110,245,.16);color:#4B6EF5;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;">3</div>
-        <div><h3 style="font-size:16px;font-weight:600;color:#FAFBFC;margin:0 0 6px;">Background scan notifications (paid automation tier only)</h3><p style="font-size:15px;line-height:1.7;color:#A8B2C8;margin:0;">If you subscribe to the automated-scanning tier, the app registers for push notifications so we can wake it to run scans in the background. This uses an Apple-issued push token, which is not personal information and is not tied to your identity.</p></div>
+        <div><h3 style="font-size:16px;font-weight:600;color:#FAFBFC;margin:0 0 6px;">Background scan notifications (paid automation tier only)</h3><p style="font-size:15px;line-height:1.7;color:#A8B2C8;margin:0;">If you subscribe to the automated-scanning tier, the app registers for push notifications so we can wake it to run scans in the background. This uses an Apple-issued push token, which is not personal information and is not tied to your identity. We keep a record of the wake messages we send (which token, when, and whether Apple accepted it) so we can tell whether background scanning is actually working. Those records say nothing about what a scan found.</p></div>
       </div>
       <div style="display:flex;gap:16px;background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:22px 24px;">
         <div style="flex:none;width:30px;height:30px;border-radius:8px;background:rgba(75,110,245,.16);color:#4B6EF5;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;">4</div>
         <div><h3 style="font-size:16px;font-weight:600;color:#FAFBFC;margin:0 0 6px;">Payments (Apple In-App Purchase)</h3><p style="font-size:15px;line-height:1.7;color:#A8B2C8;margin:0;">Subscriptions are handled entirely by Apple's In-App Purchase system. We never receive or see your payment details. We only receive your subscription status from Apple so the app can unlock paid features.</p></div>
+      </div>
+      <div style="display:flex;gap:16px;background:#11131A;border:1px solid rgba(75,110,245,.35);border-radius:14px;padding:22px 24px;">
+        <div style="flex:none;width:30px;height:30px;border-radius:8px;background:rgba(75,110,245,.16);color:#4B6EF5;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;">5</div>
+        <div><h3 style="font-size:16px;font-weight:600;color:#FAFBFC;margin:0 0 6px;">Asking us for help (only if you send it)</h3><p style="font-size:15px;line-height:1.7;color:#A8B2C8;margin:0;">If you tap "Get help," the app writes a draft email for you containing your latest verdict and findings, so support can understand what you're looking at. It opens in your own mail app. You read it, edit it if you want to, and send it — or don't. Nothing is transmitted unless you send it yourself. This is the one path by which your findings can reach us, and it exists only because you chose it.</p></div>
       </div>
     </div>
 
@@ -117,8 +153,9 @@
     <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 16px;">We do not collect, transmit, sell, or share your personal data. In particular, the app does <strong style="color:#FAFBFC;font-weight:600;">not</strong> collect:</p>
     <ul style="font-size:16px;line-height:1.7;color:#A8B2C8;margin:0 0 16px;padding-left:22px;display:flex;flex-direction:column;gap:10px;">
       <li>Contacts, photos, messages, or call history</li>
+      <li>The text of anything you check with the phishing checker, or the links behind the QR codes you scan</li>
       <li>Browsing history or the contents of your network traffic</li>
-      <li>Your location</li>
+      <li>Your location or your movements (see "Permissions" above for why the app asks for location access anyway)</li>
       <li>A list of the other apps installed on your device</li>
       <li>Advertising identifiers or device identifiers tied to your real-world identity</li>
       <li>Your name, email address, or phone number</li>
@@ -129,7 +166,7 @@
     <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">We do not sell, rent, trade, or share any information with advertisers, data brokers, other companies, or governments. The only third party involved is <strong style="color:#FAFBFC;font-weight:600;">Apple</strong> (for device attestation, push notifications, and payments, as described above), which acts under Apple's own privacy terms.</p>
 
     <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">Data retention</h2>
-    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">We do not store your scan results or personal data, so there is nothing for us to retain about your activity. The only records we keep are the minimal, non-personal anti-abuse and operational records described in "What leaves your device" (the opaque install attestation record and, for subscribers, a push token). You can end these by uninstalling the app and, for subscriptions, canceling through Apple.</p>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">We do not store your scan results or personal data, so there is nothing for us to retain about your activity. The only records we keep are the minimal, non-personal anti-abuse and operational records described in "What leaves your device": the opaque install attestation record, and, for subscribers, a push token plus the log of wake messages sent to it. You can end these by uninstalling the app and, for subscriptions, canceling through Apple. If you emailed support, that message lives in our support mailbox like any other email; ask us and we'll delete it.</p>
 
     <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">Security</h2>
     <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">Analysis runs inside Apple's app sandbox using on-device machine-learning frameworks. The limited network connections we do make are protected by certificate pinning to prevent impersonation or interception.</p>
@@ -140,6 +177,7 @@
     <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">Your choices</h2>
     <ul style="font-size:16px;line-height:1.7;color:#A8B2C8;margin:0 0 40px;padding-left:22px;display:flex;flex-direction:column;gap:10px;">
       <li>Use the free, manual-scan tier with no subscription.</li>
+      <li>Decline camera or location access and keep using everything else.</li>
       <li>Turn off notifications at any time in iOS Settings.</li>
       <li>Cancel a subscription through your Apple account.</li>
       <li>Uninstall the app to remove it and stop all activity.</li>
@@ -155,6 +193,169 @@
       <p style="font-size:15px;color:#A8B2C8;margin:0;">Email: <a href="mailto:support@lunardefense.co" style="color:#4B6EF5;text-decoration:none;">support@lunardefense.co</a></p>
       <p style="font-size:15px;color:#A8B2C8;margin:0;">Website: <a href="https://lunardefense.co" style="color:#4B6EF5;text-decoration:none;">lunardefense.co</a></p>
     </div>
+
+    </section>
+
+    <!-- ============================ MANAGED ============================ -->
+    <section class="ld-panel" id="panel-managed" role="tabpanel" aria-labelledby="tab-managed" hidden>
+
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:18px;">
+      <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,217,255,.1);border:1px solid rgba(0,217,255,.35);border-radius:100px;padding:7px 16px;font-size:14px;color:#FAFBFC;font-weight:600;">Effective date <span style="color:#00D9FF;">August 2026</span></span>
+      <span style="font-size:14px;color:#A8B2C8;"><strong style="color:#C7CEDC;font-weight:600;">Applies to:</strong> Lunar Defense Managed, activated with a code from your IT or security provider</span>
+    </div>
+    <div style="height:2px;width:64px;background:#00D9FF;margin-bottom:36px;"></div>
+
+    <p style="font-size:16px;line-height:1.75;color:#C7CEDC;margin:0 0 20px;">Lunar Defense Managed is a device-based security app. Your IT or security provider deployed it to you and holds its license. It checks whether your device and its network connection show signs of compromise, tells you what it found in plain language, and keeps a tamper-evident record of what it found over time so a technician can help you when something goes wrong. The analysis runs on your device, and the record stays on your device.</p>
+    <p style="font-size:16px;line-height:1.75;color:#C7CEDC;margin:0 0 24px;">This policy is written for you, the person holding the device. It explains what stays local, the few specific things that leave your device, and — the question that matters most here — <strong style="color:#FAFBFC;font-weight:600;">exactly what your provider can and cannot see</strong>.</p>
+
+    <div style="background:#11131A;border:1px solid #1A1D28;border-left:3px solid #00D9FF;border-radius:12px;padding:20px 24px;margin-bottom:40px;">
+      <p style="font-size:15px;line-height:1.7;color:#C7CEDC;margin:0 0 10px;font-weight:600;">Three parties, so it's clear who does what</p>
+      <p style="font-size:15px;line-height:1.7;color:#A8B2C8;margin:0;"><strong style="color:#FAFBFC;font-weight:600;">You</strong> hold the device and everything the app finds. <strong style="color:#FAFBFC;font-weight:600;">Your provider</strong> — the IT or security company that gave you the activation code — holds the license and decides who gets a seat. <strong style="color:#FAFBFC;font-weight:600;">Lunar Defense LLC</strong> makes the app and runs the licensing service the code checks against. Your provider decides who receives a code and may label your seat in their console; we hold those seat records on their instruction. Neither we nor your provider receives your scan results.</p>
+    </div>
+
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">Our approach: on-device first</h2>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 16px;">When a sweep runs, the security checks and the AI model that weighs them run <strong style="color:#FAFBFC;font-weight:600;">entirely on your device</strong>. Your scan results — the findings, the verdict, and the device and network signals we examine to produce them — are computed locally and are <strong style="color:#FAFBFC;font-weight:600;">never transmitted to us or to your provider</strong>. The security record the app keeps is written to your device and stays there.</p>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">There is no account, no login, and no password. There is one activation code, typed once.</p>
+
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">What we process on your device (and never send)</h2>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 16px;">To assess your device's security, the app inspects local security-relevant signals, such as:</p>
+    <ul style="font-size:16px;line-height:1.7;color:#A8B2C8;margin:0 0 16px;padding-left:22px;display:flex;flex-direction:column;gap:10px;">
+      <li>Signs that the operating system has been jailbroken or otherwise tampered with, or that unauthorized code is running alongside the app.</li>
+      <li>Whether anything is attached to or monitoring the app.</li>
+      <li>Your network and connection configuration (for example whether a proxy or VPN is present, and whether the secure connection to our service holds).</li>
+      <li>Whether the Wi-Fi network you're on adds encryption of its own. The app reads the network's security type only. It never reads the network's name, and it never reads your location.</li>
+    </ul>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 16px;">Two features work on content you hand them directly, and both are also entirely local:</p>
+    <ul style="font-size:16px;line-height:1.7;color:#A8B2C8;margin:0 0 16px;padding-left:22px;display:flex;flex-direction:column;gap:10px;">
+      <li><strong style="color:#FAFBFC;font-weight:600;">Check a Link.</strong> When you paste a suspicious message in, it is analyzed by Apple's on-device intelligence, on your own device. The message text is never uploaded, never stored on our servers, never seen by us, and never written into your security record.</li>
+      <li><strong style="color:#FAFBFC;font-weight:600;">QR link safety.</strong> When you point the camera at a QR code, the code is read and the link it points to is evaluated on your device. This feature makes <strong style="color:#FAFBFC;font-weight:600;">no network calls at all</strong>. No photo or video is recorded or kept.</li>
+    </ul>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">All of this is read, analyzed, and turned into a verdict <strong style="color:#FAFBFC;font-weight:600;">on your device</strong>.</p>
+
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">Permissions the app asks for, and why</h2>
+    <ul style="font-size:16px;line-height:1.7;color:#A8B2C8;margin:0 0 16px;padding-left:22px;display:flex;flex-direction:column;gap:12px;">
+      <li><strong style="color:#FAFBFC;font-weight:600;">Camera</strong> — used only while the QR scanner is open on screen, to read the code in front of it. Frames are analyzed live and discarded. Nothing is recorded, saved, or transmitted.</li>
+      <li><strong style="color:#FAFBFC;font-weight:600;">Location (while using the app)</strong> — this one deserves an explanation, because it looks like more than it is. iOS will not tell an app anything about the Wi-Fi network you're joined to, including whether it's encrypted, unless that app holds location permission. That is the <em>only</em> reason we ask. The app never reads, stores, or transmits a coordinate, and it asks in context when a scan runs rather than at launch. Decline it and everything else works normally; the app simply reports that it couldn't check your Wi-Fi rather than guessing.</li>
+      <li><strong style="color:#FAFBFC;font-weight:600;">Notifications</strong> — used to tell you when a background scan found something, and when the app's own security record needs attention. You can turn scan notifications off in iOS Settings.</li>
+    </ul>
+
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 8px;letter-spacing:-.01em;">What leaves your device, and why</h2>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 24px;">The app makes a small number of network connections. Apart from the last one, which happens only when you initiate it, <strong style="color:#FAFBFC;font-weight:600;">none of them carry your scan results, findings, security posture, or personal information.</strong> They are the licensing and security mechanisms themselves, and they are limited to the following:</p>
+
+    <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:40px;">
+      <div style="display:flex;gap:16px;background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:22px 24px;">
+        <div style="flex:none;width:30px;height:30px;border-radius:8px;background:rgba(0,217,255,.14);color:#00D9FF;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;">1</div>
+        <div><h3 style="font-size:16px;font-weight:600;color:#FAFBFC;margin:0 0 6px;">Activating your license</h3><p style="font-size:15px;line-height:1.7;color:#A8B2C8;margin:0;">When you enter the activation code your provider gave you, the app sends that code, an opaque install identifier (a random ID generated on install — not your name, Apple ID, phone number, or device serial number), and Apple's App Attest material proving your device is a genuine, untampered Apple device. Our server checks the attestation with Apple, claims one seat in your provider's allotment, and returns a license valid for 21 days that is cryptographically welded to that specific device. We keep a seat record (your provider's ID, the opaque install ID, the device's attestation key ID, whether the seat is active, and the dates it was activated and last renewed) and a log of each license issued to it. Nothing about you and nothing about what your scans found is part of any of that.</p></div>
+      </div>
+      <div style="display:flex;gap:16px;background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:22px 24px;">
+        <div style="flex:none;width:30px;height:30px;border-radius:8px;background:rgba(0,217,255,.14);color:#00D9FF;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;">2</div>
+        <div><h3 style="font-size:16px;font-weight:600;color:#FAFBFC;margin:0 0 6px;">Keeping it current (renewal)</h3><p style="font-size:15px;line-height:1.7;color:#A8B2C8;margin:0;">Your license is checked on your own device every time the app launches, with no network involved, which is why the app keeps working for up to three weeks with no connection at all. Before it expires, the app quietly renews in the background: it re-proves it's the same device and receives a fresh 21-day license. This carries the same identifiers as activation and nothing else. If your provider has released your seat, the renewal is declined and the app becomes inert when the current license expires.</p></div>
+      </div>
+      <div style="display:flex;gap:16px;background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:22px 24px;">
+        <div style="flex:none;width:30px;height:30px;border-radius:8px;background:rgba(0,217,255,.14);color:#00D9FF;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;">3</div>
+        <div><h3 style="font-size:16px;font-weight:600;color:#FAFBFC;margin:0 0 6px;">Proving your security record hasn't been altered</h3><p style="font-size:15px;line-height:1.7;color:#A8B2C8;margin:0;">The security record on your device is chained together so that changing an old entry breaks every entry after it. To make that provable rather than merely local, the app periodically sends us a <strong style="color:#FAFBFC;font-weight:600;">fingerprint</strong> of the record's current end point: a 32-byte hash, a counter, and a timestamp, signed by your device. A hash is a one-way summary — it cannot be turned back into the record, and it reveals nothing about what the record says. We store those receipts so that if anyone later rewrites your history, the rewrite contradicts a receipt they never controlled. This happens no more than a few times a day.</p></div>
+      </div>
+      <div style="display:flex;gap:16px;background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:22px 24px;">
+        <div style="flex:none;width:30px;height:30px;border-radius:8px;background:rgba(0,217,255,.14);color:#00D9FF;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;">4</div>
+        <div><h3 style="font-size:16px;font-weight:600;color:#FAFBFC;margin:0 0 6px;">Verifying the connection to our service (certificate pinning)</h3><p style="font-size:15px;line-height:1.7;color:#A8B2C8;margin:0;">The app sends a contentless request to our own service to confirm that no one is impersonating it or intercepting the connection. This carries no personal data and no scan data. It is the security check itself.</p></div>
+      </div>
+      <div style="display:flex;gap:16px;background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:22px 24px;">
+        <div style="flex:none;width:30px;height:30px;border-radius:8px;background:rgba(0,217,255,.14);color:#00D9FF;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;">5</div>
+        <div><h3 style="font-size:16px;font-weight:600;color:#FAFBFC;margin:0 0 6px;">Background scan notifications</h3><p style="font-size:15px;line-height:1.7;color:#A8B2C8;margin:0;">Automatic background scanning is included with your provider's license at no cost to you, so the app registers for push notifications and we wake it periodically to run a scan. This uses an Apple-issued push token, which is not personal information and is not tied to your identity. We keep a record of the wake messages we send (which token, when, and whether Apple accepted it) so we can tell whether background scanning is actually working. Those records say nothing about what a scan found. The push itself carries no content — it only tells the app to wake up.</p></div>
+      </div>
+      <div style="display:flex;gap:16px;background:#11131A;border:1px solid rgba(0,217,255,.3);border-radius:14px;padding:22px 24px;">
+        <div style="flex:none;width:30px;height:30px;border-radius:8px;background:rgba(0,217,255,.14);color:#00D9FF;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;">6</div>
+        <div><h3 style="font-size:16px;font-weight:600;color:#FAFBFC;margin:0 0 6px;">Asking for help (only if you send it)</h3><p style="font-size:15px;line-height:1.7;color:#A8B2C8;margin:0;">If you tap "Get help," the app writes a draft email for you containing your latest verdict and findings, so support can understand what you're looking at. It opens in your own mail app; nothing is transmitted unless you read it and send it yourself. Separately, "Copy Support Info" puts a short diagnostic summary on your clipboard — your app version, install ID, provider, and seat, so a technician can find your license. Nothing is sent; you decide where to paste it. These are the only paths by which your findings can reach us, and both require you to act.</p></div>
+      </div>
+    </div>
+
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">Your security record, and who can see it</h2>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 16px;">The app keeps a running record of what it found on your device over time, so that a technician helping you has real history to work from instead of guesswork. Because that record is about you, it is worth being precise about what it holds, where it lives, and who can reach it.</p>
+    <ul style="font-size:16px;line-height:1.7;color:#A8B2C8;margin:0 0 16px;padding-left:22px;display:flex;flex-direction:column;gap:12px;">
+      <li><strong style="color:#FAFBFC;font-weight:600;">It records changes, not activity.</strong> A scan that finds nothing writes nothing. An entry is written when a finding appears, gets worse, or clears — plus one heartbeat a day, so that a quiet stretch is provably quiet rather than a silent failure. In normal use that's a handful of entries a day at most.</li>
+      <li><strong style="color:#FAFBFC;font-weight:600;">It records the verdict, never the content.</strong> The message you checked, the full web address behind a QR code, and the AI's written explanation of either are all treated as content and none of them are ever written into the record. What goes in is the verdict itself, and for a link, the registered domain it points at. This is enforced by how the record is written, not by a policy someone has to remember to follow.</li>
+      <li><strong style="color:#FAFBFC;font-weight:600;">It lives on your device, encrypted.</strong> The record is encrypted at rest with a key held in your device's Secure Enclave, and it is excluded from device backups.</li>
+      <li><strong style="color:#FAFBFC;font-weight:600;">It doesn't grow forever.</strong> Entries are kept for up to a year, or sooner if the record reaches its size limit. When old entries are dropped, the record says so rather than quietly closing the gap.</li>
+      <li><strong style="color:#FAFBFC;font-weight:600;">It is not sent to us or to your provider.</strong> There is no upload, no export, and no dashboard anywhere that shows it. The only thing that ever leaves your device is the fingerprint described above, which is a hash and cannot be read back into the record.</li>
+      <li><strong style="color:#FAFBFC;font-weight:600;">Showing it is your action, and it is logged.</strong> A technician sees this record only when you open the technician view on your own device, typically while sharing your screen on a support call. When that view is opened, the app writes a permanent entry into your own record saying that it was shown and how much of it was shown. That entry cannot be removed without breaking the chain — which is the point.</li>
+    </ul>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">One honest limit: the technician view is protected by your device passcode and Face ID, the same as the rest of your device. Anyone who can unlock your device can open it. Treat it the way you'd treat your Photos app.</p>
+
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">What your provider can and can't see</h2>
+    <div style="display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:24px;">
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:22px 24px;">
+        <p style="font-size:15px;font-weight:600;color:#FAFBFC;margin:0 0 10px;">They can see, in their licensing console:</p>
+        <ul style="font-size:15px;line-height:1.7;color:#A8B2C8;margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;">
+          <li>That a seat exists, and the opaque install ID it's bound to</li>
+          <li>When it was activated and when it last renewed</li>
+          <li>Whether it's still active or has been released</li>
+          <li>A label they typed themselves, which may be a name like "Jane's device." Your device never sends this; your provider writes it, so it is their record to correct or remove.</li>
+        </ul>
+      </div>
+      <div style="background:#11131A;border:1px solid rgba(0,217,255,.25);border-radius:14px;padding:22px 24px;">
+        <p style="font-size:15px;font-weight:600;color:#FAFBFC;margin:0 0 10px;">They cannot see, from anywhere:</p>
+        <ul style="font-size:15px;line-height:1.7;color:#A8B2C8;margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;">
+          <li>Your scan verdicts, findings, or security record</li>
+          <li>Messages you check, links you scan, or websites you visit</li>
+          <li>Your location, your contacts, your photos, or your apps</li>
+          <li>Anything at all in real time. There is no fleet dashboard, no monitoring feed, and no export path. This product is a one-tap check and a record you can show someone — it is not remote monitoring.</li>
+        </ul>
+      </div>
+    </div>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;"><strong style="color:#FAFBFC;font-weight:600;">Where your provider is responsible.</strong> They decide who receives an activation code and can release a seat at any time, which makes the app inert once the current license expires (up to 21 days later, since a released seat is enforced at the next renewal rather than instantly). They choose whether to label your seat and what to write there. If you want to know why the app is on your device, who at your provider can see your seat, or how to have it removed, ask them first — those are their decisions, not ours. If they need our help, we'll work with them.</p>
+
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">What we never collect</h2>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 16px;">We do not collect, transmit, sell, or share your personal data. In particular, the app does <strong style="color:#FAFBFC;font-weight:600;">not</strong> collect:</p>
+    <ul style="font-size:16px;line-height:1.7;color:#A8B2C8;margin:0 0 16px;padding-left:22px;display:flex;flex-direction:column;gap:10px;">
+      <li>Contacts, photos, messages, or call history</li>
+      <li>The text of anything you check with the phishing checker, or the links behind the QR codes you scan</li>
+      <li>Browsing history or the contents of your network traffic</li>
+      <li>Your location or your movements (see "Permissions" above for why the app asks for location access anyway)</li>
+      <li>A list of the other apps installed on your device</li>
+      <li>Advertising identifiers or device identifiers tied to your real-world identity</li>
+      <li>Your name, email address, or phone number</li>
+    </ul>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">There are <strong style="color:#FAFBFC;font-weight:600;">no third-party trackers, no analytics SDKs, and no advertising networks</strong> in the app. There is no advertising or upselling of any kind: the app is free to you, and your provider holds the license.</p>
+
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">No selling, no sharing</h2>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">We do not sell, rent, trade, or share any information with advertisers, data brokers, other companies, or governments. The only third party involved is <strong style="color:#FAFBFC;font-weight:600;">Apple</strong> (for device attestation and push notifications, as described above), which acts under Apple's own privacy terms. Your provider sees only the seat records described above, because those records exist to administer the license they bought.</p>
+
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">Data retention</h2>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 16px;">We do not store your scan results, your security record, or personal data. What we hold is the minimum needed to run the license and prove the record hasn't been altered:</p>
+    <ul style="font-size:16px;line-height:1.7;color:#A8B2C8;margin:0 0 16px;padding-left:22px;display:flex;flex-direction:column;gap:10px;">
+      <li>Your seat record and the log of licenses issued to it, kept while your provider's account is active</li>
+      <li>The install attestation record (opaque install ID, an attestation public key, timestamps)</li>
+      <li>The record fingerprints described above, which are append-only by design — they would be worthless as evidence if we could edit them</li>
+      <li>Your push token and the log of wake messages sent to it</li>
+    </ul>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">On your device, the security record is capped as described above and is deleted with the app. Uninstalling removes the app and its record from your device; ask your provider to release your seat so it returns to their pool. If you emailed support, that message lives in our support mailbox like any other email; ask us and we'll delete it.</p>
+
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">Security</h2>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">Analysis runs inside Apple's app sandbox using on-device machine-learning frameworks. Your security record is encrypted with a key bound to your device's Secure Enclave and excluded from backups. Every network connection the app makes is protected by certificate pinning to prevent impersonation or interception, and the licensing calls are additionally signed by your device's hardware-backed attestation key.</p>
+
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">Children's privacy</h2>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">Lunar Defense Managed is not directed to children under 13 (or the equivalent minimum age in your jurisdiction), and we do not knowingly collect personal information from children.</p>
+
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">Your choices</h2>
+    <ul style="font-size:16px;line-height:1.7;color:#A8B2C8;margin:0 0 40px;padding-left:22px;display:flex;flex-direction:column;gap:10px;">
+      <li>Decline camera or location access and keep using everything else.</li>
+      <li>Turn off scan notifications at any time in iOS Settings.</li>
+      <li>Decide for yourself whether to show the technician view on a support call.</li>
+      <li>Uninstall the app to remove it and its record from your device, and ask your provider to release your seat.</li>
+    </ul>
+
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">Changes to this policy</h2>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 40px;">If we change how the app handles data, we will update this policy and revise the effective date above.</p>
+
+    <h2 style="font-size:22px;font-weight:700;color:#FAFBFC;margin:0 0 14px;letter-spacing:-.01em;">Contact</h2>
+    <p style="font-size:16px;line-height:1.75;color:#A8B2C8;margin:0 0 18px;">For questions about why the app is on your device, who holds your seat, or having it removed, contact your IT or security provider first. For questions about this policy or how the app handles data, get in touch with us directly.</p>
+    <div style="background:#11131A;border:1px solid rgba(0,217,255,.3);border-radius:14px;padding:24px 26px;display:flex;flex-direction:column;gap:8px;">
+      <p style="font-size:16px;font-weight:600;color:#FAFBFC;margin:0;">Lunar Defense LLC</p>
+      <p style="font-size:15px;color:#A8B2C8;margin:0;">Email: <a href="mailto:support@lunardefense.co" style="color:#00D9FF;text-decoration:none;">support@lunardefense.co</a></p>
+      <p style="font-size:15px;color:#A8B2C8;margin:0;">Website: <a href="https://lunardefense.co" style="color:#00D9FF;text-decoration:none;">lunardefense.co</a></p>
+    </div>
+
+    </section>
 
   </main>
 
@@ -175,6 +376,46 @@
   var b=document.querySelector('.ld-ham'), m=document.getElementById('ld-mm');
   if(b&&m){ b.addEventListener('click',function(){m.classList.toggle('open');});
     m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');});}); }
+})();
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.ld-tab'));
+  if(!tabs.length) return;
+  function select(name,setHash){
+    tabs.forEach(function(t){
+      var on=(t.getAttribute('data-tab')===name);
+      t.setAttribute('aria-selected',on?'true':'false');
+      t.setAttribute('tabindex',on?'0':'-1');
+      var panel=document.getElementById('panel-'+t.getAttribute('data-tab'));
+      if(panel) panel.hidden=!on;
+    });
+    if(setHash&&window.history&&window.history.replaceState){
+      window.history.replaceState(null,'','#'+name);
+    }
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){
+      select(t.getAttribute('data-tab'),true);
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+    t.addEventListener('keydown',function(e){
+      var next=null;
+      if(e.key==='ArrowRight') next=tabs[(i+1)%tabs.length];
+      if(e.key==='ArrowLeft') next=tabs[(i-1+tabs.length)%tabs.length];
+      if(!next) return;
+      e.preventDefault();
+      select(next.getAttribute('data-tab'),true);
+      next.focus();
+    });
+  });
+  function fromHash(){
+    var h=(window.location.hash||'').replace('#','').toLowerCase();
+    return (h==='managed'||h==='consumer')?h:null;
+  }
+  select(fromHash()||'consumer',false);
+  window.addEventListener('hashchange',function(){
+    var h=fromHash();
+    if(h) select(h,false);
+  });
 })();
 </script>
 </body>
