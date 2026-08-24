@@ -44,6 +44,14 @@
   }
   @media (max-width:639px){ .m-grid3{grid-template-columns:1fr !important;} }
   @media (max-width:479px){ .m-h1{font-size:34px !important;} }
+  /* form controls (paused-access band) */
+  .tf-l{display:block;font-size:13px;font-weight:500;color:#A8B2C8;margin-bottom:8px;}
+  .tf-in{box-sizing:border-box;width:100%;padding:13px 14px;background:#0A0B0F;border:1px solid #2D3139;border-radius:11px;color:#FAFBFC;font-size:16px;font-family:inherit;transition:border-color .2s;}
+  .tf-in:focus{outline:none;border-color:#4B6EF5;}
+  .tf-in::placeholder{color:rgba(168,178,200,.4);}
+  .tf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  .tf-req{color:#4B6EF5;}
+  @media (max-width:767px){ .tf-row{grid-template-columns:1fr !important;} }
 </style>
 </head>
 <body>
@@ -73,6 +81,65 @@
     </div>
   </header>
 
+  <!-- paused / switched-off band: the landing spot for the in-app licence walls -->
+  <section id="paused" style="max-width:880px;margin:0 auto;padding:44px 32px 8px;">
+    <div style="background:linear-gradient(140deg,#141119,#0D0F15);border:1px solid rgba(255,176,32,.32);border-radius:20px;padding:36px;">
+      <p style="color:#FFB020;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:600;margin:0 0 14px;">Protection paused on your device</p>
+      <h2 style="font-size:28px;line-height:1.15;font-weight:700;letter-spacing:-.02em;margin:0 0 14px;">Let's get it switched back on.</h2>
+      <p style="font-size:16px;color:#C7CEDC;line-height:1.65;margin:0 0 16px;">If Lunar Defense says access for your organization has been <strong style="color:#FAFBFC;font-weight:600;">turned off</strong>, or simply that it is <strong style="color:#FAFBFC;font-weight:600;">paused</strong>, you are in the right place. This is something we can look up and act on.</p>
+      <p style="font-size:15px;color:#A8B2C8;line-height:1.65;margin:0 0 26px;">Your device keeps its registration either way. Nothing needs to be reinstalled, re-registered, or entered again, and protection resumes on its own once the account is switched back on.</p>
+
+      <div style="background:#0A0B0F;border:1px solid #1A1D28;border-radius:14px;padding:22px;margin-bottom:24px;">
+        <h3 style="font-size:16px;font-weight:700;margin:0 0 8px;">One thing that speeds this up</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;">On the screen you just came from, tap <strong style="color:#FAFBFC;">Copy device info</strong> and paste the block into your message. You do not need to know your organization's account, who bought it, or anything about billing. That block tells us which record to look at, which turns a general question into something we can answer straight away.</p>
+      </div>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+        <a href="mailto:support@lunardefense.co?subject=Lunar%20Defense%3A%20protection%20paused%20on%20my%20device&amp;body=%5BPaste%20the%20%22Copy%20device%20info%22%20block%20from%20the%20app%20here%5D%0A%0A%0AWhat%20the%20app%20says%3A%0A%0A%0AAnything%20else%20we%20should%20know%3A%0A%0A" style="display:inline-flex;align-items:center;gap:9px;background:#4B6EF5;color:#FAFBFC;font-size:15px;font-weight:700;padding:14px 22px;border-radius:12px;text-decoration:none;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
+          Email us, ready to paste
+        </a>
+        <a href="#paused-form" style="display:inline-flex;align-items:center;gap:7px;color:#FAFBFC;border:1px solid #2D3139;border-radius:12px;padding:14px 20px;font-weight:600;font-size:15px;text-decoration:none;">Use a form instead</a>
+      </div>
+
+      <details id="paused-form" style="margin-top:22px;border-top:1px solid #1A1D28;padding-top:20px;">
+        <summary style="display:flex;align-items:center;justify-content:space-between;font-size:15px;font-weight:600;color:#FAFBFC;">Send it from this page<span class="faq-plus" style="transition:transform .2s;color:#FFB020;font-size:22px;font-weight:300;">+</span></summary>
+        <form id="paused-contact-form" novalidate style="margin-top:20px;">
+          <!-- honeypot: hidden from users, bots tend to fill it -->
+          <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+            <label>Company website<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label>
+          </div>
+          <div class="tf-row">
+            <div>
+              <label class="tf-l" for="pf-name">Name <span class="tf-req">*</span></label>
+              <input id="pf-name" name="name" type="text" required autocomplete="name" class="tf-in">
+            </div>
+            <div>
+              <label class="tf-l" for="pf-email">Email <span class="tf-req">*</span></label>
+              <input id="pf-email" name="email" type="email" required autocomplete="email" class="tf-in">
+            </div>
+          </div>
+          <div style="margin-bottom:16px;">
+            <label class="tf-l" for="pf-org">Organization <span style="color:#6b7080;font-weight:400;">(if you know it)</span></label>
+            <input id="pf-org" name="organization" type="text" autocomplete="organization" class="tf-in">
+          </div>
+          <div style="margin-bottom:16px;">
+            <label class="tf-l" for="pf-device">Device info <span style="color:#6b7080;font-weight:400;">(paste the copied block)</span></label>
+            <textarea id="pf-device" name="device_info" rows="4" class="tf-in" style="resize:vertical;line-height:1.55;font-family:'IBM Plex Mono',monospace;font-size:13px;"></textarea>
+          </div>
+          <div style="margin-bottom:20px;">
+            <label class="tf-l" for="pf-message">What does the app say? <span class="tf-req">*</span></label>
+            <textarea id="pf-message" name="message" rows="3" required class="tf-in" style="resize:vertical;line-height:1.55;"></textarea>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+            <button type="submit" id="pf-submit" style="background:#4B6EF5;color:#FAFBFC;border:none;border-radius:12px;padding:14px 26px;font-weight:700;font-size:15px;font-family:inherit;cursor:pointer;">Send message</button>
+            <p id="pf-status" style="font-size:14px;margin:0;color:#A8B2C8;" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </details>
+    </div>
+  </section>
+
   <!-- hero -->
   <section style="max-width:1200px;margin:0 auto;padding:80px 32px 56px;text-align:center;">
     <p style="color:#4B6EF5;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:600;margin:0 0 16px;">Lunar Defense · Support</p>
@@ -94,7 +161,7 @@
         <h2 style="font-size:24px;font-weight:700;margin:0 0 8px;">Contact our team</h2>
         <p style="font-size:15px;color:#A8B2C8;line-height:1.6;margin:0 0 6px;">Email us and we'll get back to you, typically within one business day.</p>
         <p style="font-size:13px;color:#6b7080;margin:0 0 8px;">Include your device model and OS version so we can help faster.</p>
-        <p style="font-size:13px;color:#6b7080;margin:0;">Using Managed? Include the output of Settings &rarr; License &rarr; Copy Support Info, and contact your IT or security provider first for anything about your seat or why the app was deployed.</p>
+        <p style="font-size:13px;color:#6b7080;margin:0;">Using Managed? Include the output of Settings &rarr; License &rarr; Copy device info. For an activation code, or a question about why the app was deployed, your IT or security provider is the fastest route: they issue the codes and decide who gets a seat. If Lunar Defense was working and has stopped, come straight to us.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
         <a href="mailto:support@lunardefense.co" style="display:inline-flex;align-items:center;gap:10px;background:#4B6EF5;color:#FAFBFC;font-size:16px;font-weight:700;padding:14px 22px;border-radius:12px;text-decoration:none;">
@@ -113,8 +180,8 @@
     </div>
     <div style="display:flex;flex-direction:column;gap:10px;">
       <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">How do I run my first sweep?<span class="faq-plus" style="transition:transform .2s;color:#00E676;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">Open Lunar Defense and tap <strong>Run Security Scan</strong> on the home screen to start a sweep. It runs entirely on your device and finishes in seconds, no account or sign-in required.</p></details>
-      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">Do I need to create an account?<span class="faq-plus" style="transition:transform .2s;color:#00E676;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">No. You can download the app and run unlimited manual sweeps without an account. A Pro subscription is tied to your Apple ID, so there's still no separate account to manage. If you're using <strong>Lunar Defense Managed</strong>, there's no account either — your IT or security provider gives you a one-time activation code, and that's the only setup step.</p></details>
-      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">Which devices and iOS versions are supported?<span class="faq-plus" style="transition:transform .2s;color:#00E676;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">Lunar Defense Mobile Security and Lunar Defense Managed both support iPhone on iOS 26 or later and iPad on iPadOS 26 or later. One exception: the phishing checker (<strong>Check a Link</strong>) runs on-device using Apple Intelligence, so it needs a device that supports Apple Intelligence — every other feature works on any supported device.</p></details>
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">Do I need to create an account?<span class="faq-plus" style="transition:transform .2s;color:#00E676;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">No. You can download the app and run unlimited manual sweeps without an account. A Pro subscription is tied to your Apple ID, so there's still no separate account to manage. If you're using <strong>Lunar Defense Managed</strong>, there's no account either. Your IT or security provider gives you a one-time activation code, and that's the only setup step.</p></details>
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">Which devices and iOS versions are supported?<span class="faq-plus" style="transition:transform .2s;color:#00E676;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">Lunar Defense Mobile Security and Lunar Defense Managed both support iPhone on iOS 26 or later and iPad on iPadOS 26 or later. One exception: the phishing checker (<strong>Check a Link</strong>) runs on-device using Apple Intelligence, so it needs a device that supports Apple Intelligence. Every other feature works on any supported device.</p></details>
     </div>
   </section>
 
@@ -137,7 +204,7 @@
       <div style="width:38px;height:38px;border-radius:10px;background:rgba(75,110,245,.14);display:flex;align-items:center;justify-content:center;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#4B6EF5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path></svg></div>
       <h2 style="font-size:22px;font-weight:700;margin:0;letter-spacing:-.01em;">Subscription &amp; billing</h2>
     </div>
-    <p style="font-size:14px;color:#6b7080;line-height:1.65;margin:-8px 0 18px;">Applies to Lunar Defense Mobile Security. Managed has no in-app purchases — it's licensed through your IT or security provider instead. See <a href="#license" style="color:#A8B2C8;text-decoration:none;">Your license</a> below.</p>
+    <p style="font-size:14px;color:#6b7080;line-height:1.65;margin:-8px 0 18px;">Applies to Lunar Defense Mobile Security. Managed has no in-app purchases. It's licensed through your IT or security provider instead. See <a href="#license" style="color:#A8B2C8;text-decoration:none;">Your license</a> below.</p>
 
     <!-- manage subscription callout -->
     <div style="background:#0D0F15;border:1px solid rgba(75,110,245,.3);border-radius:16px;padding:24px 26px;margin-bottom:14px;">
@@ -168,11 +235,13 @@
     <p style="font-size:14px;color:#6b7080;line-height:1.65;margin:-8px 0 18px;">Applies to Lunar Defense Managed, deployed by your IT or security provider.</p>
     <div style="display:flex;flex-direction:column;gap:10px;">
       <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">How do I activate Lunar Defense Managed?<span class="faq-plus" style="transition:transform .2s;color:#00D9FF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">Your IT or security provider gives you an activation code. Enter it when the app asks. Until you do, the app stays inert. Everything unlocks once it activates, and there's nothing to buy in the app.</p></details>
-      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">I don't have a code, or my code was rejected.<span class="faq-plus" style="transition:transform .2s;color:#00D9FF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">Activation codes come from your IT or security provider, not from us — they hold the license and decide who gets a seat, so contact them first. If they need our help, they can reach us at support@lunardefense.co. The <strong>Copy Support Info</strong> button on the activation screen gives them the details we'd need to look into it.</p></details>
-      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">The app says my license is no longer active.<span class="faq-plus" style="transition:transform .2s;color:#00D9FF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">Two common causes: the device has been offline for more than three weeks, or your provider released your seat. Reconnect to the internet and reopen the app — if the license is still valid it renews itself silently. If it doesn't come back, contact your provider.</p></details>
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">I don't have a code, or my code was rejected.<span class="faq-plus" style="transition:transform .2s;color:#00D9FF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">Activation codes come from your IT or security provider, not from us. They hold the license and decide who gets a seat, so contact them first. If they need our help, they can reach us at support@lunardefense.co. The <strong>Copy device info</strong> button on the activation screen gives them the details we'd need to look into it.</p></details>
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">The app says my license is no longer active.<span class="faq-plus" style="transition:transform .2s;color:#00D9FF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">Two common causes: the device has been offline for more than three weeks, or your provider released your seat. Reconnect to the internet and reopen the app. If the license is still valid it renews itself silently. If it doesn't come back, contact your provider.</p></details>
       <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">Does it work without a connection?<span class="faq-plus" style="transition:transform .2s;color:#00D9FF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">Yes. Your license is verified on your own device every time the app launches, with no network involved, so it keeps working for up to three weeks offline.</p></details>
-      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">Does Managed cost me anything?<span class="faq-plus" style="transition:transform .2s;color:#00D9FF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">There's nothing to buy in the app: no in-app purchases, no subscription, and no paywalled features — automatic background scanning and alerts are all included. Your IT or security provider holds the license, so whether Managed shows up in what you pay them is between you and them. Ask them if you're not sure.</p></details>
-      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">Where do I see my license details?<span class="faq-plus" style="transition:transform .2s;color:#00D9FF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;"><strong>Settings &rarr; License</strong> shows your status, valid-through date, provider, seat, and installation ID. <strong>Copy Support Info</strong> puts a short summary on your clipboard for a support call.</p></details>
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">Does Managed cost me anything?<span class="faq-plus" style="transition:transform .2s;color:#00D9FF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">There's nothing to buy in the app: no in-app purchases, no subscription, and no paywalled features. Automatic background scanning and alerts are all included. Your IT or security provider holds the license, so whether Managed shows up in what you pay them is between you and them. Ask them if you're not sure.</p></details>
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">Where do I see my license details?<span class="faq-plus" style="transition:transform .2s;color:#00D9FF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;"><strong>Settings &rarr; License</strong> shows your status, valid-through date, provider, seat, and installation ID. <strong>Copy device info</strong> puts a short summary on your clipboard for a support call.</p></details>
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">The app says our trial has ended.<span class="faq-plus" style="transition:transform .2s;color:#00D9FF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">Protection is paused, but nothing has been lost. Your device stays registered and there is no code to enter again. The moment your organization starts a subscription, Lunar Defense turns itself back on here automatically. Whoever manages IT or security for your organization can pick things up from our <a href="trial.html" style="color:#00D9FF;text-decoration:none;">trial page</a>.</p></details>
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">The app says access has been turned off, or is paused.<span class="faq-plus" style="transition:transform .2s;color:#00D9FF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">This one is on our side rather than your provider's, so contact us directly and we'll look it up. Your device keeps its registration and access resumes on its own once the account is switched back on. <a href="#paused" style="color:#00D9FF;text-decoration:none;">Start here</a>, and bring the <strong>Copy device info</strong> block if you can.</p></details>
     </div>
   </section>
 
@@ -183,9 +252,9 @@
       <h2 style="font-size:22px;font-weight:700;margin:0;letter-spacing:-.01em;">Privacy &amp; data</h2>
     </div>
     <div style="display:flex;flex-direction:column;gap:10px;">
-      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">Do my scan results ever leave my device?<span class="faq-plus" style="transition:transform .2s;color:#7C6FBF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">No. The analysis runs on your device and your results stay there. The app makes only a few network connections — verifying your device is genuine with Apple, checking that the connection to us isn't being intercepted, push notifications for background scans, and payments through Apple — and none of them carry your scan results or personal information. The one exception is one you control: if you tap <strong>Get help</strong>, the app drafts an email containing your findings, and nothing is sent until you read it and send it yourself. See our <a href="privacy.html#consumer" style="color:#7C6FBF;text-decoration:none;">Privacy Policy</a> for full details.</p></details>
-      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">What data does Lunar Defense collect?<span class="faq-plus" style="transition:transform .2s;color:#7C6FBF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">The app is built to minimize data collection: no account, no analytics SDKs, no trackers, no advertising. Two things worth knowing up front: the camera is used only while the QR scanner is open on screen, and the app asks for location permission solely because iOS will not reveal whether your Wi-Fi is encrypted unless it holds that permission — it never reads your location. Full details are in our <a href="privacy.html#consumer" style="color:#7C6FBF;text-decoration:none;">Privacy Policy</a>.</p></details>
-      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">My provider deployed Managed on my device. What can they see?<span class="faq-plus" style="transition:transform .2s;color:#7C6FBF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">They can see that your seat exists, when it activated and last renewed, and any label they typed themselves. They cannot see your scan results, your security record, or anything about how you use your device — there is no dashboard, no feed, and no export. A technician sees your record only if you open the technician view on your own device during a support call, and doing so writes a permanent entry into that record. Full detail in our <a href="privacy.html#managed" style="color:#7C6FBF;text-decoration:none;">Privacy Policy for Managed</a>.</p></details>
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">Do my scan results ever leave my device?<span class="faq-plus" style="transition:transform .2s;color:#7C6FBF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">No. The analysis runs on your device and your results stay there. The app makes only a few network connections: verifying your device is genuine with Apple, checking that the connection to us isn't being intercepted, push notifications for background scans, and payments through Apple. None of them carry your scan results or personal information. The one exception is one you control: if you tap <strong>Get help</strong>, the app drafts an email containing your findings, and nothing is sent until you read it and send it yourself. See our <a href="privacy.html#consumer" style="color:#7C6FBF;text-decoration:none;">Privacy Policy</a> for full details.</p></details>
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">What data does Lunar Defense collect?<span class="faq-plus" style="transition:transform .2s;color:#7C6FBF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">The app is built to minimize data collection: no account, no analytics SDKs, no trackers, no advertising. Two things worth knowing up front: the camera is used only while the QR scanner is open on screen, and the app asks for location permission solely because iOS will not reveal whether your Wi-Fi is encrypted unless it holds that permission. It never reads your location. Full details are in our <a href="privacy.html#consumer" style="color:#7C6FBF;text-decoration:none;">Privacy Policy</a>.</p></details>
+      <details style="background:#11131A;border:1px solid #1A1D28;border-radius:14px;padding:0 22px;"><summary style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-size:15px;font-weight:600;color:#FAFBFC;">My provider deployed Managed on my device. What can they see?<span class="faq-plus" style="transition:transform .2s;color:#7C6FBF;font-size:22px;font-weight:300;">+</span></summary><p style="font-size:14px;color:#A8B2C8;line-height:1.65;margin:0;padding:0 0 20px;">They can see that your seat exists, when it activated and last renewed, and any label they typed themselves. They cannot see your scan results, your security record, or anything about how you use your device. There is no dashboard, no feed, and no export. A technician sees your record only if you open the technician view on your own device during a support call, and doing so writes a permanent entry into that record. Full detail in our <a href="privacy.html#managed" style="color:#7C6FBF;text-decoration:none;">Privacy Policy for Managed</a>.</p></details>
     </div>
   </section>
 
@@ -228,6 +297,83 @@
   </footer>
 
 </div>
+<script>
+(function () {
+    // "Use a form instead" links to the panel below, which is collapsed by default.
+    // Open it on the way there, otherwise the link looks like it did nothing.
+    const opener = document.querySelector('a[href="#paused-form"]');
+    const panel = document.getElementById('paused-form');
+    if (opener && panel) opener.addEventListener('click', function () { panel.open = true; });
+
+    const form = document.getElementById('paused-contact-form');
+    if (!form) return;
+    const els = form.elements;
+    const status = document.getElementById('pf-status');
+    const btn = document.getElementById('pf-submit');
+    const ENDPOINT = 'https://api.lunardefense.co/contact';
+    const TOPIC = 'Managed (IT & security providers)';
+
+    const setStatus = (msg, ok) => {
+        status.textContent = msg;
+        status.style.color = ok === true ? '#00E676' : ok === false ? '#ff6b6b' : '#A8B2C8';
+    };
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Honeypot: a filled hidden field means a bot. Pretend success, send nothing.
+        if (els['company_website'] && els['company_website'].value) {
+            form.reset();
+            setStatus("Thanks, we'll be in touch shortly.", true);
+            return;
+        }
+
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        // Device info rides along in the message body so the endpoint's payload shape is untouched.
+        const device = els['device_info'].value.trim();
+        const body = els['message'].value.trim();
+
+        const payload = {
+            name: els['name'].value.trim(),
+            email: els['email'].value.trim(),
+            organization: els['organization'].value.trim(),
+            role: '',
+            topic: TOPIC,
+            message: 'Licence wall: protection paused.\n\n' + body
+                     + (device ? '\n\n--- device info ---\n' + device : '\n\n(no device info supplied)'),
+            company_website: '', // honeypot, always empty from real users
+            page: location.href
+        };
+
+        const original = btn.textContent;
+        btn.disabled = true;
+        btn.style.opacity = '.6';
+        btn.textContent = 'Sending\u2026';
+        setStatus('', null);
+
+        try {
+            const res = await fetch(ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            if (!res.ok) throw new Error('Request failed: ' + res.status);
+            form.reset();
+            setStatus("Thanks, your message is on its way. We'll follow up soon.", true);
+        } catch (err) {
+            setStatus('Something went wrong. Please try again, or email support@lunardefense.co.', false);
+        } finally {
+            btn.disabled = false;
+            btn.style.opacity = '1';
+            btn.textContent = original;
+        }
+    });
+})();
+</script>
 <script>
 (function(){
   var b=document.querySelector('.ld-ham'), m=document.getElementById('ld-mm');

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Managed Trials | Lunar Defense</title>
+<meta name="description" content="Trial Lunar Defense Managed on real devices: the full product, every seat, nothing for the client to buy. Request a trial or continue one that has ended.">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  body{margin:0;}
+  html{scroll-behavior:smooth;}
+  [id]{scroll-margin-top:90px;}
+</style>
+<style>
+  body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+  .ld-header{position:sticky;top:0;z-index:50;background:rgba(10,11,15,.95);backdrop-filter:blur(8px);border-bottom:1px solid #1A1D28;box-shadow:0 10px 30px rgba(0,0,0,.3);}
+  .ld-header-inner{box-sizing:border-box;max-width:1280px;margin:0 auto;padding:0 16px;height:80px;display:flex;align-items:center;justify-content:space-between;}
+  @media (min-width:640px){.ld-header-inner{padding-left:24px;padding-right:24px;}}
+  @media (min-width:1024px){.ld-header-inner{padding-left:32px;padding-right:32px;}}
+  .ld-brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+  .ld-wordmark{font-size:24px;font-weight:700;color:#FAFBFC;letter-spacing:-.01em;}
+  .ld-nav{display:flex;align-items:center;gap:28px;}
+  .ld-nav a{font-size:14px;font-weight:500;color:#A8B2C8;text-decoration:none;transition:color .2s;}
+  .ld-nav a:hover{color:#00D9FF;}
+  .ld-cta{display:inline-flex;align-items:center;gap:8px;background:#00D9FF;color:#04222B !important;padding:10px 18px;border-radius:9px;font-weight:700;}
+  .ld-ham{display:none;background:none;border:none;color:#A8B2C8;cursor:pointer;padding:8px;line-height:0;}
+  .ld-mm{display:none;flex-direction:column;padding:6px 32px 18px;border-top:1px solid #1A1D28;background:rgba(10,11,15,.98);}
+  .ld-mm.open{display:flex;}
+  .ld-mm a{font-size:15px;color:#C7CEDC;text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(45,49,57,.5);}
+  .ld-mm a:last-child{border-bottom:none;color:#00D9FF;font-weight:600;}
+  [id]{scroll-margin-top:96px;}
+  @media (max-width:860px){ .ld-nav{display:none;} .ld-ham{display:block;} }
+  @media (min-width:861px){ .ld-mm{display:none !important;} }
+  html,body{overflow-x:hidden;}
+  /* form controls */
+  .tf-l{display:block;font-size:13px;font-weight:500;color:#A8B2C8;margin-bottom:8px;}
+  .tf-in{box-sizing:border-box;width:100%;padding:13px 14px;background:#0A0B0F;border:1px solid #2D3139;border-radius:11px;color:#FAFBFC;font-size:16px;font-family:inherit;transition:border-color .2s;}
+  .tf-in:focus{outline:none;border-color:#00D9FF;}
+  .tf-in::placeholder{color:rgba(168,178,200,.4);}
+  .tf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  .tf-req{color:#00D9FF;}
+  @media (max-width:1023px){ .m-grid3{grid-template-columns:1fr 1fr !important;} }
+  @media (max-width:767px){
+    .m-split{grid-template-columns:1fr !important;gap:32px !important;}
+    .m-h1{font-size:42px !important;}
+    .m-h2{font-size:28px !important;}
+    .tf-row{grid-template-columns:1fr !important;}
+  }
+  @media (max-width:639px){ .m-grid3{grid-template-columns:1fr !important;} }
+  @media (max-width:479px){ .m-h1{font-size:34px !important;} }
+</style>
+</head>
+<body>
+<div style="font-family:'IBM Plex Sans',sans-serif;background:#0A0B0F;color:#FAFBFC;background-image:radial-gradient(at 0% 0%, rgba(0,217,255,.12) 0%, transparent 45%),radial-gradient(at 100% 0%, rgba(75,110,245,.08) 0%, transparent 45%);">
+
+  <!-- header -->
+  <header class="ld-header">
+    <div class="ld-header-inner">
+      <a href="index.html" class="ld-brand"><svg width="32" height="36" viewBox="0 0 300 300" fill="none"><g fill="#FAFBFC"><g transform="translate(27,14)"><path d="M163.564191,1.3407301 C207.987662,1.3407301 244,61.7822889 244,136.34073 C244,210.899171 207.987662,271.34073 163.564191,271.34073 C163.304665,271.34073 163.045425,271.338667 162.786478,271.334551 C179.344579,250.006202 190.376128,211.840323 190.376128,168.306247 C190.376128,101.460748 164.367217,47.2717646 132.283599,47.2717646 C114.540749,47.2717646 98.6557267,63.8443823 88,89.9652393 C99.2698137,38.2518581 128.8487,1.3407301 163.564191,1.3407301 Z"></path><path d="M26.6595801,1.34072655 L68.0688562,1.34072655 C72.4871342,1.34072655 76.0688562,4.92244855 76.0688562,9.34072655 C76.0688562,9.58400934 76.0577587,9.82716551 76.0355984,10.0694369 L58.0247074,206.976371 C57.8234796,209.176326 59.4437682,211.12287 61.6437233,211.324098 C61.764859,211.335178 61.8864371,211.340727 62.0080785,211.340727 L148.863101,211.340725 C148.864889,211.340727 148.866677,211.340727 148.868465,211.340725 C162.956155,211.341093 170,214.341093 170,220.340727 C170,229.340727 160,261.340727 147.90546,271.340727 C101.46676,271.340727 55.0280603,271.340727 8.5893603,271.340727 C4.17108231,271.340727 0.589360305,267.759005 0.589360305,263.340727 C0.589360305,263.151312 0.596087395,262.961957 0.609528855,262.773021 L18.6797486,8.77302061 C18.9776513,4.58561845 22.4615945,1.34072655 26.6595801,1.34072655 Z"></path></g></g></svg><span class="ld-wordmark">Lunar Defense</span></a>
+      <nav class="ld-nav">
+        <a href="#what">What it does</a>
+        <a href="msp.html">Managed</a>
+        <a href="support.html">Support</a>
+        <a href="#contact" class="ld-cta">Talk to us</a>
+      </nav>
+      <button class="ld-ham" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+    </div>
+    <div class="ld-mm" id="ld-mm">
+      <a href="#what">What it does</a>
+      <a href="msp.html">Managed</a>
+      <a href="support.html">Support</a>
+      <a href="#contact">Talk to us</a>
+    </div>
+  </header>
+
+  <!-- hero: neutral, so it serves a prospect, a mid-trial reader, and a locked-out one -->
+  <section style="max-width:900px;margin:0 auto;padding:72px 32px 36px;">
+    <p style="color:#00D9FF;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:600;margin:0 0 16px;">For IT &amp; security providers</p>
+    <h1 class="m-h1" style="font-size:52px;line-height:1.05;font-weight:700;letter-spacing:-.03em;margin:0 0 20px;">Lunar Defense Managed trials.</h1>
+    <p style="font-size:19px;color:#C7CEDC;font-weight:300;line-height:1.6;margin:0 0 32px;max-width:640px;">A trial puts the full product on real devices: every check, every seat, no feature held back and nothing for the client to buy. Tell us how many devices you'd cover and we'll set it up.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="#contact" style="display:inline-flex;align-items:center;gap:8px;background:#00D9FF;color:#04222B;border-radius:12px;padding:15px 26px;font-weight:700;font-size:16px;text-decoration:none;">Request a trial &rarr;</a>
+      <a href="#what" style="display:inline-flex;align-items:center;gap:7px;color:#FAFBFC;border:1px solid #2D3139;border-radius:12px;padding:15px 22px;font-weight:600;font-size:15px;text-decoration:none;">What the app does</a>
+    </div>
+    <p style="font-size:13px;color:#6b7080;margin:22px 0 0;">Licensed per seat &middot; No in-app purchases &middot; No client accounts</p>
+  </section>
+
+  <!-- the app's licence wall links straight here, so this reader is served high on the page -->
+  <section style="max-width:900px;margin:0 auto;padding:0 32px 64px;">
+    <div style="display:flex;align-items:flex-start;gap:18px;background:linear-gradient(140deg,#0F1620,#0C0E14);border:1px solid rgba(0,217,255,.28);border-radius:18px;padding:26px 28px;">
+      <div style="flex-shrink:0;width:42px;height:42px;border-radius:11px;background:rgba(0,217,255,.12);display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.4 8A6.5 6.5 0 006 9v1.5"></path><path d="M5.6 16A6.5 6.5 0 0018 15v-1.5"></path><path d="M6 4v5h5M18 20v-5h-5"></path></svg></div>
+      <p style="font-size:16px;color:#A8B2C8;line-height:1.6;margin:0;"><strong style="color:#FAFBFC;font-weight:600;">Trial already ended?</strong> Protection is paused on this device, but nothing has been lost. Every device keeps its registration, and the same seat comes back on the app's next check the moment a subscription starts. No reinstall, no rollout, nothing to re-enter.</p>
+    </div>
+  </section>
+
+  <!-- what it does: sits next to the forward block, because the reader who needs it is the forwardee -->
+  <section id="what" style="max-width:1100px;margin:0 auto;padding:0 32px 40px;">
+    <div style="text-align:center;margin-bottom:36px;">
+      <p style="color:#00D9FF;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:600;margin:0 0 12px;">What the app does</p>
+      <h2 class="m-h2" style="font-size:34px;font-weight:700;margin:0 0 14px;letter-spacing:-.02em;">Real security checks, in plain language.</h2>
+      <p style="font-size:16px;color:#A8B2C8;font-weight:300;max-width:660px;margin:0 auto;line-height:1.65;">Every device runs the same one-tap sweep, and the analysis stays on the device.</p>
+    </div>
+    <div class="m-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:26px;">
+        <div style="width:44px;height:44px;border-radius:12px;background:rgba(0,217,255,.12);display:flex;align-items:center;justify-content:center;margin-bottom:16px;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg></div>
+        <h3 style="font-size:17px;font-weight:600;margin:0 0 8px;">Device integrity</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">Checks for a tampered operating system and unauthorized code, and confirms the device is genuine with Apple.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:26px;">
+        <div style="width:44px;height:44px;border-radius:12px;background:rgba(0,217,255,.12);display:flex;align-items:center;justify-content:center;margin-bottom:16px;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"></path><path d="M2 12h20M12 2c2.5 2.7 4 6.3 4 10s-1.5 7.3-4 10c-2.5-2.7-4-6.3-4-10s1.5-7.3 4-10z"></path></svg></div>
+        <h3 style="font-size:17px;font-weight:600;margin:0 0 8px;">Connection safety</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">Detects proxies and network interception, and confirms the app's own connection isn't being watched.</p>
+      </div>
+      <div style="background:#11131A;border:1px solid #1A1D28;border-radius:16px;padding:26px;">
+        <div style="width:44px;height:44px;border-radius:12px;background:rgba(0,217,255,.12);display:flex;align-items:center;justify-content:center;margin-bottom:16px;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"></rect><path d="M9 12l2 2 4-4"></path></svg></div>
+        <h3 style="font-size:17px;font-weight:600;margin:0 0 8px;">A verdict, not a score</h3>
+        <p style="font-size:14px;color:#A8B2C8;line-height:1.6;margin:0;">One plain status, backed by named evidence, with a ranked list of what to do next.</p>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:14px;color:#6b7080;margin:24px 0 0;">Background scans, push alerts, and phishing checks are included on every seat. <a href="msp.html" style="color:#A8B2C8;text-decoration:none;border-bottom:1px solid #2D3139;">See the full product &rarr;</a></p>
+  </section>
+
+  <!-- forward this -->
+  <section style="max-width:900px;margin:0 auto;padding:24px 32px 56px;">
+    <div style="background:#0C0E14;border:1px solid #1A1D28;border-radius:18px;padding:32px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;">
+      <div style="flex:1;min-width:260px;">
+        <h2 style="font-size:20px;font-weight:700;margin:0 0 8px;">Not the person who decides?</h2>
+        <p style="font-size:15px;color:#A8B2C8;line-height:1.65;margin:0;">Continuing is a decision for whoever manages IT or security for your organization. Send them this page.</p>
+      </div>
+      <a id="share-link" href="mailto:?subject=Lunar%20Defense%20Managed%3A%20continuing%20our%20trial&amp;body=Our%20Lunar%20Defense%20trial%20is%20ending%2C%20so%20security%20scanning%20on%20our%20devices%20will%20pause.%20Details%20and%20how%20to%20continue%20are%20here%3A%0A%0Ahttps%3A%2F%2Flunardefense.co%2Ftrial%0A%0ANothing%20has%20to%20be%20reinstalled%20or%20re-registered.%20It%20turns%20back%20on%20by%20itself." style="display:inline-flex;align-items:center;gap:9px;color:#FAFBFC;border:1px solid #2D3139;border-radius:12px;padding:14px 20px;font-weight:600;font-size:15px;text-decoration:none;white-space:nowrap;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
+        Forward this page
+      </a>
+    </div>
+  </section>
+
+  <!-- contact -->
+  <section id="contact" style="max-width:760px;margin:0 auto;padding:24px 32px 72px;">
+    <div style="background:linear-gradient(140deg,#11161C,#0D0F15);border:1px solid rgba(0,217,255,.32);border-radius:20px;padding:40px;box-shadow:0 30px 70px -35px rgba(0,217,255,.28);">
+      <h2 class="m-h2" style="font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.02em;">Start or continue a trial</h2>
+      <p style="font-size:15px;color:#A8B2C8;line-height:1.65;margin:0 0 28px;">Managed is licensed per seat. Tell us roughly how many devices you'd cover and we'll come back with next steps, usually the same business day.</p>
+
+      <form id="trial-form" novalidate>
+        <!-- honeypot: hidden from users, bots tend to fill it -->
+        <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+          <label>Company website<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+        <div style="margin-bottom:16px;">
+          <label class="tf-l" for="tf-intent">What do you need? <span class="tf-req">*</span></label>
+          <select id="tf-intent" name="intent" required class="tf-in">
+            <option value="Start a trial" selected>Start a trial</option>
+            <option value="Continue a trial that has ended">Continue a trial that has ended</option>
+            <option value="Something else about a trial">Something else about a trial</option>
+          </select>
+        </div>
+
+        <div class="tf-row">
+          <div>
+            <label class="tf-l" for="tf-name">Name <span class="tf-req">*</span></label>
+            <input id="tf-name" name="name" type="text" required autocomplete="name" class="tf-in">
+          </div>
+          <div>
+            <label class="tf-l" for="tf-email">Work email <span class="tf-req">*</span></label>
+            <input id="tf-email" name="email" type="email" required autocomplete="email" class="tf-in">
+          </div>
+        </div>
+
+        <div class="tf-row">
+          <div>
+            <label class="tf-l" for="tf-org">Organization</label>
+            <input id="tf-org" name="organization" type="text" autocomplete="organization" class="tf-in">
+          </div>
+          <div>
+            <label class="tf-l" for="tf-seats">How many devices?</label>
+            <input id="tf-seats" name="seats" type="text" inputmode="numeric" placeholder="A rough number is fine" class="tf-in">
+          </div>
+        </div>
+
+        <div style="margin-bottom:20px;">
+          <label class="tf-l" for="tf-message">Anything we should know? <span class="tf-req">*</span></label>
+          <textarea id="tf-message" name="message" rows="4" required class="tf-in" style="resize:vertical;line-height:1.55;"></textarea>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+          <button type="submit" id="tf-submit" style="background:#00D9FF;color:#04222B;border:none;border-radius:12px;padding:15px 28px;font-weight:700;font-size:16px;font-family:inherit;cursor:pointer;">Send message</button>
+          <p id="tf-status" style="font-size:14px;margin:0;color:#A8B2C8;" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+
+      <p style="font-size:14px;color:#6b7080;margin:24px 0 0;padding-top:22px;border-top:1px solid #1A1D28;">Prefer email? <a href="mailto:potts@lunardefense.co?subject=Lunar%20Defense%20Managed%3A%20continuing%20our%20trial" style="color:#00D9FF;text-decoration:none;">potts@lunardefense.co</a></p>
+    </div>
+  </section>
+
+  <!-- app info -->
+  <section style="max-width:900px;margin:0 auto;padding:0 32px 56px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid #1A1D28;padding-top:28px;font-size:13px;color:#6b7080;">
+      <span>Having a different problem? <a href="support.html" style="color:#A8B2C8;text-decoration:none;">Visit support</a></span>
+      <div style="display:flex;gap:22px;">
+        <a href="privacy.html#managed" style="color:#A8B2C8;text-decoration:none;">Privacy Policy</a>
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener" style="color:#A8B2C8;text-decoration:none;">Terms of Use</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer style="background:#0A0B0F;border-top:1px solid #1A1D28;padding:48px 32px;">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <svg width="22" height="25" viewBox="0 0 300 300" fill="none"><g fill="#FAFBFC"><g transform="translate(27,14)"><path d="M163.564191,1.3407301 C207.987662,1.3407301 244,61.7822889 244,136.34073 C244,210.899171 207.987662,271.34073 163.564191,271.34073 C163.304665,271.34073 163.045425,271.338667 162.786478,271.334551 C179.344579,250.006202 190.376128,211.840323 190.376128,168.306247 C190.376128,101.460748 164.367217,47.2717646 132.283599,47.2717646 C114.540749,47.2717646 98.6557267,63.8443823 88,89.9652393 C99.2698137,38.2518581 128.8487,1.3407301 163.564191,1.3407301 Z"></path><path d="M26.6595801,1.34072655 L68.0688562,1.34072655 C72.4871342,1.34072655 76.0688562,4.92244855 76.0688562,9.34072655 C76.0688562,9.58400934 76.0577587,9.82716551 76.0355984,10.0694369 L58.0247074,206.976371 C57.8234796,209.176326 59.4437682,211.12287 61.6437233,211.324098 C61.764859,211.335178 61.8864371,211.340727 62.0080785,211.340727 L148.863101,211.340725 C148.864889,211.340727 148.866677,211.340727 148.868465,211.340725 C162.956155,211.341093 170,214.341093 170,220.340727 C170,229.340727 160,261.340727 147.90546,271.340727 C101.46676,271.340727 55.0280603,271.340727 8.5893603,271.340727 C4.17108231,271.340727 0.589360305,267.759005 0.589360305,263.340727 C0.589360305,263.151312 0.596087395,262.961957 0.609528855,262.773021 L18.6797486,8.77302061 C18.9776513,4.58561845 22.4615945,1.34072655 26.6595801,1.34072655 Z"></path></g></g></svg>
+        <span style="font-size:14px;color:#A8B2C8;">&copy; 2026 Lunar Defense</span>
+      </div>
+      <div style="display:flex;gap:28px;font-size:14px;color:#A8B2C8;">
+        <a href="index.html" style="color:#A8B2C8;text-decoration:none;">Main site</a>
+        <a href="msp.html" style="color:#A8B2C8;text-decoration:none;">Managed</a>
+        <a href="support.html" style="color:#A8B2C8;text-decoration:none;">Support</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+<script>
+(function(){
+  var b=document.querySelector('.ld-ham'), m=document.getElementById('ld-mm');
+  if(b&&m){ b.addEventListener('click',function(){m.classList.toggle('open');});
+    m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');});}); }
+})();
+</script>
+<script>
+(function () {
+    const form = document.getElementById('trial-form');
+    if (!form) return;
+    const els = form.elements;
+    const status = document.getElementById('tf-status');
+    const btn = document.getElementById('tf-submit');
+    const ENDPOINT = 'https://api.lunardefense.co/contact';
+    const TOPIC = 'Managed (IT & security providers)';
+
+    const setStatus = (msg, ok) => {
+        status.textContent = msg;
+        status.style.color = ok === true ? '#00E676' : ok === false ? '#ff6b6b' : '#A8B2C8';
+    };
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Honeypot: a filled hidden field means a bot. Pretend success, send nothing.
+        if (els['company_website'] && els['company_website'].value) {
+            form.reset();
+            setStatus("Thanks, we'll be in touch shortly.", true);
+            return;
+        }
+
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        // Seat count rides along in the message body so the endpoint's payload shape is untouched.
+        const seats = els['seats'].value.trim();
+        const body = els['message'].value.trim();
+
+        const payload = {
+            name: els['name'].value.trim(),
+            email: els['email'].value.trim(),
+            organization: els['organization'].value.trim(),
+            role: '',
+            topic: TOPIC,
+            message: els['intent'].value + '.\nDevices: ' + (seats || 'not given') + '\n\n' + body,
+            company_website: '', // honeypot, always empty from real users
+            page: location.href
+        };
+
+        const original = btn.textContent;
+        btn.disabled = true;
+        btn.style.opacity = '.6';
+        btn.textContent = 'Sending…';
+        setStatus('', null);
+
+        try {
+            const res = await fetch(ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            if (!res.ok) throw new Error('Request failed: ' + res.status);
+            form.reset();
+            setStatus("Thanks, your message is on its way. We'll follow up soon.", true);
+        } catch (err) {
+            setStatus('Something went wrong. Please try again, or email potts@lunardefense.co.', false);
+        } finally {
+            btn.disabled = false;
+            btn.style.opacity = '1';
+            btn.textContent = original;
+        }
+    });
+})();
+</script>
+</body>
+</html>
